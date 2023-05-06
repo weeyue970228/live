@@ -1,0 +1,126 @@
+<div class="detail_r family_r">
+                
+    <!-- 未加入家族时显示 -->
+    <!-- emceeagent -->
+    <if condition="($is_joinagent_sign['agentuid'] eq 0) and ($is_joinagent_sign['emceeagent'] eq 'n') ">
+        <input type="button" value="申请加入家族" class="create_btn" ids="{$myid['id']}" familyid="{$Think.get.id}" />
+    </if>
+    <!--提示1-->
+    <label style="display: none" id='submitok'>您已申请过了,耐心等待帮主审核</label>
+    <!--提示2-->
+    <label style="display: none" id="submitreturn"></label>
+
+    <!-- 该用户为族长时显示 -->
+    <div class="patriarch" >
+        <div class="patriarch_c">
+            <a href=""><img src="{$ucurl}avatar.php?uid={$zuzhanginfo['ucuid']}&size=middle" /></a>
+            <div>
+                <h6>{$zuzhanginfo['nickname']}</h6>
+                <span class="level4"></span>
+                <span>族长</span>
+            </div>
+        </div>
+     
+        <if condition="$is_joinagent_sign['emceeagent'] eq 'y'">
+        <ul>
+            <li><a href="/index.php/Jiazu/family_personnel.html">人员管理</a></li>
+            <li><a href="/index.php/Jiazu/family_live_data.html">直播数据</a></li>
+            <li><a href="/index.php/Jiazu/family_gift.html">礼物统计</a></li>
+            
+            <!-- <li><a href="javascript:;">家族直播</a></li> -->
+        </ul>
+        </if>
+    </div>
+
+    <!-- 该用户为家族成员时显示 -->
+    <div class="patriarch" style="display: none">
+        <div class="patriarch_c">
+            <a href="javascript:;"><img src="" /></a>
+            <div>
+                <h6>茜茜茜茜小姐茜茜小姐茜茜小姐小姐</h6>
+                <span class="level4"></span>
+                <span>家族成员</span><a href="javascript:;" class="family_exit">退出家族</a>
+            </div>
+        </div>
+        <div class="patriarch_c">
+            <a href="javascript:;"><img src="" /></a>
+            <div>
+                <h6>茜茜茜茜小姐茜茜小姐茜茜小姐小姐</h6>
+                <span class="level4"></span>
+                <span>家族成员</span><a href="javascript:;" class="family_exit">退出家族</a>
+            </div>
+        </div>
+        <input type="button" value="家族直播" />
+    </div>
+   <style>
+		.family_ranking ul li:first-child span {
+		  background: url(/Public/images/family/familu_top.png) no-repeat left center;
+		  line-height: 0;
+		  font-size: 0;
+		}   
+   </style> 
+                <div class="family_ranking">
+                    <h2>家族排行</h2>
+                    <ul>
+                    <volist name='paihang' id='vo' >
+                        <li>
+                        	<span>{$i}</span>
+                        	<a href="{:U('Jiazu/family_detail',array('id'=>$vo['familyinfo']['id']))}">
+                        		<img <if condition="$vo['familyinfo']['familyimg']">src="/Public/Familyimg/{$vo['familyinfo']['familyimg']}"<else />src="/Public/images/family/family_ranking_img.jpg"</if> />
+                        	</a>
+                        	<div>
+                        		<p>{$vo['familyinfo']['familyname']}</p>
+                        		<p>人数：{$vo['tatol']}</p>
+                        	</div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+</div>
+<!-- 添加家族公告窗口 -->
+<div class="notice_bg" style="display: none">
+    <div class="body">
+        <a href="javascript:;" class="close_notice right">×</a>
+        <p class="title">家族公告</p>
+        <div class="content">
+            <span class="left label inline-block">公告内容：</span>
+            <textarea class="notice_text"></textarea>
+        </div>
+        <button class="notice_btn" value ="{$Think.get.id}">提交</button>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('.release_notice').click(function(){
+            // $('body').append('<div class="notice_bg">'+
+            //     '<div class="body">'+
+            //         '<a href="javascript:;" class="close_notice right">×</a>'+
+            //         '<p class="title">家族公告</p>'+
+            //         '<div class="content">'+
+            //             '<span class="left label inline-block">公告内容：</span>'+
+            //             '<textarea class="notice_text"></textarea>'+
+            //         '</div>'+
+            //         '<button class="notice_btn" value ="{$Think.get.id}">提交</button>'+
+            //     '</div>'+
+            // '</div>');
+
+            $('.notice_bg').show().find('.body').css({
+                'margin-top': ($(window).height() - $('.notice_bg .body').height())/2
+            })
+
+            $('.close_notice').click(function(){
+                $('.notice_bg').hide();
+            });
+            $(".notice_btn").on({
+                click:function(){
+                    var url = "/index.php/Jiazu/gonggao";
+                    var content = $(".notice_text").val();
+                    var familyid = $(".notice_btn").attr('value');
+                    $.post(url,{'content':content,'familyid':familyid}, function(){
+                        $(".notice_bg").hide();
+                    });
+                }
+            });
+        });
+    });
+</script>

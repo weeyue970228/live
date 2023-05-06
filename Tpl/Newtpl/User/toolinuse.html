@@ -1,0 +1,191 @@
+﻿<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的道具-管理中心-{$sitename}</title>
+<include file="Public:head" />
+<style>
+	.enableMounts
+	{
+	    width: 86px;
+	    height: 26px;
+	    line-height: 23px;
+	    background: url(/Public/images/daojubtn.png) no-repeat;
+	    display: block;
+
+	    text-align: center;
+	}
+</style>
+</head>
+<body>
+<include file="Public:header" />
+<div class="headhead"></div>
+<include file="Public:header1" />
+
+<div class="wrap">
+	<div class="usercenter">
+
+    <include file="User:header" />
+    
+<script language="javascript">
+$("document").ready(function(){
+	
+	//道具初始化
+	
+	$.ajax({
+		url:"__URL__/queryMounts",
+		success:function(data)
+		{
+			$(".enableMounts").each(function()
+			{
+				var id = parseInt($(this).attr("enableMountsID")) ;
+
+				if(data == id)
+				{
+					$(this).text("卸载");
+					//$(this).attr("disabled","disabled");
+				}
+			});
+		}
+	});
+	//装备
+	$(".enableMounts").click(function(){
+			var mountsID = $(this).attr("enableMountsID");
+			var text = $(this).text();
+			if(text=="卸载") mountsID = 0;
+			var $this = $(this);
+			$.ajax(
+				{
+					url:"__URL__/enableMounts/mountsID/"+mountsID,
+					success:function(data)
+					{
+						if(data==1)
+						{
+							$(".enableMounts").text("启用");
+							$(".enableMounts").removeAttr("disabled");
+							if(text!="卸载") $this.text("卸载");
+							//$this.attr("disabled","disabled");
+							alert("操作成功");
+							
+						}
+						else if(data==-1)
+						{
+							//道具未购买 正常操作不会出现该问题
+						}
+						else if(data==2)
+						{
+							alert("出错了~请刷新重试");
+						}
+					}
+				}
+			);
+		
+	});
+		
+})
+
+
+
+</script>
+        <div class="usercenter_con">
+            <div class="djsc_top">
+                <h4>我的道具</h4>
+                <span><a href="__URL__/toolItem/" class="djbuy">购买道具</a></span>
+            </div>
+            <div class="djsc_list">
+                <table border="0">
+                  <tr>
+                    <th scope="col">道具</th>
+                    <th scope="col">威力</th>
+                    <th scope="col">操作</th>
+                    <th scope="col">有效期</th>
+                  </tr>
+                  <?php
+				  if($userinfo['vip'] == '1' and $userinfo['vipexpire'] > time()){
+				  ?>
+					 <tr>
+		                    <td>至尊VIP<span class='props vip1'></span></td>
+		                    <td>
+		                    	<ul>
+									<li>名称前"<span class="props vip1"></span>"紫色标识</li><li>防止被踢</li><li>防止被禁言</li><li>可以进入满员房间</li>
+		                        </ul>
+		                    </td>
+		                    <td>--</td>
+							<td><?php echo date('Y-m-d H:i:s',$userinfo['vipexpire']); ?></td>
+					 </tr>
+				  <?php
+				  }
+				  ?>
+				  <?php
+				  if($userinfo['vip'] == '2' and $userinfo['vipexpire'] > time()){
+				  ?>
+					 <tr>
+		                    <td>VIP<span class='props vip2'></span></td>
+		                    <td>
+		                    	<ul>
+									<li>名称前"<span class="props vip2"></span>"标识</li><li>除房主以外，防止被踢</li><li>除房主以外，防止被禁言</li><li>可以进入满员房间</li><li>房间排位直接升至10富上面</li>
+		                        </ul>
+		                    </td>
+		                    <td>--</td>
+							<td><?php echo date('Y-m-d H:i:s',$userinfo['vipexpire']); ?></td>
+					 </tr>
+				  <?php
+				  }
+				  ?>
+				  <?php
+				  if($userinfo['goldkey'] == 'y' and $userinfo['gkexpire'] > time()){
+				  ?>
+					 <tr>
+		                    <td>金钥匙<span class='props vip4'></span></td>
+		                    <td>
+		                    	<ul>
+									可以进入满员房间
+		                        </ul>
+		                    </td>
+		                    <td>--</td>
+							<td><span><?php echo date('Y-m-d H:i:s',$userinfo['gkexpire']); ?></span></td>
+					 </tr>
+				  <?php
+				  }
+				  ?>
+				  <?php
+				  if($userinfo['atwill'] == 'y' and $userinfo['awexpire'] > time()){
+				  ?>
+					 <tr>
+		                    <td>随意说<span class='props vip900'></span></td>
+		                    <td>
+		                    	<ul>
+									每日免费发布100条广播
+		                        </ul>
+		                    </td>
+		                    <td>--</td>
+							<td><span><?php echo date('Y-m-d H:i:s',$userinfo['awexpire']); ?></span></td>
+					 </tr>
+				  <?php
+				  }
+				  ?>
+				  <volist name="carList" id="vo">
+					 <tr>
+		                <td>{$vo['name']}<span class='props vip900' style="background:url('{$vo["icon"]}');background-position:center center;background-size:100% 100%;"></span></td>
+		                    <td>
+		                    	<ul>
+									{$vo['explain']}
+		                        </ul>
+		                    </td>
+		                    <td>
+		                    	<button class="enableMounts" enableMountsID="{$vo['carID']}">启用</button>
+		                    </td>
+							<td><span><?php echo date('Y-m-d H:i:s',$vo['endtime']); ?></span></td>
+					 </tr>
+				</volist>
+                </table>
+            </div>
+		</div>
+    </div>
+    
+</div>
+<include file="Public:footer" />
+ 
+</body>
+</html>

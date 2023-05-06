@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家族-礼物统计</title>
+<include file="Public:head" />
+<link rel="stylesheet" type="text/css" href="/Public/css/family/family_detail.css"/>
+</head>
+
+<body>
+    <include file="Public:header" />
+	<div class="family_detail">
+       	<include file='Jiazu/publicheader' />
+        <div class="detail_l">
+        	<h3>礼物统计<span>只记录最近一个月</span></h3>
+            <form method="post">
+            <div class="family_search">全部<input type="text" name="search" /><button>搜索</button></div>
+            </form>
+            <table width="807" border="0">
+            	<thead>
+                	<th width="126">赠送人</th>
+                    <th width="126">收礼主播</th>
+                    <th width="181">赠送时间</th>
+                    <th width="124">礼物名称</th>
+                    <th width="118">价格</th>
+                    <th width="99">数量</th>
+                </thead>
+            <volist name="coindetail" id="vo">
+              <tr class="dark_grey">
+                <td>{$vo['uname']}</td>
+                <td>{$vo['toname']}</td>
+                <td><php>echo date('Y-m-d H:i:s',$vo['addtime'])</php></td>
+                <td>{$vo['giftname']}</td>
+                <td>{$vo['coin']}</td>
+                <td>{$vo['giftcount']}</td>
+              </tr>
+            </volist>
+            </table>
+			<div class="page">
+            	{$show}
+            </div>
+        </div>
+        <include file="Jiazu/family_detail_right" />
+        <div class="clear"></div>
+    </div>
+    <include file="Public:footer" />
+</body>
+</html>

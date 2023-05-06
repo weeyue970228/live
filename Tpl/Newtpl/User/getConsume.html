@@ -1,0 +1,104 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>消费记录-我的账单-管理中心-{$sitename}</title>
+<include file="Public:head" />
+<script language="javascript" src="__PUBLIC__/js/CoreJS/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<form name="giftFrm" id="giftFrm" method="get" action="__URL__/getConsume/">
+<div class="wrap">
+	<div class="usercenter">
+    <include file="User:header" />
+		<div class="myaccount">
+			
+
+
+
+			<div class="account-l">
+				<a href="__URL__/getGiftStat/"  title="礼物统计">礼物统计</a>
+				<a href="__URL__/getTakedGift/"  title="我收到的礼物">我收到的礼物</a>
+				<a href="__URL__/getBuyedGift/"  title="我送出的礼物">我送出的礼物</a>
+				<a href="__URL__/getConsume/"  class="on" title="消费记录">消费记录</a>
+                <a href="__URL__/getPresentation/"  title="获赠记录">获赠记录</a>
+                
+				
+				
+				<a href="__URL__/getShowList/"  title="直播详细">直播详细</a>
+				<!--<a href="__URL__/listAward/"  title="中奖记录">中奖记录</a>//-->
+			</div>
+			<div class="account-r">
+				<div class="recent">近期我有<strong>{$count}</strong>笔交易</div>
+				<div class="record">
+						<?php
+						if($_GET['begin'] != ''){
+							$begin = $_GET['begin'];
+						}
+						else{
+							$begin = date('Y-m',time()).'-01';
+						}
+						if($_GET['end'] != ''){
+							$end = $_GET['end'];
+						}
+						else{
+							$end = date('Y-m-d',time());
+						}
+						?>
+						<input type="text" name="begin" id="begint"  onfocus="WdatePicker({el:'begint'});" class="input-accout" value="{$begin}"/>
+						<span onclick="WdatePicker({el:'begint'});"></span>
+						<p class="line">--</p>
+						<input type="text" name="end" id="endt"  onfocus="WdatePicker({el:'endt'});" class="input-accout"  value="{$end}"/>
+						<span onclick="WdatePicker({el:'endt'});"></span>
+						<input type="submit" name="sea-record" class="sea-record" value="搜 索"/>
+				</div>
+				<div class="recod-tpl">
+					<table class="r-table">
+						<tr>
+							<th class="t1">消费时间</th>
+							<th class="t2">消费行为</th>
+							<th class="t3">物品 </th>
+							<th class="t4">数量</th>
+							<th>支付秀币</th>
+						</tr>
+						<volist name="consumes" id="vo">				
+						<tr>
+							<td class="t1"><?php echo date('Y-m-d H:i:s',$vo['addtime']); ?></td>
+							<td class="t2">{$vo['content']}</td>
+							
+								<td class="t3"><img src="{$vo['objectIcon']}"/></td>
+													
+							<td class="t4">{$vo['giftcount']}</td>
+							<td>{$vo['coin']}</td>
+						</tr>						
+						</volist>			
+					</table>
+					
+						<div class="page">
+							{$page}
+							&nbsp;共{$pagecount}页 到第<input type="text" id="pageindex" name="p" value="1" size="2" maxlength="5"/>页 <input type="button" value="确定" onclick="btnScrollPage()"/>
+	               	   </div>					
+               	   					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<include file="Public:footer" />
+<script language="javascript">
+//document.getElementById("begint").value = "2012-09-01";
+//document.getElementById("endt").value = "2012-09-08";
+function scrollPage(step){
+	document.getElementById("pageindex").value = step;
+ 	document.forms["giftFrm"].submit();
+ }
+function btnScrollPage(){
+ 	var curPage = document.getElementById("pageindex").value;
+ 	document.forms["giftFrm"].submit();
+} 
+</script>
+</body>
+</html>

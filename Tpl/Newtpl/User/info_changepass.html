@@ -1,0 +1,93 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>密码修改-个人中心-管理中心-{$sitename}</title>
+<include file="Public:head" />
+
+<script language="javascript" src="__PUBLIC__/js/CoreJS/changePwd.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<div class="wrap">
+  <div class="usercenter">
+    <include file="User:header" />
+    <div class="myaccount">
+      
+
+<div class="account-l">
+<a href="__URL__/info_edit/" title="我的个人资料">我的个人资料</a>
+<a href="__URL__/info_icon/" title="上传头像">上传头像</a> 
+<a href="__URL__/info_changepass/" title="密码/保护" class="on">密码/保护</a> 
+<a href="__URL__/info_live/" title="密码/保护">直播设置</a> 
+</div>
+
+	  <script language="javascript">
+			function savePassword(){
+			  if(!$.passwordOldCheck('#opassword_text','#opw_prompt')){
+				  $("#opassword_text").focus();
+				  return false;			
+			  }else{
+				  if(!$.passwordCheck('#password_text','#pw_prompt')){
+					  $("#password_text").focus();
+					  return false;	
+				  }else{
+					  if(!$.repasswordCheck('#password_text','#pw_prompt','#npassword_text','#npw_prompt')	){
+						 $("#npassword_text").focus();
+						 return false;	
+					  }else
+						return true;
+				  }
+			  }
+			}
+	  </script>
+      <div class="account-r">
+        <div class="xgmm_l">
+          <h2>修改密码</h2>
+          <form name="infoForm" id="id_passwordForm" method="post" action="__URL__/do_info_changepass/" onsubmit="return savePassword();">
+          <input type="hidden" name="id" value="{$_SESSION['uid']}">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="30%" align="right">当前使用的密码：</td>
+                <td width="22%"><input id="opassword_text" onblur="$.passwordOldCheck('#opassword_text','#opw_prompt');" name="oldpass" type="password" class="set_input set1"/></td>
+				<td><em id="opw_prompt"></em></td>
+              </tr>
+              <tr>
+                <td width="30%" align="right">请输入新密码：</td>
+                <td width="22%"><input id="password_text" onblur="$.passwordCheck('#password_text','#pw_prompt');" name="newpass" type="password" class="set_input set1"/></td>
+				<td><em id="pw_prompt"></em></td>
+              </tr>
+              <tr>
+                <td width="30%" align="right">再输入一次新密码：</td>
+                <td width="22%"><input id="npassword_text" onblur="$.repasswordCheck('#password_text','#pw_prompt','#npassword_text','#npw_prompt');" name="newpwd_1" type="password" class="set_input set1"/></td>
+				<td><em id="npw_prompt"></em></td>
+              </tr>
+              <tr>
+                <td width="30%" align="right">&nbsp;</td>
+                <td width="22%"><input name="setinfo_btn" type="image" src="__PUBLIC__/images/tjbt.gif"/></td>
+				<td></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+		<!--提示层-->
+			<div class="poptip" id="giveBox" style="display:none;">
+				<div class="pop-t"><span class="close" id="pop-close"></span><h3>提示</h3></div>	
+				<div class="pop-v">
+					<p class="txt" id="pop-text">修改成功!</p>
+					<p class="txt"><span class="sendBtn" id="pop-btnclose">确 定</span></p>
+				</div>
+			</div>
+		<!--提示层-->
+      </div>
+      <literal><script language="javascript">$(function(){$(".set_input").ClearRoom();})</script></literal>
+    </div>
+  </div>
+</div>
+
+
+
+<include file="Public:footer" />
+</body>
+</html>

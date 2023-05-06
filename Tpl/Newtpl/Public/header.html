@@ -1,0 +1,63 @@
+<script>
+	try { 
+		document.domain = '{$domainroot}';
+	}catch(e){}
+</script>
+<script src="__PUBLIC__/js/logon-2.0.js"></script>
+<script>
+	UAC.showUserInfo = function(data) 
+	{
+		if(data.isLogin == "1")
+		{
+			window.location.reload();
+		}
+	}
+</script>
+<div class="header clear">
+	<div class="contenter navbar">
+		<div class=" logo fn_left">
+			<a href="{$siteurl}" target="_blank"><img src="{$sitelogo}"></a>
+		</div>
+		<div class="nav_list fn_left">
+			<ul>
+				<li><a href="/index.php" target="_self" <if condition="$_GET['_URL_'][0] eq ''">class="on"</if>>首页</a></li>
+				<li><a href="/index.php/xiuchang/" target="_self" <if condition="$_GET['_URL_'][0] eq 'xiuchang'">class="on"</if> >秀场</a></li>
+				<li style="display:none;"><a href="/index.php/youxi/" target="_self" <if condition="$_GET['_URL_'][0] eq 'youxi'">class="on"</if> >游戏</a></li>
+				<li><a href="/index.php/order/" target="_self" <if condition="$_GET['_URL_'][0] eq 'order'">class="on"</if> >排行榜</a></li>
+				<li><a href="/index.php/User/toolItem/" target="_self" <if condition="$_GET['_URL_'][1] eq 'toolItem'">class="on"</if> >商城</a></li>
+				<li><a href="/index.php/Jiazu/" target="_self" <if condition="$_GET['_URL_'][0] eq 'Jiazu'">class="on"</if> >家族</a></li>
+				<li><a href="/index.php/emceeno/" target="_self" <if condition="$_GET['_URL_'][0] eq 'emceeno'">class="on"</if>">靓号</a></li>
+				<li><a href="/index.php/Xiazai/" target="_self" <if condition="$_GET['_URL_'][0] eq 'Xiazai'">class="on"</if> >APP</a></li>
+			</ul>
+
+		</div>
+
+		<div class="header_login fn_right others">
+
+			<literal>
+				<script language="javascript" type="text/javascript">
+					$(function(){	
+						setTimeout(function(){ 
+							$.get("/index.php/Show/show_headerInfo/t/"+Math.random(),function(data){ $('.header_login').html(data);});
+						}, 1000);
+						setTimeout(function(){ 
+							$.get("/index.php/Show/show_headerInfo2/t/"+Math.random(),function(data){ $('.setting').html(data);});
+						}, 1500);
+					});
+				</script>
+
+			</literal>
+
+		</div>
+		<div class="search-form fn_right">
+			<form id="globalsearchform" name="globalsearchform" method="get" action="/index.php/User/search" style="width:140px">
+				<input type="text" id="key" name="key" placeholder="昵称/房号" class="input"  onkeydown="FSubmit(event.keyCode||event.which);">
+				<div href="" class="btn-search fn_right" id="searchBtn" onclick="searchroom();"></div>
+				<div class="search-input" id="searchTips" style="position:absolute;top:0;left:0"></div>
+
+			</form>
+		</div>
+
+	</div>
+
+</div>

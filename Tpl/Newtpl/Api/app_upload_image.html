@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+ 
+	<head>
+		<meta charset="utf-8">
+		<title>上传头像</title>
+		<link href="/Tpl/Newtpl/Api/common.css" rel="stylesheet" />
+
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+			.mg {
+				margin: 0;
+			}
+
+			.button.yellow {
+			    border: 1px solid #d2a000;
+			    box-shadow: 0 1px 2px #fedd71 inset,0 -1px 0 #a38b39 inset,0 -2px 3px #fedd71 inset;
+			    background: -webkit-linear-gradient(top,#FF8900,#d8a605);
+
+			    background: -moz-linear-gradient(top,#FF8900,#d8a605);
+			    background: linear-gradient(top,#FF8900,#d8a605);
+			}
+		.button {
+		    width: 140px;
+		    line-height: 38px;
+		    text-align: center;
+		    font-weight: bold;
+		    color: #fff;
+		    text-shadow: 1px 1px 1px #333;
+		    border-radius: 5px;
+		    margin: 0 20px 20px 0;
+		    position: relative;
+		    overflow: hidden;
+		}
+
+.spinner {
+  margin: 100px auto;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  text-align: center;
+   
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+ 
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #67CF22;
+  border-radius: 100%;
+   
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+ 
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+ 
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+		</style>
+
+		<script type="text/javascript">
+			function AddPOP()
+			{
+				document.getElementById("pop").style.display="block";
+				document.getElementById("Inform").style.display="none";
+				
+			}
+		</script>
+
+	</head>
+
+	<body ng-controller="MyCtrl">
+
+	
+
+
+		<div class="mg">
+		<div class="ordertop" id="ordertop">
+					<div class="fanhui">
+						<a onclick="history.go(-1);"><img src="/Tpl/Newtpl/Api/back_default.png" width="25px" height="25px"></a>
+					</div>
+					<div id="ordertitle">
+						<p style="color:white;">上传头像</p>
+					</div>
+		</div>
+
+		<div class="spinner" id="pop" style="display:none">
+		  <div class="dot1"></div>
+		  <div class="dot2"></div>
+		</div>
+		<form action="__URL__/doapp_upload_image" method="post"
+		enctype="multipart/form-data" id="Inform">
+		<div>
+		<label for="file">选择图片</label>
+		<input type="file" name="file" id="file"  /> 
+		</div>
+		<br />
+		<input type="submit" name="submit" value="提交" class="button yellow"  onclick="AddPOP()" />
+		</form>
+	</body>
+
+</html>

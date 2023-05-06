@@ -1,0 +1,69 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>礼物统计-我的账单-管理中心-{$sitename}</title>
+<include file="Public:head" />
+
+
+</head>
+<body>
+<include file="Public:header" />
+
+<div class="wrap">
+	<div class="usercenter">
+    <include file="User:header" />
+		<div class="myaccount">
+			
+
+
+
+			<div class="account-l">
+				<a href="__URL__/getGiftStat/"  class="on" title="礼物统计">礼物统计</a>
+				<a href="__URL__/getTakedGift/"  title="我收到的礼物">我收到的礼物</a>
+				<a href="__URL__/getBuyedGift/"  title="我送出的礼物">我送出的礼物</a>
+				<a href="__URL__/getConsume/"  title="消费记录">消费记录</a>
+                <a href="__URL__/getPresentation/"  title="获赠记录">获赠记录</a>
+                
+				
+				
+				<a href="__URL__/getShowList/"  title="直播详细">直播详细</a>
+				<!--<a href="__URL__/listAward/"  title="中奖记录">中奖记录</a>//-->
+			</div>
+			<div class="account-r">
+				<div class="lwtj_top">
+                	<p>统计截至<?php echo date('Y-m-d H:i:s',time()); ?></p>
+                </div>
+				<div class="lwtj_con">
+					<div class="giftin">
+                    	<div class="gifttt">收到的礼物<span>({$getgifts|count})</span></div>
+                        <div class="giftcon">
+                        	<div class="giftcontt"><span class="lwmctt">礼物名称</span><span class="lwsltt">礼物数量</span></div>
+                            <ul>
+								<volist name='getgifts' id='vo' key='k'>
+                            	<li><span class="lwmc"><img src="{$vo['objectIcon']}"/></span><span class="lwsl">{$vo['total']}</span></li>
+								</volist>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="giftout">
+                    	<div class="gifttt">送出的礼物<span>({$sendgifts|count})</span></div>
+                        <div class="giftcon">
+                        	<div class="giftcontt"><span class="lwmctt">礼物名称</span><span class="lwsltt">礼物数量</span></div>
+                            <ul>
+								<volist name='sendgifts' id='vo' key='k'>
+                            	<li><span class="lwmc"><img src="{$vo['objectIcon']}"/></span><span class="lwsl">{$vo['total']}</span></li>
+								</volist>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public:footer" />
+
+</body>
+</html>

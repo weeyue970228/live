@@ -1,0 +1,62 @@
+<div class="add_r family_r">
+    
+    <!-- 未加入家族时显示 -->
+    <!-- emceeagent -->
+    <if condition="$myfamilyinfo['emceeagent'] eq 'n'">
+    <if condition="$myfamilyinfo['agentuid'] lt 1">
+    <input type="button" value="申请加入家族" class="create_btn" />
+    </if>
+    </if>
+    <!--提示1-->
+    <label style="display: none">您已申请过了,耐心等待帮主审核</label>
+    <!--提示2-->
+    <label style="display: none">恭喜您申请成功,等待帮主审核</label>
+
+    <!-- 该用户为族长时显示 -->
+    <div class="patriarch" >
+        <div class="patriarch_c">
+            <a href="/{$myfamilyinfo['id']}"><img src="{$ucurl}avatar.php?uid={$myfamilyinfo['id']}&size=middle" /></a>
+            <div>
+                <h6>{$myfamilyinfo['nickname']}</h6>
+                <span class="level4"></span>
+                <span>族长</span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="/index.php/Jiazu/family_personnel.html">人员管理</a></li>
+            <li><a href="/index.php/Jiazu/family_live_data.html">直播数据</a></li>
+            <li><a href="/index.php/Jiazu/family_gift.html">礼物统计</a></li>
+            <li><a href="javascript:;">发布公告</a></li>
+            <!-- <li><a href="javascript:;">家族直播</a></li> -->
+        </ul>
+    </div>
+
+    <!-- 该用户为家族成员时显示 -->
+    <div class="patriarch" style="display: none">
+        <div class="patriarch_c">
+            <a href="javascript:;"><img src="" /></a>
+            <div>
+                <h6>茜茜茜茜小姐茜茜小姐茜茜小姐小姐</h6>
+                <span class="level4"></span>
+                <span>家族成员</span><a href="javascript:;" class="family_exit">退出家族</a>
+            </div>
+        </div>
+        <div class="patriarch_c">
+            <a href="javascript:;"><img src="" /></a>
+            <div>
+                <h6>茜茜茜茜小姐茜茜小姐茜茜小姐小姐</h6>
+                <span class="level4"></span>
+                <span>家族成员</span><a href="javascript:;" class="family_exit">退出家族</a>
+            </div>
+        </div>
+        <input type="button" value="家族直播" />
+    </div>
+    <div class="family_ranking">
+        <h2>家族排行</h2>
+        <ul>
+        <volist name='paihang' id='vo' key='k'>
+            <li <if condition="$k eq 1 ">class="family_no1"</if>><span>{$k}</span><a href="javascript:;"><img <if condition="$vo['familyimg']">>src="{$vo['familyimg']}"<else />src="_IMG_/family/family_ranking_img.jpg"</if> /></a><div><p>{$vo['nickname']}</p><p>人数：{$vo['agent']}</p></div></li>
+        </volist>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,849 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,table,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 12px;
+	color: #333;
+	font-family: \5FAE\8F6F\96C5\9ED1,arial,\5b8b\4f53;
+}
+
+input,select,button,textarea {
+	vertical-align: middle;
+	font-size: 12px;
+	outline: none;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+::-webkit-input-placeholder {
+ /* WebKit browsers */
+	color: #9acae8;
+	font-family: '微软雅黑';
+}
+
+
+/* 公用*/
+.joymodlogin {
+	margin: 0 auto;
+	width: 484px;
+	color: #333;
+	text-align: left;
+	font-size: 12px;
+	border: 1px solid #d2d2d2;
+	padding:30px;
+	border-radius:8px;	
+	background: #fff;
+}
+
+.joymodlogin em {
+	font-style: normal;
+	float: right;
+}
+
+.joymodlogin a {
+	color: #333;
+	text-decoration: none;
+}
+
+.joymodlogin a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+
+.joymodlogin span.close {
+	float: right;
+	width: 14px;
+	height: 14px;
+	overflow: hidden;
+	cursor: pointer;
+	margin-top:-20px;
+}
+
+.joymodlogin span.close a {
+	width: 14px;
+	height: 14px;
+	display: block;
+		cursor: pointer;
+	background: url("../../images/usercenter/login.png") no-repeat -50px -0px;
+}
+
+.joymodlogin span.close a:hover {
+	background: url("../../images/usercenter/login.png") no-repeat -70px -0px;
+}
+
+.jmltitle {
+	height: 34px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom:10px;
+}
+
+.jmltitle span {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: -1px;
+  width: 90px;
+  height: 35px;
+  line-height: 36px;
+  color: #555;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.jmltitle span.cur {
+	color: #fb5470;
+	cursor: default;
+	border-bottom: 3px solid #fb5470;
+	height: 32px;
+}
+
+.goodtip {
+	margin: 13px 0 0 10px;
+	background: url(../../images/usercenter/ad.png)  no-repeat;
+	width: 270px;
+	height: 31px;
+	float: left;
+}
+
+.jmlnana {
+	padding: 10px 0 0 24px;
+}
+
+.jmlnana span {
+	font-weight: bold;
+	padding-right: 4px;
+}
+
+
+/* 登录 */
+.jmllogin1 ul {
+	padding: 5px 0 0 0px;
+	float: left;
+	width: 290px;
+	overflow: hidden;
+}
+
+.jmllogin1 ul li {
+	padding-bottom: 10px;
+
+}
+
+.jmllogin1 ul li input {
+	margin-top: 10px;	
+	border: 1px #bebebe solid;
+	border-radius: 15px;
+	WIDTH: 230px;
+	HEIGHT: 32px;
+	line-height: 32px;	
+}
+
+.jmllogin1 ul li input:focus {
+	border: 1px solid #7cbcf4;
+	box-shadow: 0px 0px 5px 1px rgba(190, 212, 231, 0.25);
+}
+
+.jmllogin1 ul li label {
+	width: 50px;
+	float: left;
+	text-align: right;
+	margin-right: 9px;
+}
+
+.jmllogin1 ul li em {
+	padding-left: 9px;
+}
+
+.jmllogin1 ul li em a {
+	color: #004a99;
+	text-decoration: underline;
+}
+
+.jmllogin1 ul li em a:hover {
+	color: #004a99;
+}
+
+.jmllogin1 ul li.spe1 {
+	color: #ff0101;
+	padding-bottom: 0;
+	padding-left: 60px;
+	_padding-left: 62px;
+	height: 20px;
+}
+
+.jmlbtn1 {
+	width: 252px;
+	padding: 5px 0 0 10px;
+	float: left;
+	height: 25px;
+	_height: 21px;
+	line-height:25px;
+}
+
+.jmlbtn1 input {
+	float: left;
+	margin: 5px 5px 0 0;
+}
+
+
+.jmlbtn2 {
+	padding: 0 0 0 19px;
+	width: 249px;
+	float: left;
+	_padding: 2px 0 0 112px;
+}
+
+.jmlbtn2 input {
+	color: #FFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	BORDER-LEFT: 0px;
+	WIDTH: 250px;
+	HEIGHT: 32px;
+	FONT-SIZE: 14px;
+	VERTICAL-ALIGN: middle;
+	BORDER-TOP: 0px;
+	CURSOR: pointer;
+	FONT-WEIGHT: bold;
+	MARGIN-RIGHT: 10px;
+	BORDER-RIGHT: 0px;
+	PADDING-TOP: 0px;
+	background: #fb5470;
+
+	font-size:18px;
+	line-height: 20px;
+	border:0;
+}
+
+.jmlbtn2 input:hover {
+	background: #f33c5b;
+}
+
+
+/* 密码找回 */
+.jmllogin2 ul {
+	padding: 20px 0 0 60px;
+	float: left;
+	width: 380px;
+	overflow: hidden;
+}
+
+.jmllogin2 ul li {
+	padding-bottom: 11px;
+	height: 22px;
+	line-height: 22px;
+}
+
+.jmllogin2 ul li input {
+	width: 240px;
+	height: 20px;
+	border: 1px solid #b4b4b4;
+	background: #fff;
+}
+
+.jmllogin2 ul li label {
+	width: 50px;
+	float: left;
+	text-align: right;
+	margin-right: 9px;
+}
+
+.jmllogin2 ul li em {
+	padding-left: 9px;
+}
+
+.jmllogin2 ul li em a {
+	color: #004a99;
+	text-decoration: underline;
+}
+
+.jmllogin2 ul li em a:hover {
+	color: #004a99;
+}
+
+.jmllogin2 ul li.spe1 {
+	color: #ff0101;
+	padding-bottom: 2px;
+	padding-left: 60px;
+	_padding-left: 32px;
+}
+
+.jmllogin2 .jmlbtn3 {
+	padding: 5px 0 0 119px;
+	width: 249px;
+	float: left;
+	height: 74px;
+	_padding: 5px 0 0 121px;
+}
+
+.jmllogin2 .jmlbtn3 input {
+	width: 84px;
+	height: 24px;
+	font-size: 12px;
+	padding-top: 0;
+	*padding-top: 2px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 10px;
+	border: 0;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat;
+}
+
+.jmllogin2 .jmltip {
+	width: 404px;
+	clear: both;
+	margin: 0 auto;
+	color: #797979;
+	padding: 16px 0 0 12px;
+}
+
+.jmllogin2 .jmltip span {
+	width: 62px;
+	float: left;
+	line-height: 17px;
+	padding-top: 1px;
+	margin-right: 8px;
+	text-align: center;
+	color: #fff;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat 0 -51px;
+}
+
+.jmllogin2 .jmltip p {
+	width: 324px;
+	float: left;
+	line-height: 20px;
+}
+
+.jmllogin2 .jmltip  a {
+	color: #004a99;
+	text-decoration: underline;
+}
+
+.jmllogin2 .jmltip  a:hover {
+	color: #004a99;
+}
+
+.jmllogin2 .jmlmail1 {
+	padding-top: 40px;
+	height: 165px;
+	color: #333;
+}
+
+.jmllogin2 .jmlmailtip {
+	line-height: 38px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 125px;
+	height: 70px;
+}
+
+.jmllogin2 .jmlmailtip em {
+	width: 33px;
+	height: 38px;
+	float: left;
+	margin-right: 10px;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat 0 -78px;
+}
+
+.jmllogin2 .jmlmail1 p {
+	line-height: 22px;
+	padding-left: 67px;
+}
+
+.jmllogin2 .jmlmail1  a {
+	color: #004a99;
+	text-decoration: underline;
+}
+
+.jmllogin2 .jmlmail1  a:hover {
+	color: #004a99;
+}
+
+.jmllogin2 .jmlmail1 p span {
+	padding-left: 12px;
+}
+/* 注册 */
+.jmllogin3 ul {
+	padding-top: 5px;
+	float: left;
+	width: 300px;
+}
+
+.jmllogin3 ul li {
+	height: 45px;
+	line-height: 29px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.jmllogin3 ul li span {
+	float: left;
+	width: 277px;
+	height: 34px;
+	padding-left: 0px;
+	margin-top: 10px;
+}
+
+.jmllogin3 ul li span.cur {
+	background-position: 0 -118px;
+	margin-top: 10px;
+}
+
+.jmllogin3 ul li span.cur2 {
+	background-position: 0 -213px;
+	margin-top: 10px;
+}
+
+.jmllogin3 ul li input {
+	outline: none;
+	border: 1px #bebebe solid;
+	border-radius: 15px;
+	WIDTH: 230px;
+	HEIGHT: 32px;
+	line-height: 32px;
+}
+
+.jmllogin3 ul li input:focus {
+	border: 1px solid #7cbcf4;
+	box-shadow: 0px 0px 5px 1px rgba(190, 212, 231, 0.25);
+}
+
+.jmllogin3 ul li label {
+	width: 50px;
+	float: left;
+	text-align: right;
+	margin-right: 4px;
+}
+
+.jmllogin3 ul li span.jmlma1 {
+	width: 78px;
+	background-position: 0 -177px;
+	margin-right: 3px;
+}
+
+.jmllogin3 ul li span.jmlma1 input {
+	width: 72px;
+	margin-right: 3px;
+	outline: none;
+  /* width: 57px; */
+  height: 20px;
+  border: 1px solid #B4B4B4;
+  margin: 0;
+  background: none repeat scroll 0 0 #FFFFFF;	
+  vertical-align: top;
+  line-height: 20px;
+}
+
+.jmllogin3 ul li span.jmlma1.cur3 {
+	background-position: 0 -285px;
+}
+
+.jmllogin3 ul li span.jmlma1.cur4 {
+	background-position: 0 -320px;
+}
+
+.jmllogin3 ul li .jmlma2 {
+	float: left;
+}
+
+.jmllogin3 ul li em {
+	padding-left: 8px;
+}
+
+.jmllogin3 a {
+	color: #004a99;
+	text-decoration: underline;
+}
+
+.jmllogin3 a:hover {
+	color: #004a99;
+}
+
+.jmllogin3 .jmlbtn1 {
+	padding: 5px 0 0 100px;
+	float: left;
+	height: 25px;
+	_height: 21px;
+	position: relative;
+}
+
+.jmllogin3 .jmlbtn1 input {
+	float: left;
+	margin: 0 5px 0 0;
+	*margin: -5px 0 0;
+	outline: none;
+}
+
+.jmllogin3 .jmlbtn3 {
+	padding: 2px 0 0 100px;
+	float: left;
+	height: 37px;
+	_padding: 2px 0 0 100px;
+}
+
+.jmllogin3 .jmlbtn3 input {
+	width: 84px;
+	height: 24px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 0;
+	*padding-top: 4px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 10px;
+	border: 0;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat;
+	outline: none;
+}
+
+.jmllogin3 .jmlmail2 {
+	padding-top: 50px;
+}
+
+.jmllogin3 .jmlmailtip {
+	line-height: 38px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 76px;
+	height: 60px;
+}
+
+.jmllogin3 .jmlmailtip em {
+	width: 33px;
+	height: 38px;
+	float: left;
+	margin-right: 10px;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat 0 -78px;
+}
+
+.jmllogin3 .jmlmailtip span {
+	color: #f88c29;
+}
+
+.jmllogin3 .jmlmail2 p {
+	color: #797979;
+	line-height: 20px;
+	padding: 14px 0 0 92px;
+	height: 35px;
+}
+
+.jmllogin3 .jmlmail2 p span {
+	width: 62px;
+	float: left;
+	line-height: 17px;
+	padding-top: 1px;
+	margin-right: 8px;
+	text-align: center;
+	color: #fff;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat 0 -51px;
+}
+
+.jmllogin3 .jmlbtn4 {
+	width: 64px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.jmllogin3 .jmlbtn4 input {
+	width: 64px;
+	height: 25px;
+	font-size: 12px;
+	padding-top: -1px;
+	*padding-top: 2px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 10px;
+	border: 0;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat 0 -25px;
+}
+
+.jmlfalsebox {
+	z-index: 500;
+	width: 265px;
+	position: absolute;
+	overflow: hidden;
+	left: 12px;
+	top: -10px;
+	height: 15px;
+}
+
+.jmlfalsebox .jmlicon01 {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-right: 4px;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat -89px 0;
+}
+
+.jmlfalsebox .jmlicon02 {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-right: 4px;
+	background: url(../../images/usercenter/joylogin10072602-1.png) no-repeat -109px 0;
+}
+
+.jmlfalsebox .jmlicon_empty {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-right: 4px;
+}
+
+.jmlfalse {
+	width: 265px;
+	margin-top: -3px;
+	padding-left: 6px;
+	margin-left: 13px;
+	line-height: 16px;
+	color: #676767;
+}
+/*.jmlfalsecon{width:140px;float:left;padding:4px 0 2px 8px; border:1px solid #ccc;border-left:0; background:#ffffcd;}*/
+.jmlkuan {
+	width: 160px;
+	position: absolute;
+	overflow: hidden;
+	right: -162px;
+	top: -1px;
+}
+
+.jmlkuan .jmlfalse {
+	width: 101px;
+}
+
+.jmlkuan {
+	width: 91px;
+	padding: 4px 0 2px 4px;
+}
+
+.jmlkuan2 {
+	width: 145px;
+	position: absolute;
+	overflow: hidden;
+	right: 30px;
+	top: 2px;
+}
+
+.jmlkuan2 .jmlfalse {
+	width: 120px;
+}
+
+.jmlkuan2 {
+	width: 115px;
+	padding: 4px 0 2px 4px;
+}
+
+.jmlkuan3 {
+	width: 150px;
+	position: absolute;
+	overflow: hidden;
+	right: -20px;
+	top: -1px;
+}
+
+.jmlkuan3 .jmlfalse {
+	width: 100px;
+}
+
+.jmlkuan3 {
+	width: 94px;
+	padding: 4px 0 2px 1px;
+}
+
+.jmlfalsecon {
+	width: 140px;
+	padding: 4px 0 2px 8px;
+	border-left: 0;
+	width: 280px;
+	padding: 3px 0 2px 1px;
+}
+
+.jmlfalse {
+	width: 280px;
+}
+
+
+
+.denglu_01 {
+	width: 310px;
+	
+	float: left;
+}
+
+
+.user {
+
+	background: url(../../images/user.png) no-repeat;
+	padding-left: 45px;
+}
+
+.user_02 {
+
+	background: url(../../images/user_02.png) no-repeat;
+	padding-left: 45px;
+}
+
+.password {
+
+	background: url(../../images/password.png) no-repeat;
+	padding-left: 45px;
+}
+
+.password_02 {
+
+	background: url(../../images/password_02.png) no-repeat;
+	padding-left: 45px;
+}
+
+.email_02 {
+
+	background: url(../../images/email.png) no-repeat;
+	padding-left: 45px;
+}
+
+.phone_02 {
+
+	background: url(../../images/phone.png) no-repeat;
+	padding-left: 45px;
+}
+
+.nli_code {
+	float: left;
+	padding-left: 40px;
+	padding-top: 15px;
+	list-style-type: none;
+}
+
+.yzm_01 {
+	float: left;
+	line-height: 22px;
+}
+
+.png24 {
+	display: inline-block
+}
+
+.dialogLayer-hd2 {
+	position: absolute;
+	top: 2px;
+	padding-right: 0px;
+	right: 71px;
+}
+
+
+.yzmhyh {
+	float: left;
+	width: 80px;
+}
+
+.yzmhyh:focus {
+	border: 1px solid #FF50A5;
+	box-shadow: 0px 0px 5px 1px rgba(251, 40, 142, 0.25);
+}
+
+.tzddl {
+	padding-top: 5px;
+}
+
+.njmlma2 {
+	width: 50px;
+	height: 22px;
+	padding-left: 5px;
+	float: left;
+}
+
+.jmllogin1 .jmlbtn1, .jmllogin3 .jmlbtn1 {
+	height: 28px;
+	padding-top: 0;
+}
+
+.jmllogin3 ul li span.jmlma1 {
+	width: 59px;
+	height: 24px;
+	padding: 0px 0 0 4px;
+	margin: 0;
+	background: none;
+}
+
+
+
+.jmllogin3 ul li .jmlma2 {
+	top: 3px;
+}
+
+
+.login_bodya {
+	float: left;
+	padding-left: 40px;
+}
+
+
+.goodtip {
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 20px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 13px
+}
+
+
+/*右侧快捷登陆*/
+
+.M-hz-list {
+	float: right;
+	margin-top: 31px;
+	padding-left: 26px;
+	width: 96px;
+	border-left: 1px solid #efefef;
+}
+
+.M-hz-list dt {
+	height: 29px;
+	color: #999;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.M-hz-list dd {
+	padding-bottom: 10px;
+}
+
+.M-hz-list dd a {
+	display: block;
+	height: 34px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+.M-hz-list dd a {
+	background: url("../../images/usercenter/tlogin_v3.png") no-repeat;
+}
+.M-hz-list dd .qq {
+	background-position: 0 0;
+}
+
+.M-hz-list dd .qq:hover {
+	background-position: 0 -51px;
+}
+
+.M-hz-list dd .weixin {
+	background-position: -104px 0;
+}
+
+.M-hz-list dd .weixin:hover {
+	background-position: -104px -51px;
+}
+
+.M-hz-list dd .wb {
+	background-position: -207px 0;
+}
+
+.M-hz-list dd .wb:hover {
+	background-position: -207px -51px;
+}

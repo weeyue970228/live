@@ -1,0 +1,100 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>兑换-我的账单-管理中心-{$sitename}</title>
+<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" />
+<script language="javascript" src="__PUBLIC__/js/CoreJS/jquery.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/common.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<link rel="stylesheet" href="/Public/newtpl2/css/common.css" type="text/css" />
+<div class="wrap">
+	<div class="usercenter">
+		
+    <include file="User:header" />
+		<div class="myaccount">
+			<div class="exchange">
+				<div class="nums"><span>我的秀豆:</span><strong>{$userinfo['beanbalance']}</strong></div>
+				<div class="deal-view">
+					<div class="item">
+						<p>想兑换的秀豆数量：</p>
+						<p>
+							<label><input type="radio" name="want" value="1"  onclick="javascript:exchangeAll()"/>全部</label>
+							<label class="ml20"><input type="radio" name="want" value="0" /><input type="text" class="set_input" onkeyup="javascript:canget()" name="showsettlementB" id="showsettlementB"/></label>
+						</p>
+					</div>
+					<div class="item no">
+						<p>可兑换的秀币数量：</p>
+						<p><input type="text" class="set_input set3" name="can" id="can" readonly="true"/></p>
+						<p class="">提示：秀豆和秀币的兑换比率是 1:1</p>
+						<p class="btn_change"><span class="change_data" onclick="javascript:exchange()">立即兑换</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="ex_history">
+				<div class="record">
+					<strong>历史兑换记录</strong>
+				</div>
+				<div class="recod-tpl">
+				                                                        
+					<table class="r-table">
+						<tr>
+							<th class="t1">兑换时间</th>
+							<th class="t2">己兑换的秀豆</th>
+							<th class="t3">获得的秀币</th>
+						</tr>
+						<volist name="exchanges" id="vo" key="k">
+							<tr>
+								<td class="t1"><?php echo date('Y-m-d H:i:s',$vo['addtime']); ?></td>
+								<td class="t2">{$vo['bean']}</td>
+								<td class="t3">{$vo['bean']}</td>
+							</tr>
+						</volist>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer" />
+<script language="javascript">
+function exchangeAll(){
+	document.getElementById("showsettlementB").value="{$userinfo['beanbalance']}.00000".split(".")[0];
+	document.getElementById("can").value="{$userinfo['beanbalance']}.00000".split(".")[0];
+}
+function canget(){
+	document.getElementById("can").value=document.getElementById("showsettlementB").value;
+	var checkObj = document.getElementsByName("want");
+	for (i=0;i<checkObj.length;i++) {
+       if (checkObj[i].value=="0") {
+			checkObj[i].checked = true;
+       }else{
+       		checkObj[i].checked = false;
+       }
+    }
+}
+function exchange(){
+	changelimit = document.getElementById("can").value;
+	if(!(/^(\-?)(\d+)$/.test(changelimit))){
+		alert("请输入数字");
+		document.getElementById('can').focus();
+		return;
+	}					
+    $.post('__URL__/doExchange/rand/'+Math.random(),{
+ 		changelimit:changelimit},function(data){
+			if(data=="000000"){
+				alert("兑换成功");
+				document.location.reload();
+			}else{
+				alert("兑换失败");
+			}
+ 		}
+ 	)
+}
+</script>
+</body>
+</html>

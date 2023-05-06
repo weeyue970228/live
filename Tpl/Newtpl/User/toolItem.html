@@ -1,0 +1,169 @@
+<tagLib name="html" />
+<!DOCTYPE html >
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>道具商城-管理中心-{$sitename}</title>
+		<include file="Public:head" />
+		<link rel="stylesheet" href="__PUBLIC__/css/CoreCSS/shop.css" type="text/css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/CoreCSS/car.css" type="text/css" />
+
+		<script type="text/javascript">
+			//test
+			function buy(toolid, toolsubid) {
+				var info = document.getElementById('info_' + toolsubid);
+				if (confirm("确认要购买此礼物吗?")) {
+					jQuery.ajax({
+						type: "get",
+						dataType: "json",
+						url: "__URL__/buyTool/toolid/" + toolid + "/toolsubid/" + toolsubid + "/v/" + Math.random(),
+						beforeSend: function(XMLHttpRequest) {
+							info.innerHTML = '<img src="__PUBLIC__/images/loading.gif"> ...';
+						},
+						success: function(data, textStatus) {
+							alert(data.msg);
+							info.innerHTML = "";
+							if (data.msg == "您的余额不足") {
+								window.location.href = '../charge/';
+							}
+						},
+						complete: function(XMLHttpRequest, textStatus) {
+							//alert('complete');											
+						},
+						error: function() {
+							//inner.innerHTML='<font color=green>出错啦 稍后再试</font>';	
+						}
+					});
+				}
+			}
+		</script>
+	</head>
+
+	<body style="background: #f1f1f1;;">
+		<include file="Public:header" />
+
+		<div class="wrap">
+
+			<div class="shop-bd">
+				<div class="shop-product">
+					<div class="shop-product-hd"><em class="png24 shop-floor">1F</em>
+						<h2>会员与特权</h2>
+
+					</div>
+					<div class="shop-product-bd">
+						<ul class="clearfix js-bd-list">
+							<li class="shop-item tq1" style="height:500px;">
+								<p class="shop-sale-info"></p>
+								<img class="png24 shop-img" src="/Public/carpic/v.png" width="170" height="110">
+								<h3> 至尊VIP</h3>
+								<p>限10富及以上等级玩家购买</p>
+								<p>防止被踢</p>
+								<p>防止被禁言
+									<p/> 可以进入满员房间
+									<p/>
+									<p>1个月：20000秀币
+										<button onClick="buy('1','1')">购买</button>
+										<span id="info_1"></p>
+              <p>12个月：120000秀币
+                <button style="" onClick="buy('1','4')">购买</button>
+                <span id="info_4"></p>
+              <div class="shop-buy-more"> <a class="js-goBuy" href="javascript:;" data-method="give" data-itemid="63">赠送</a> </div>
+            </li>
+					            <li class="shop-item tq2" style="height:500px;">
+					              <p class="shop-sale-info"></p>
+					              <img class="png24 shop-img" src="/Public/carpic/basic-vip.png" width="170" height="110">
+					              <h3>黄金VIP</h3>
+					              <p>限3富及以上等级玩家购买</p>
+					              <p>除房主以外，防止被踢、禁言<p/>
+					              可以进入满员房间<p/>
+					              房间排位直接升至10富上面
+					              <p/>
+					              <p>1个月：15000秀币
+					                <button onClick="buy('2','5')">购买</button>
+					                <span id="info_5"></p>
+					              <p>12个月：100000秀币
+					                <button style="" onClick="buy('2','8')">购买</button>
+					                <span id="info_8"></p>
+					              <p></p>
+					              <div class="shop-buy-more"> <a class="js-goBuy" href="javascript:;" data-method="give" data-itemid="63">赠送</a> </div>
+					            </li>
+					            <li class="shop-item tq3" style="height:500px;">
+					              <p class="shop-sale-info"></p>
+					              <img class="png24 shop-img" src="/Public/carpic/man.png" width="170" height="110">
+					              <h3>金钥匙</h3>
+					              <p>不限条件</p>
+					              <p>可进入满房房间<br />
+					              </p>
+					              <p>1个月：15000秀币
+					                <button onClick="buy('3','9')">购买</button>
+					                <span id="info_9"></p>
+					              <p></p>
+					              <div class="shop-buy-more"> <a class="js-goBuy" href="javascript:;" data-method="give" data-itemid="63">赠送</a> </div>
+					            </li>
+					            <li class="shop-item tq4" style="height:500px;">
+              <p class="shop-sale-info"></p>
+              <img class="png24 shop-img" src="/Public/carpic/jin.png" width="170" height="110">
+              <h3>随意说</h3>
+              <p>不限条件</p>
+              <p>每日免费发布100条广播<br />
+              </p>
+              <p>1个月：50000秀币
+                <button onClick="buy('4','10')">购买</button>
+                <span id="info_10"></p>
+              <p></p>
+              <div class="shop-buy-more"> <a class="js-goBuy" href="javascript:;" data-method="give" data-itemid="63">赠送</a> </div>
+            </li>
+           						 <!--新道具Start-->
+					            <?php include '/lib/action/daojuset.php'; ?>
+					         </ul>
+          					<div class="clear"></div>
+       					 </div>
+      				</div>
+    			</div>
+   				 <div class="shop-product">
+      <div class="shop-product-hd"> <em class="png24 shop-floor">2F</em>
+        <h2>秀场座驾</h2>
+      
+      <div class="shop-product-bd shop-prop-bd">
+        <div class="car">
+          <div class="car_03">
+          <volist name="carList" id="vo">
+            <div class="car_07">
+              <div class="car_01">
+                <div class="car_02">{$vo['name']}</div>
+                <div class="car_04"><img src="{$vo['image']}" width="160"></div>
+                <b class="shop_ico" carSwf="{$vo['swf']}"  showtime="{$vo['showTime']}">
+								 预览
+								</b>
+              </div>
+              <div class="car_05">售价：{$vo['coin']}秀币/月</div>
+              <div class="car_06"><a href="#" onClick="buy('5','{$vo['id']}')">购买</a></div>
+			    <div class="car_08"><span id="info_{$vo['id']}"></span></div>
+				</div>
+				</volist>
+
+			</div>
+		</div>
+		<div class="clear"></div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<include file="Public:footer" />
+		<script>
+			var c, l;
+			$(".car_01 b").click(function() {
+				var e = $(this).attr("carSwf");
+				var showtime = $(this).attr("showtime");
+				$("#yulan").remove();
+				$(this).append('<div  style="position:fixed; top:50%;left:50%; margin-top:-285px;margin-left:-450px" id="yulan"><embed src="' + e + '" wmode="transparent" width="900" height="570" class="flash" type=""></div>');
+				clearTimeout(l);
+				l = setTimeout(function() {
+					$("#yulan").remove();
+				}, showtime + 'e3');
+			})
+		</script>
+	</body>
+
+</html>

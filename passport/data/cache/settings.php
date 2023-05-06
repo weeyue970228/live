@@ -1,0 +1,32 @@
+<?php
+$_CACHE['settings'] = array (
+  'accessemail' => '',
+  'censoremail' => '',
+  'censorusername' => '',
+  'dateformat' => 'y-n-j',
+  'doublee' => '0',
+  'nextnotetime' => '0',
+  'timeoffset' => '28800',
+  'privatepmthreadlimit' => '25',
+  'chatpmthreadlimit' => '30',
+  'chatpmmemberlimit' => '35',
+  'pmfloodctrl' => '15',
+  'pmcenter' => '1',
+  'sendpmseccode' => '1',
+  'pmsendregdays' => '0',
+  'maildefault' => 'no-reply@phpweb.cn',
+  'mailsend' => '2',
+  'mailserver' => 'smtp.exmail.qq.com',
+  'mailport' => '25',
+  'mailauth' => '1',
+  'mailfrom' => 'UCenter <no-reply@phpweb.cn>',
+  'mailauth_username' => 'no-reply@phpweb.cn',
+  'mailauth_password' => 'sxwmlhtzzvhzgwui',
+  'maildelimiter' => '0',
+  'mailusername' => '1',
+  'mailsilent' => '1',
+  'version' => '1.6.0',
+  'credits' => 'N;',
+);
+
+?>

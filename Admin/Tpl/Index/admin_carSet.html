@@ -1,0 +1,88 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script type="text/javascript">
+	window.focus();
+	</script>
+</head>
+<body>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href='javascript:;' class="on"><em>道具列表</em></a>
+	</div>
+</div>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style><form name="myform" action="__URL__/save_car/" method="post" enctype="multipart/form-data">
+<div class="pad_10">
+
+<div class="bk10"></div>
+<div class="table-list">
+    <table width="100%" cellspacing="0" >
+        <thead>
+            <tr>
+			 <th width="16"><input type="checkbox" value="" id="check_box" onclick="selectall('ids[]');"></th> 
+            <th width="150">道具名称</th>
+            <th width="50">价格</th>
+            <th width="130">小图(25*25)</th>
+			<th width="130">大图(50*50)</th>
+			<th width="150">flash</th>
+			<th width="40">flash显示时间(单位秒，默认为20)</th>
+			<th width="150">添加时间</th> 
+            </tr>
+        </thead>
+		<tbody>
+			<volist name="carList" id="vo">
+			<tr>
+				<input type="hidden" name="id[]" value="{$vo['id']}">
+				<td align="center"><input class="inputcheckbox " name="ids[]" value="{$vo['id']}" type="checkbox"></td> 
+
+				<td><input name='name[]' type='text' value='{$vo['name']}' class='input-text-c' style="width:150px;"></td>
+				<td><input name='coin[]' type='text' value='{$vo['coin']}' class='input-text-c' style="width:50px;"></td>
+				<td><input name='icon[]' type='text' value='{$vo['icon']}' class='input-text-c' style="width:150px;"></td>
+				<td><input name='image[]' type='text' value='{$vo['image']}' class='input-text-c' style="width:130px;"></td>
+				<td><input name='swf[]' type='text' value='{$vo['swf']}' class='input-text-c' style="width:130px;"></td>
+				<td><input name='ShowTime[]' type='text' value='{$vo['showTime']}' class='input-text-c' style="width:40px;"></td>
+				<td><center>{$vo['addtime'],2|fDate}</center></td>
+			</tr>
+			</volist>
+			<tr>
+				<td align="center">增加</td> 
+				<td><input name='add_name' type='text' class='input-text-c' style="width:150px;"></td>
+				<td><input name='add_coin' type='text' class='input-text-c' style="width:50px;"></td>
+				<td><input type="file" name="pic1" id="pic1" style="width:150px;height:25px"></td>
+				<td><input type="file" name="pic2" id="pic2" style="width:150px;height:25px"></td>
+				<td><input type="file" name="pic3" id="pic3" style="width:150px;height:25px"></td>
+				<td><input type="text" name="add_showTime" id="pic3" style="width:40px;"></td>
+				<td></td>
+			</tr>
+		</tbody>
+    </table>
+
+    <div class="btn">
+	<label for="check_box">全选/取消</label> 
+	<input type="submit" class="button" name="dosubmit" value="保存" /></div>  </div>
+</div>
+</div>
+</form>
+<script language="JavaScript">
+<!--
+	window.top.$('#display_center_id').css('display','none');
+//-->
+</script>
+</body>
+</html>

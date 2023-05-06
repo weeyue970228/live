@@ -1,0 +1,49 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上传头像-个人中心-管理中心-{$sitename}</title>
+<include file="Public:head" />
+
+<script language="javascript" src="__PUBLIC__/js/CoreJS/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<div class="wrap">
+  <div class="usercenter">
+    <include file="User:header" />
+    <div class="myaccount">
+      
+
+<div class="account-l">
+<a href="__URL__/info_edit/" title="我的个人资料">我的个人资料</a>
+<a href="__URL__/info_icon/" title="上传头像" class="on">上传头像</a> 
+<a href="__URL__/info_changepass/" title="密码/保护">密码/保护</a> 
+<a href="__URL__/info_live/" title="密码/保护">直播设置</a> 
+</div>
+
+      <div class="account-r">
+<?php
+include './config.inc.php';
+include './uc_client/client.php';
+$loginuser = uc_get_user($_SESSION['username']);
+list($uid, $username, $email) = $loginuser;
+
+echo '
+<img src="'.UC_API.'/avatar.php?uid='.$uid.'&size=big">&nbsp;
+<img src="'.UC_API.'/avatar.php?uid='.$uid.'&size=middle">&nbsp;
+<img src="'.UC_API.'/avatar.php?uid='.$uid.'&size=small">
+<br><br>'.uc_avatar($uid);
+?>
+			  
+		
+       	  <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<include file="Public:footer" />
+</body>
+</html>

@@ -1,0 +1,260 @@
+.shop-sprite,
+.shop-floor,
+.shop-more,
+.shop-my-tool,
+.shop-nomoney,
+.shop-pay,
+.shop-sold,
+.shop-suc,
+.shop-tip,
+.shop-wealth {
+	background-image: url('http://img1.cache.netease.com/bobo/image/shop-s7ed61eb7a9.png');
+	background-repeat: no-repeat
+}
+
+.shop-floor {
+	background-position: 0 0;
+	height: 32px;
+	width: 26px
+}
+
+.shop-product {
+	position: relative;
+	width: 1130px;
+	margin-bottom: 48px
+}
+
+.shop-product-hd {
+	height: 32px;
+	line-height: 32px;
+	margin: 16px 0
+}
+
+.shop-product-hd .shop-floor {
+	float: left;
+	color: #fff;
+	margin-right: 8px;
+	text-align: center;
+	font: bold 18px/30px Arial
+}
+
+.shop-product-hd h2 {
+	float: left;
+	height: 32px;
+	font-size: 22px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin-right: 20px
+}
+
+.shop-product-hd strong {
+	float: left;
+	color: #686868;
+	font-size: 14px;
+	font-style: italic
+}
+
+
+
+.shop-product-bd {
+	position: relative
+}
+
+.shop-product-bd ul {
+	width: 1150px
+}
+
+.shop-product-bd .shop-item {
+	position: relative;
+	float: left;
+	width: 282px;
+	height: 360px;
+	background: #fff;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.shop-product-bd .shop-item .shop-tip {
+	position: absolute;
+	top: 7px;
+	left: 10px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 40px;
+	text-align: center
+}
+
+.shop-product-bd .shop-item .shop-sale-info {
+	padding: 5px 0 0 50px;
+	color: #ff7256;
+	height: 30px;
+	line-height: 30px;
+	text-align: center
+}
+
+.shop-product-bd .shop-item .shop-sale-info em {
+	color: #f44103;
+	margin: 0 4px
+}
+
+.shop-product-bd .shop-item .shop-img {
+	display: block;
+	margin: 20px auto
+}
+
+.shop-product-bd .shop-item h3 {
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-family: "微软雅黑";
+}
+
+.shop-product-bd .shop-item p {
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	font-size: 14px;
+	text-align: left;
+	padding-left: 60px;
+	font-family: "微软雅黑";
+}
+
+.shop-product-bd .shop-item .shop-buy-btn {
+	display: block;
+	width: 180px;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px auto 0;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	background: #ff7256;
+	border-radius: 14px
+}
+
+.shop-product-bd .shop-item .shop-buy-btn:hover,
+.shop-product-bd .shop-item .shop-buy-btn:active {
+	background: #ff4b28;
+	text-decoration: none
+}
+
+.shop-product-bd .shop-item .shop-buy-more {
+	display: none;
+	margin-top: 5px
+}
+
+.shop-product-bd .shop-item .shop-buy-more a {
+	color: #ff7256;
+	margin: 0 12px
+}
+
+.shop-product-bd .shop-item .shop-buy-more .js-effect {
+	display: none
+}
+
+.shop-product-bd .shop-zj {
+	height: 285px
+}
+
+.shop-product-bd li.hover .shop-buy-more {
+	display: block
+}
+
+
+
+
+.shop-product-bd .tq1 {
+	background: #64ddcd;
+}
+
+.shop-product-bd .tq2 {
+	background: #aa9fff;
+}
+
+.shop-product-bd .tq3 {
+	background: #9fbcff;
+}
+
+.shop-product-bd .tq4 {
+	background: #d099ff;
+}
+
+.shop-product-bd .tq1 button {
+	background: #3dcab7;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 3px 15px;
+	font-family: "微软雅黑";
+	margin-left: 10px;
+}
+
+.shop-product-bd .tq1 button:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.shop-product-bd .tq2 button {
+	background: #9c8fff;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 3px 15px;
+	font-family: "微软雅黑";
+	margin-left: 10px;
+}
+
+.shop-product-bd .tq2 button:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.shop-product-bd .tq3 button {
+	background: #89abf8;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 3px 15px;
+	font-family: "微软雅黑";
+	margin-left: 10px;
+}
+
+.shop-product-bd .tq3 button:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.shop-product-bd .tq4 button {
+	background: #c47fff;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 3px 15px;
+	font-family: "微软雅黑";
+	margin-left: 10px;
+}
+
+.shop-product-bd .tq4 button:hover {
+	cursor: pointer;
+	color: red;
+}
+
+			.shop_ico {
+				display: inline-block;
+				cursor: pointer;
+				width: 36px;
+				height: 21px;
+				line-height: 20px;
+				color: #fff;
+				margin-left: 110px;
+				margin-top: -10px;
+			}
+			
+			.shop_ico {
+				font-size: 14px;
+				background-image: url(/public/images/shop_ico.png);
+				background-repeat: no-repeat;
+				display: inline-block;
+				text-align: center;
+			}

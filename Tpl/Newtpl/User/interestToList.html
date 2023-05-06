@@ -1,0 +1,194 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的偶像-管理中心-{$sitename}</title>
+<include file="Public:head" />
+
+<style>
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border-radius: .5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.blue {
+	color: #d9eef7;
+	border: solid 1px #0076a3;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.small {
+	font-size: 11px;
+	padding: .2em 1em .275em;
+}
+</style>
+
+</head>
+<body>
+
+<include file="Public:header" />
+<div class="wrap">
+	<div class="usercenter">
+    <include file="User:header" />
+		
+		<div class="attention">
+			<div class="my-attention">
+				<h2><strong>我关注的人</strong> ({$count})  </h2>
+				<div class="att_box">
+						<volist name="attentions" id="vo">
+						<dl>
+							<volist name="vo['voo']" id="sub">
+							<dt>
+								<a href="/{$sub['curroomnum']}" title="{$sub['nickname']}" target="_blank">
+									<img width="60"  height="60" src="{$ucurl}avatar.php?uid={$sub['ucuid']}&size=middle"/></a></dt>
+							<dd class="tt"><a href="/{$sub['curroomnum']}" title="{$sub['nickname']}" target="_blank" style="  color:#9999A3;">{$sub['nickname']}</a></dd>
+							<dd class="bt">
+									<?php
+									$myattention = D("Attention")->where('uid='.$sub['id'].' and attuid='.$_SESSION['uid'])->order('id asc')->select();
+									if(!$myattention){
+									?>
+									<span class="st2" state="2" uid="{$sub['id']}">- 取消关注</span>
+									<?php
+									}
+									else{
+									?>
+									<span class="st3" state="3" uid="{$sub['id']}">互相关注|取消</span>
+									<?php
+									}
+									?>
+							</dd>
+							</volist>
+						</dl>
+						</volist>
+				</div>
+				
+                <form name="interToFrm" id="interToFrm" method="get" action="__URL__/interestToList/">
+				   
+
+
+
+	<div class="page">
+			{$page}
+		
+	</div>					
+				
+			
+		
+		
+		
+		<input type="hidden" id="p" name="p" value="1" />
+		
+		<h2><strong>我守护的主播  </h2>
+		<div class="att_box">
+			
+			<volist name="guard" id="vo">
+			
+			<div>
+				<dl >
+				<dt><img width="60"  height="60" src="{$ucurl}avatar.php?uid={$vo['ucuid']}&size=middle"/></dt>
+				<dt class="bt">{$vo.nickname}</dt>
+				
+				<dt class="tt"><a href="/{$vo['curroomnum']}" target="_blank" class="button blue small">直播间</a></dt>
+				<dt ><a href="/index.php/Guard/index/id/{$vo['curroomnum']}" >(续费)</a></dt>	
+			    </dl>
+			 </div>
+			<div style="float:left">
+				 <dt ><a>到期时间<?php echo date('Y-m-d H:i:s',$vo['maturitytime']); ?></a></dt>
+			</div>
+				
+			</volist> 
+			
+		</div>
+	
+
+<script language="javascript">
+function scrollPage(step){
+	//document.getElementById("pageindex").value = step;
+ 	//document.forms["interToFrm"].submit();
+	$('#p').val(step);
+	$('#interToFrm').submit();
+}
+</script>
+                </form>
+			</div>
+			<div class="my-peng">
+				<div class="mptitle">我捧的人<span>TOP5</span></div>
+                <div class="index"><span class="pm">排名</span><span class="wp">我捧的人</span><span class="wdgxz">我的贡献值</span></div>
+                <ul class="list">
+						<volist name="mypengusers" id="vo" key="k">
+						<li>
+							<volist name="vo['voo']" id="sub">
+							<?php
+							$richlevel = getRichlevel($sub['spendcoin']);
+							?>
+							<em>{$k}</em>
+							<a href="/{$sub['curroomnum']}" title="{$sub['nickname']}" target="_blank"><img width="60" height="60" src="{$ucurl}avatar.php?uid={$sub['ucuid']}&size=middle"/></a>
+							<div class="tt">
+								<span class="cracy cra{$richlevel[0]['levelid']}"></span>
+								<p><a href="/{$sub['curroomnum']}" title="{$sub['nickname']}" target="_blank">{$sub['nickname']}</a></p>
+							</div>
+							<span class="gxz">{$vo['total']}</span>
+							</volist>
+						</li>
+						</volist>
+                </ul>
+			</div>
+            <div class="clear"></div>
+		</div>
+	</div>
+</div>
+<script language="javascript">
+	(function($){
+	    $('.att_box .bt span').click(function(){
+	    	var that=$(this);
+			var intState=that.attr('state');			
+			var upurl;
+			//关注1，取消2
+			if(intState == '1'){
+				upurl = "__URL__/interest/";
+			}else{
+				upurl = "__URL__/cancelInterest/";
+			}
+			
+			var intUid=$(this).attr('uid');
+			
+			$.ajax({
+				type:"GET",
+				url: upurl,
+				data:{
+					uid:intUid,
+					t:Math.random()
+				},
+				success:function(response){
+					//取消成功
+					if(response != 0){
+						if(intState == '1'){
+							that.attr("state",2);
+							that.attr("class","st2");
+							that.text("- 取消关注");
+						}else{
+							that.attr("state",1);
+							that.attr("class","st1");
+							that.text("+ 关注");
+						}
+					}
+				}
+			});
+		})
+		
+	})(jQuery);
+</script>
+<literal><script language="javascript">window.onload=function(){$(".my-peng .list li").OverChange();}</script></literal>
+<include file="Public:footer" />
+
+</body>
+</html>

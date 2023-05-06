@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家族-人员管理</title>
+<include file="Public/head" />
+<link rel="stylesheet" type="text/css" href="/Public/css/family/family_detail.css"/>
+</head>
+
+<body>
+    <include file="Public/header" />
+	<div class="family_detail">
+       	<include file='Jiazu/publicheader' />
+        <div class="detail_l person_list">
+        	<h3>人员管理<span>主播 <b>{$zhubo_count}</b> 位&nbsp;&nbsp;&nbsp;<span>群众 <b>{$qunzhong_count}</b> 位</h3>
+            <form method="post" >
+            <div class="family_search">全部<input type="text" name="search" /><button>搜索</button></div>
+            </form>
+            <table width="807" border="0">
+            	<thead>
+                	<th width="195">成员昵称</th>
+                    <th width="236">最后登录时间</th>
+                    <th width="119">身份</th>
+                    <th colspan="2">操作</th>
+                </thead>
+              <volist name='zhubo' id='vo'>
+              <tr class="dark_grey">
+                <td>{$vo['nickname']}</td>
+                <td><php>echo date('Y-m-d H:i:s',$vo['lastlogtime'])</php></td>
+                
+                <!-- <td><a href="javascript:;" class="btn_del">移除副族长</a></td> -->
+                <if condition="$vo['zuzhang'] eq 2 ">
+                    <td>主播</td>
+                    <td>
+                    	<a href="javascript:;" class="btn_expel" value="{$vo['id']}">开除</a>
+                    	<!--<if condition="$vo['isadmin'] eq '1'">
+                    		 <a href="javascript:;" class="del_admin" value="{$vo['id']}">移除管理员</a>
+                    	<else/>
+                    		<a href="javascript:;" class="set_admin" value="{$vo['id']}">设置为管理员</a>
+                    	</if>	-->
+                    </td>
+             	</if>
+                <if condition="$vo['zuzhang'] eq 1 ">
+                    <td>族长</td>
+                    <td></td>
+             	</if>
+             	<if condition="$vo['zuzhang'] eq 3 ">
+                    <td>群众</td>
+                    <td>
+                    	<a href="javascript:;" class="btn_expel" value="{$vo['id']}">开除</a>
+                    	<!--<if condition="$vo['isadmin'] eq '1'">
+                    		 <a href="javascript:;" class="del_admin" value="{$vo['id']}">移除管理员</a>
+                    	<else/>
+                    		<a href="javascript:;" class="set_admin" value="{$vo['id']}">设置为管理员</a>
+                    	</if>	                    	-->
+                    </td>
+             	</if>
+                
+                
+              </tr>
+              </volist>
+            </table>
+			<div class="page">
+            	{$page}
+            </div>
+        </div>
+        <include file="Jiazu/family_detail_right" />
+        <div class="clear"></div>
+    </div>
+    <include file="Public:footer" />
+    <script type="text/javascript">
+    $(".btn_expel").click(function(){
+    	var url = "{:U('Jiazu/delZhubo')}" ;
+        var id = $(this).attr('value');
+        
+        $.post(url,{'id':id},function(d){
+        	
+            if(d.stats == 0){
+            	alert("该成员成功被开除");
+                location.reload();
+            }
+          },'json');
+    });
+    $(".del_admin").click(function(){
+    	var url = "{:U('Jiazu/del_admin')}" ;
+        var id = $(this).attr('value');
+        
+        $.post(url,{'id':id},function(d){
+        	
+            if(d.stats == 0){
+            	alert("管理员移除成功");
+                location.reload();
+            }
+          },'json');
+    });
+    $(".set_admin").click(function(){
+    	var url = "{:U('Jiazu/set_admin')}" ;
+        var id = $(this).attr('value');
+        
+        $.post(url,{'id':id},function(d){
+        	
+            if(d.stats == 0){
+            	alert("管理员设置成功");
+                location.reload();
+            }
+          },'json');
+    });    
+    </script>
+</body>
+</html>

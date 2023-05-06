@@ -1,0 +1,43 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理中心-我的黑名单</title>
+<link rel="stylesheet" href="__PUBLIC__/css/CoreCSS/family.css" type="text/css" />
+<script language="javascript" src="__PUBLIC__/js/CoreJS/jquery.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/common.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/family_common.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<div class="f_block">
+	<div class="usercenter">
+  
+<include file="User:header" />
+		<div class="myaccount clearn">
+                <div class="f_informationcon" style="padding-top:0;">
+                	<form action="bl_release.htm" id="blForm" method="post">
+                	<table class="f_tb01">
+						<tr>
+                       		<th class="t1"><input name="" id="blackall" type="checkbox" onclick="checkfilter('blackall','blId');" />&nbsp;全选&nbsp;&nbsp;黑名单里的人：</th>
+							<th class="t2 addbt">
+                            </th>
+						</tr>
+						
+					</table>
+                    
+                    <div class="passbt"><button class="btn_clear" name="blockno" type="submit">解禁</button></div>
+                    </form>
+                </div>
+		</div>
+	</div>
+</div>
+<include file="Public:footer" />
+<script language="javascript">
+	$(function(){
+		$(".input_fx").ClearRoom();
+	})
+</script>
+</body>
+</html>

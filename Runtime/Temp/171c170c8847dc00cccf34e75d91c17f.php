@@ -1,0 +1,3 @@
+<?php
+//000000000060a:3:{i:0;a:3:{s:7:"picpath";s:41:"/Public/rollpic/2015-10/562db8f8d9b2e.png";s:5:"title";N;s:7:"linkurl";s:23:"http://yunbaozhibo.com/";}i:1;a:3:{s:7:"picpath";s:41:"/Public/rollpic/2015-08/55da93b873da1.jpg";s:5:"title";N;s:7:"linkurl";s:23:"http://yunbaozhibo.com/";}i:2;a:3:{s:7:"picpath";s:41:"/Public/rollpic/2015-07/55a1dd6e4196b.jpg";s:5:"title";N;s:7:"linkurl";s:23:"http://yunbaozhibo.com/";}}
+?>

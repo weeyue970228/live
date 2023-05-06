@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家族首页</title>
+<include file='Public/head' />
+<link rel="stylesheet" type="text/css" href="/Public/css/family/family.css"/>
+    <style type="text/css">
+        .header .header-content .header-search .header-search-text{
+            padding-right:30px;
+        }
+    </style>
+
+
+<script>
+    $(function(){
+        //打开创建家族窗口
+        $('.create_btn').click(function(){
+            var level="{$level}";
+           
+            if(level >=8 ){
+                $('.add_family_modal').show().css({
+                    'padding-top': ($(window).height() - $('.add_family_modal .body').height())/2
+                });
+            }else{
+                  $('.create_family_msg').show().css({
+                    'padding-top': ($(window).height() - $('.create_family_msg .body').height())/2
+                  });
+            }
+        });
+
+        //关闭窗口
+        $('.close_modal, .close_btn').click(function(){
+            $($(this).attr('data-modal')).hide().find('input, textarea').val('');
+        });
+
+    })
+</script>
+</head>
+
+<body>
+    <include file="Public:header" />
+	<div class="family">
+    	<div class="family_banner"><img src="/Public/images/background/family_banner.jpg" /></div>
+        <div class="family_c">
+            <div class="family_l">
+                <!-- 加入家族后显示，未加入家族隐藏 -->
+                
+                <div class="family_my">
+                	<if condition="($userinfo['agentuid'] gt 0) or ($userinfo['emceeagent'] eq 'y') ">
+                    <h2>我的家族</h2>
+                    <a href="{:U('Jiazu/family_detail',array('id'=>$myfamilyinfo['familyinfo']['id']))}">
+                    <div class="family_brief">
+                        <span><img src="/Public/Familyimg/{$myfamilyinfo['familyinfo']['familyimg']}" onerror="javascript:this.src='/Public/images/default.gif'"/></span>
+                        <div class="family_brief_c">
+                            <h3>{$myfamilyinfo['familyinfo']['familyname']}</h3>
+                            <p>家族人数：{$myfamilyinfo['jiazurenshu']}</p> 
+                        </div>
+                        <div>
+                            <img src="/Public/images/person_label.png" />
+                            <p>主播人数：{$myfamilyinfo['emceeagent']}</p>
+                        </div>
+                    </div>
+                    </a>
+                    </if>
+                </div>
+               
+                <div class="family_new">
+                    <h2>最新家族</h2>
+                    <ul>
+                    <foreach name="newagent" item="new">
+                        <li>
+                        	<a href="{:U('Jiazu/family_detail',array('id'=>$new['id']))}">
+                        		<img src="/Public/Familyimg/{$new['familyimg']}" onerror="javascript:this.src='/Public/images/default.gif'" />
+                        		<div>
+                        			<h6>{$new.familyname}</h6>
+                        			<p>族长：{$new['agentinfo']['nickname']}</p>
+                        			<p>成员：{$new['zbtotal']['zbtotal']}</p>
+                        		</div>
+                        	</a>
+                        	<span class="icon-icon19"></span>
+                        </li>
+                    </foreach>
+                    </ul>
+                </div>
+                <div class="family_hot">
+                    <h2>热门家族</h2>
+                    <ul>
+                    <volist name='hotfamily'  id = 'vo' key ='k'>
+                        <li>
+                        	<a href="{:U('Jiazu/family_detail',array('id'=>$vo['agentuid']))}">
+                        		<img src="/Public/Familyimg/{$vo['familyinfo']['familyimg']}" onerror="javascript:this.src='/Public/images/default.gif'" />
+                        		<div>
+                        			<h6>{$vo['familyinfo']["familyname"]}</h6>
+                        			<p>族长：{$vo['agentinfo']["nickname"]}</p>
+                        			<p>成员：{$vo["total"]}</p>
+                        		</div>
+                        	</a>
+                        	<span class="icon-icon19"></span></li>
+                     </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="family_r">
+                <!-- 未加入家族 -->
+                <if condition="$sqfamily['zhuangtai'] eq '未审核' ">
+                       <a class="kong">家族申请正在审核中...</a>
+                <elseif condition="($userinfo['agentuid'] eq 0 ) and  ($userinfo['emceeagent'] eq 'n') "/>
+                
+                <input type="button" value="创建家族" class="create_btn"/>
+                <label >需要 10 等级以上才可申请</label>
+                <elseif condition="($userinfo['agentuid'] gt 0 ) or ($userinfo['emceeagent'] eq 'y')"/>
+                    <a href="{:U('Jiazu/family_detail',array('id'=>$myfamilyinfo['familyinfo']['id']))}" class="family_detail">进入家族</a>
+                <else/>
+                    <a class="kong"></a> 
+                </if>
+
+                <div class="family_ranking">
+                    <h2>家族排行</h2>
+                    <ul>
+                    <volist name='paihang' id='vo' >
+                        <li>
+                        	<span>{$i}</span>
+                        	<a href="{:U('Jiazu/family_detail',array('id'=>$vo['familyinfo']['id']))}">
+                        		<img <if condition="$vo['familyinfo']['familyimg']">src="/Public/Familyimg/{$vo['familyinfo']['familyimg']}"<else />src="/Public/images/family/family_ranking_img.jpg"</if> />
+                        	</a>
+                        	<div>
+                        		<p>{$vo['familyinfo']['familyname']}</p>
+                        		<p>人数：{$vo['tatol']}</p>
+                        	</div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                <div class="add_family_modal">
+                <form action="{:U('Jiazu/sqagent')}" method="post" enctype="multipart/form-data" id="createfamily">
+                    <div class="body">
+                        <p class="title clearfix">
+                            <a href="javascript:;" class="close_modal right" data-modal=".add_family_modal">×</a>
+                        </p>
+                        <h1>创建家族</h1>
+                        <div class="item">
+                            <span class="label inline-block">家族名称：</span>
+                            <input type="text" class="family_name_text" name="familyname" />
+                        </div>
+                        <div class="item">
+                            <span class="label inline-block">家族宣言：</span>
+                            <textarea class="family_text" name="familyinfo"></textarea>
+                        </div>
+                        <div class="item">
+                            <span class="label inline-block">家族logo：</span>
+                            <input type="file" class="family_logo" name="familyimg" />
+                        </div>
+                        <div class="item">
+                            <span class="label inline-block">徽章名称：</span>
+                            <input type="text" class="badge_name" name="declaration" />
+                            <span class="badge_name_msg">3个汉字内</span>
+                        </div>
+                        <button class="submit_btn">确认申请</button>
+                    </div>
+                </form>
+                </div>
+                <div class="create_family_msg">
+                    <div class="body">
+                        <p class="title">
+                            <span>提示</span>
+                            <a href="javascript:;" class="close_modal right" data-modal=".create_family_msg">×</a>
+                        </p>
+                        <p class="content">
+                            <i class="inline-block"></i>
+                            <span>创建家族需要10富</span>
+                        </p>
+                        <button class="close_btn" data-modal=".create_family_msg">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <include file="Public:footer" />
+    <script type="text/javascript">
+        /*$(document).ready(function(){
+            $(".submit_btn").on({
+                click:function(){
+                   $('#createfamily').submit();
+                }
+            });
+        });*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div class="tab-content tab-cur" data-content="{$_GET['sid']}">
+								<ul>
+								<volist name="users" id="vo">
+									<li>
+									<div class="live-panel live-panel-tag">
+										<div class="host-pic">
+											<img class="thumb" width="200" height="130" alt="{$vo['nickname']}"  src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+											<a class="play-mask" target="room" href="/{$vo['curroomnum']}">
+											<div class="back"></div>
+											<span class="play-btn">播放</span>
+											</a>
+										</div>
+										<h4 class="name">
+										<a target="room" href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+										<!--<span class="host-type">热舞秀 </span>-->
+										</h4>
+										<p class="status fr">
+											<span class="" title="观众数">
+											<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+											<!--<span class="viewer" title="粉丝数">
+											<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+										</p>
+										<if condition="$vo['broadcasting'] eq 'y'">
+											<span class="live-tip">直播中<span class="arrow"></span></span>
+										<elseif condition=" $vo['offlinevideo'] neq null && $vo['offlinevideo'] neq '' " />	
+										    <span class="live-tip">录像<span class="arrow"></span></span>
+										</if>
+									</div>
+									</li>
+   								</volist>
+								</ul>
+							</div>

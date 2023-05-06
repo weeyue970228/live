@@ -1,0 +1,119 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+	<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+	<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidator.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	window.focus();
+</script>
+</head>
+<body>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style>
+<form action="__URL__/edit/" method="post" id="myform">
+	
+<input type="hidden" name="id" value="1"></input>
+<div class="pad-10">
+	<div class="explain-col">
+说明：<br />
+1.幸运礼物的概率问题，例如设置5倍10%，10倍20%，一个幸运礼物500秀币，那么送礼的人有10%的可能性获得500*5的秀币奖励，有20%的可能性获得500*10的秀币奖励
+
+	</div>
+<div class="col-tab">
+<ul class="tabBut cu-li">
+            <li id="tab_setting_1" class="on" onclick="SwapTab('setting','on','',4,1);">幸运礼物配置</li>
+</ul>
+<div id="div_setting_1" class="contentList pad-10">
+<table width="100%"  class="table_form">
+  <tr>
+    <th>幸运礼物开启</th>
+    <td class="y-bg">
+    	是<input name="is_open" value="1" type="radio" <if condition="$luckgift.is_open eq 1" >checked="checked"</if>>
+    		
+    	否<input name="is_open" value="0" type="radio" <if condition="$luckgift.is_open eq 0" >checked="checked"</if>>
+    </td>
+  </tr>
+  <tr>
+    <th>幸运礼物分类</th>
+    <td class="y-bg">
+    	<select name="giftsort">
+    	<volist name="giftsort" id="vo">
+    		<option value="{$vo.id}" <eq name="luckgift.giftsort" value="$vo.id" >selected</eq> >{$vo.sortname}</option>	
+    	</volist>
+    	</select>
+    </td>
+  </tr>
+  <tr>
+    <th>幸运奖励设置</th>
+    <td class="y-bg"><input type="text" class="input-text" name="prize1" id="" size="5" value="{$luckgift.prize1}"/> 倍,概率<input type="text" class="input-text" name="chance1" id="" size="5" value="{$luckgift.chance1}"/>%</td> 
+  	
+  </tr> 
+  <tr>
+  	<th></th>
+  	 <td class="y-bg"><input type="text" class="input-text" name="prize2" id="" size="5" value="{$luckgift.prize2}"/> 倍,概率<input type="text" class="input-text" name="chance2" id="" size="5" value="{$luckgift.chance2}"/>%</td> 
+  </tr>
+  <tr>
+  	<th></th>
+  	 <td class="y-bg"><input type="text" class="input-text" name="prize3" id="" size="5" value="{$luckgift.prize3}"/> 倍,概率<input type="text" class="input-text" name="chance3" id="" size="5" value="{$luckgift.chance3}"/>%</td> 
+  </tr>
+  <tr>
+  	<th></th>
+  	 <td class="y-bg"><input type="text" class="input-text" name="prize4" id="" size="5" value="{$luckgift.prize4}"/> 倍,概率<input type="text" class="input-text" name="chance4" id="" size="5" value="{$luckgift.chance4}"/>%</td> 
+  </tr>
+  <tr>
+  	<th></th>
+  	 <td class="y-bg"><input type="text" class="input-text" name="prize5" id="" size="5" value="{$luckgift.prize5}"/> 倍,概率<input type="text" class="input-text" name="chance5" id="" size="5" value="{$luckgift.chance5}"/>%</td> 
+  </tr>
+</table>
+</div>
+
+<div class="bk15"></div>
+<input name="dosubmit" type="submit" value="提交" class="button">
+</div>
+</div>
+</form>
+</body>
+<script type="text/javascript">
+
+function SwapTab(name,cls_show,cls_hide,cnt,cur){
+    for(i=1;i<=cnt;i++){
+		if(i==cur){
+			 $('#div_'+name+'_'+i).show();
+			 $('#tab_'+name+'_'+i).attr('class',cls_show);
+		}else{
+			 $('#div_'+name+'_'+i).hide();
+			 $('#tab_'+name+'_'+i).attr('class',cls_hide);
+		}
+	}
+}
+
+function showsmtp(obj,hiddenid){
+	hiddenid = hiddenid ? hiddenid : 'smtpcfg';
+	var status = $(obj).val();
+	if(status == 1) $("#"+hiddenid).show();
+	else  $("#"+hiddenid).hide();
+}
+function test_mail() {
+	var mail_type = $('input[checkbox=mail_type][checked]').val();
+    $.post('?m=admin&c=setting&a=public_test_mail&mail_to='+$('#mail_to').val(),{mail_type:mail_type,mail_server:$('#mail_server').val(),mail_port:$('#mail_port').val(),mail_user:$('#mail_user').val(),mail_password:$('#mail_password').val(),mail_auth:$('#mail_auth').val(),mail_auth:$('#mail_auth').val(),mail_from:$('#mail_from').val()}, function(data){
+	alert(data);
+	});
+}
+
+</script>
+</html>

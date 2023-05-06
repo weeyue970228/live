@@ -1,0 +1,209 @@
+.form-group{
+  float:left;
+  clear:both;
+  margin-top:50px;
+}
+.form-control{
+    width: 300px;
+    height: 30px;
+	}
+	
+	.title_fx {
+    color: #000;
+    font-size: 24px;
+    text-align: left;
+    font-weight: normal;
+}
+
+
+.area_hd{
+    width: 1000px;
+    margin: 0 auto;
+	margin-top: 40px;
+}
+.fline {
+    display: block;
+    width: 52px;
+    height: 6px;
+    background-color: #e7408e;
+    margin: 3px 0 6px;
+}
+
+.p_family_Create .area_bd {
+    margin-bottom: 35px;
+}
+
+.F_crePro {
+    width: 910px;
+    height: 8px;
+    padding: 1px;
+    margin: 35px auto 55px;
+    background: #e2e0e0;
+    box-shadow: inset 0 1px 2px #d9d6d6;
+    position: relative;
+}
+
+.F_creProC {
+    width: 40%;
+    height: 8px;
+    background: #e7408e;
+}
+
+.F_proD {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    width: 60px;
+    text-align: center;
+    margin-left: -30px;
+    color: #000;
+    line-height: 26px;
+}
+
+.F_proD .active {
+    background: #e7408e;
+    box-shadow: none;
+    color: #fff;
+}
+
+.F_pspan {
+    display: block;
+    line-height: 19px;
+    width: 19px;
+    height: 19px;
+    margin: auto;
+    background: #e2e0e0;
+    box-shadow: inset 0 1px 2px #d9d6d6;
+    border-radius: 2px;
+    padding: 1px;
+}
+
+.p_family_Create .area_bd {
+    margin-bottom: 35px;
+}
+
+.F_cre_tj {
+    color: #000;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 10px 0 0 30px;
+}
+
+.F_cre_tj h4 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.F_clause {
+    text-align: center;
+    padding: 30px;
+}
+.F_clause .F_cla_p {
+    text-align: left;
+}
+.check {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+.check input {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    float: left;
+    background: none;
+    cursor: pointer;
+}
+.F_clause .F_cla_p .check {
+    margin-left: 610px;
+}
+
+.corred {
+    color: #d40404;
+}
+
+.Exclamation {
+    background-position: 0 0;
+    margin: 0 10px 0 15px;
+}
+
+.F_clause .btn_fx {
+    display: inline-block;
+    width: 100px;
+    padding: 5px 10px;
+    margin: 20px;
+    color: #fff;
+}
+
+.icocheck{
+    display: inline-block;
+    background: url(/Public/images/Family.png);
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+	background-position: -49px -2px;
+}
+
+.F_line {
+    border-top: 1px solid #c3c3c3;
+    border-bottom: 1px solid #e2e0e0;
+    width: 970px;
+    margin: auto;
+    height: 0;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #4c4c4c;
+}
+
+.bf_gray {
+    background-color: #bcbcbc;
+    box-shadow: 0 3px 0 #8f8f8f;
+	border-radius: 3px;
+}
+
+.bf_gray:hover{
+    background-color: #e7408e;
+    box-shadow: 0 3px 0 #b82067;
+    border-radius: 3px;
+}
+
+.control-label{
+
+    width: 100px;
+    height: 30px;
+    float: left;
+    line-height: 34px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.col-lg-3{
+   float: left;
+}
+
+#exampleInputFile{
+    height: 30px;
+}
+
+.corred{
+    color: #d40404!important;
+    line-height: 35px;
+    margin-left: 10px;
+}
+.btn-default{
+    background-color: #e7408e;
+    border: none;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    box-shadow: 0 3px 0 #b82067;
+    border-radius: 3px;
+}
+
+.btn-default:hover{
+    background-color: #e96ca6;
+}

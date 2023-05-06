@@ -1,0 +1,15 @@
+/*!Builded Time:2015/10/22 05:58:22 PM */
+body{background-color:#d8d1f9;min-width:1100px;}
+.min-wide .site-nav,.min-wide .site-header,.min-wide #footer{min-width:1100px;}
+#bd{background:url(../../images/xiazai/bg.jpg) no-repeat center top;min-width:1100px;}
+#bd .content{width:1100px;position:relative;*zoom:1;margin:0 auto;height:658px;}
+#bd .content .user-act{width:480px;position:absolute;left:427px;top:412px;*zoom:1;overflow:hidden;}
+#bd .content .btn-download{float:left;width:148px;height:50px;padding-left:80px;padding-top:10px;margin-right:8px;background:#792dec;border-radius:3px;border-bottom:3px solid #44236d;color:#fff;position:relative;*zoom:1;font-size:14px;line-height:18px;font-family:"\5FAE\8F6F\96C5\9ED1";}
+#bd .content .text{cursor:pointer;display:inline-block;vertical-align:top;padding-left:25px;border-left:1px solid #552699;height:40px;}
+#bd .content .icon-android,#bd .content .icon-iphone,#bd .content .icon-download{background:url(../../images/xiazai/download.png) no-repeat;position:absolute;font:0/0 a;overflow:hidden;color:transparent!important;width:40px;height:40px;top:10px;cursor:pointer;_background-image:url(../../images/xiazai/download_ie6.png);}
+#bd .content .icon-android{left:20px;}
+#bd .content .icon-iphone{background-position:-40px 0;left:20px;}
+#bd .content .icon-download{width:35px;background-position:-80px 0;right:20px;}
+#bd .content .btn-download:hover{background:#552699;}
+#bd .QR-codes{background:url(../../images/xiazai/QR_codes.png) no-repeat;width:192px;height:222px;font:0/0 a;overflow:hidden;color:transparent!important;position:absolute;right:0;top:252px;}
+#bd .QR-codes img{border:none;width: 160px;height: 160px;  margin: 16px;}

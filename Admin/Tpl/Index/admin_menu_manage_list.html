@@ -1,0 +1,86 @@
+﻿<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script type="text/javascript">
+	window.focus();
+	</script>
+</head>
+<body>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href='javascript:;' class="on"><em>管理菜单</em></a><span>|</span><a href='__URL__/add_admin_menu_manage/' ><em>添加菜单</em></a>
+        
+	</div>
+</div>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style><form name="myform" action="" method="post">
+<div class="pad_10">
+<div class="explain-col">
+温馨提示：请在添加、修改菜单全部完成后，<a href="__APP__/Index/cache_all/">更新缓存</a><span style="padding-left:40px;color:#000">注意：当控制器为空时，为一二级菜单。仅三级菜单包含控制器</span>
+</div>
+<div class="bk10"></div>
+<div class="table-list">
+    <table width="100%" cellspacing="0" >
+        <thead>
+            <tr>
+            <th>编号</th>
+            <th >菜单名称</th>
+            <th >控制器</th>
+            <th >是否显示</th>
+			<th >管理操作</th>
+            </tr>
+        </thead>
+		<tbody>
+			<volist name="adminmenu" id="vo">
+			<tr>
+				
+				<td align='center'>{$vo['id']}</td>
+				<td align='center'>{$vo['menuname']}</td>
+				<td align='center'>{$vo['url']}</td>
+				<td align='center'>
+					<php>if($vo['is_show']){echo "显示";}else{echo "隐藏";}</php>
+				</td>
+				<td align='center' ><a href="__URL__/edit_admin_menu_manage/id/{$vo['id']}">修改</a> </td>
+			</tr>
+				<volist name="vo['voo']" id="sub">
+				<tr>
+					<td><input type="hidden" name="id[]" value="{$sub['id']}" /><input name='orderno[]' type='text' size='3' value='{$sub['orderno']}' class='input-text-c'></td>
+					<td align='center'>{$sub['id']}</td>
+					<td align='center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ {$sub['sortname']}</td>
+					<td>{$vo['sortname']}</td>
+					
+					<td align='center'>{$sub['addtime'],2|fDate}</td>
+					<td align='center' ><a href="__URL__/edit_admin_menu_manage/id/">修改</a> </td>
+				</tr>
+				</volist>
+			</volist>
+		</tbody>
+    </table>
+
+    <div class="btn">
+	</div>  </div>
+</div>
+</div>
+</form>
+<script language="JavaScript">
+<!--
+	window.top.$('#display_center_id').css('display','none');
+//-->
+</script>
+</body>
+</html>

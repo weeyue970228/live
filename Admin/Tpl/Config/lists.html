@@ -1,0 +1,98 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=7" /> 
+<title>FMScms - 后台管理中心</title> 
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/dialog.css" rel="stylesheet" type="text/css" /> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/dialog.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" /> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script> 
+
+</head> 
+<body> 
+<style type="text/css"> 
+	html{_overflow-y:scroll}
+</style>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href="/Admin/index.php/Config/index/"><em>设置</em></a><span>|</span>
+        <a href="javascript:;" class="on"><em>管理</em></a><span>|</span>
+        <a href="/Admin/index.php/Config/add/"><em>添加</em></a>
+        
+	</div>
+</div>
+<div class="pad-10"> 
+<div class="content-menu ib-a blue line-x"> 
+
+<div class="table-list"> 
+    <table width="100%"> 
+        <thead> 
+            <tr> 
+			
+			<th width="40">ID</th> 
+            <th >字段</th> 
+			<th >名称</th> 
+			<th >数据类型</th> 
+			<th >管理操作</th> 
+            </tr> 
+        </thead> 
+<tbody> 
+	<?php $user_statuses=array("num"=>'数字',"string"=>'字符串',"datetime"=>'时间',"bool"=>'布尔'); ?>
+	<volist name="lists" id="vo">
+	<tr> 
+		
+		<td align='center' >{$vo['id']}</td> 
+		<td align='center' >{$vo['name']}</td> 
+		<td align='center' >{$vo['title']}</td> 
+
+		<td align='center'>{$user_statuses[$vo['type']]}</td> 
+
+
+		<td align='center'>
+			<a href="__URL__/edit/id/{$vo['id']}">修改</a> | 
+			<a href="javascript:confirmurl('__URL__/delete/id/{$vo['id']}/return/{$_SERVER["REQUEST_URI"]|base64_encode}', '是否删除?')">删除</a>
+		</td> 
+	</tr> 
+	</volist>
+             
+     </tbody> 
+     </table> 
+
+    <div id="pages">{$page}</div> 
+</div> 
+<input type="hidden" id="return" name="return" value="{$_SERVER["REQUEST_URI"]|base64_encode}" >
+
+</div> 
+<script>
+function SwapTab(name,cls_show,cls_hide,cnt,cur){
+    for(i=1;i<=cnt;i++){
+		if(i==cur){
+			 $('#div_'+name+'_'+i).show();
+			 $('#tab_'+name+'_'+i).attr('class',cls_show);
+		}else{
+			 $('#div_'+name+'_'+i).hide();
+			 $('#tab_'+name+'_'+i).attr('class',cls_hide);
+		}
+	}
+}
+
+function showsmtp(obj,hiddenid){
+	hiddenid = hiddenid ? hiddenid : 'smtpcfg';
+	var status = $(obj).val();
+	if(status == 1) $("#"+hiddenid).show();
+	else  $("#"+hiddenid).hide();
+}
+
+</script>	
+</body> 
+</html>

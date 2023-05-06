@@ -1,0 +1,30 @@
+
+<div class="utitle">
+			<h2><a href="/index.php/User/index/" title="管理中心">我的管理中心</a></h2>
+			<div class="utab">
+				<a href="/index.php/User/myfavor/" title="收藏" ><span>收藏</span></a>
+				<a href="/index.php/User/interestToList/" title="偶像"><span>偶像</span></a>
+				<a href="/index.php/User/myNos/" title="靓号"><span>靓号</span></a>
+				<a href="/index.php/User/toolinuse/" title="道具"><span>道具</span></a>
+				<a href="/index.php/User/showadmin/" title="房管"><span>房管</span></a>
+                <a href="/index.php/User/interestByList/" title="粉丝"><span>粉丝</span></a>
+                <a href="/index.php/User/info_edit/" title="个人设置"><span>个人设置</span></a>
+				<a href="/index.php/User/getConsume/" title="账单"><span>账单</span></a>
+				<a href="/index.php/PhotoManage/index" title="相册" class="on"><span>我的相册</span></a>
+				<a href="__URL__/settlement/" title="结算" style="display:none;"><span>我的结算</span></a>
+				
+				
+			</div>
+			<div class="umyhelp">
+           <?php if($userinfo['sign']=="y")
+	       {?>
+		    <a href="/index.php/User/exchange/" title="兑换"><span>兑换</span></a>
+           <?php } ?>
+	  <a href="/index.php/User/charge/" title="充值"><span>充值</span></a>
+<?php if($userinfo['sign']=="y"){?>
+                <a href="/index.php/User/settlement/" title="结算"><span>结算</span></a>
+<?php } ?>
+			</div>
+</div>
+
+

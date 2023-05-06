@@ -1,0 +1,337 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    background: #f8f8f8;
+    font-family: "微软雅黑";
+}
+
+/*=================================搜索====================================*/
+
+/*整体内容*/
+.person {
+    width: 1282px;
+    margin: 25px auto 0;
+    background: #f8f8f8;
+}
+
+/*=================================上部====================================*/
+.person_top {
+    height: 66px;
+    font-size: 14px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+/*输入框*/
+.person_top input {
+    width: 320px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 14px;
+    border: 1px solid #e3e3e3;
+    outline: none;
+    float: left;
+}
+
+.person_top input::-webkit-input-placeholder {
+    color: #000;
+}
+
+.person_top input:-moz-placeholder {
+    color: #000;
+}
+
+.person_top input::-moz-placeholder {
+    color: #000;
+}
+
+.person_top input:-ms-input-placeholder {
+    color: #000;
+}
+
+/*下拉框*/
+.tab {
+    display: none;
+}
+
+.person_top .pull {
+    position: relative;
+    width: 102px;
+    height: 38px;
+    border: 1px solid #e3e3e3;
+    float: left;
+}
+
+/*.person_top .pull:hover .pull_down {*/
+/*display: block;*/
+/*}*/
+
+.person_top .pull {
+    border-left: none;
+}
+
+.person_top .pull .pull1 {
+    width: 80px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    float: left;
+}
+
+.person_top .pull .pull_click {
+    float: left;
+}
+
+.person_top .pull .pull_click li {
+    width: 22px;
+    height: 19px;
+    background: #2368bc;
+    background: url(../images/person_search_top1.png) no-repeat 0 13px;
+    cursor: pointer;
+}
+
+.person_top .pull .pull_click .down {
+    background: url(../images/person_search_top2.png) no-repeat 0 1px;
+}
+
+.person_top .pull .pull_down {
+    position: absolute;
+    top: 38px;
+    left: -1px;
+    border: 1px solid #e3e3e3;
+    background: #f8f8f8;
+    z-index: 1;
+}
+
+.person_top .pull .pull_down {
+    border-bottom: none;
+}
+
+.person_top .pull .pull_down li {
+    width: 102px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.person_top .pull .pull_down a {
+    display: block;
+    width: 80px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.person_top .pull .pull_down li.selected {
+    background: #9751f1;
+}
+
+.person_top .pull .pull_down a.selected1 {
+    color: #fff;
+}
+
+/*遮罩层*/
+/*.person_top .pull .pull_down div {*/
+/*position: absolute;*/
+/*top: 38px;*/
+/*left: -1px;*/
+/*width: 104px;*/
+/*height: 112px;*/
+/*background: #fff;*/
+/*opacity: 0.5;*/
+/*filter: alpha(opacity=50);*/
+/*}*/
+
+/*按钮*/
+.person_top .button {
+    width: 77px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 2px;
+    background: #ed34a6;
+    color: #fff;
+    float: left;
+}
+
+/*=================================中部====================================*/
+.person_center .top {
+    height: 66px;
+    line-height: 66px;
+    font-size: 14px;
+}
+
+.person_center .nothing {
+    width: 547px;
+    height: 318px;
+    margin-left: 370px;
+    font-size: 34px;
+}
+
+.person_center .nothing img {
+    margin: 0 0 40px 75px;
+}
+
+.person_center .bottom {
+    font-size:18px;
+    height:62px;
+    line-height:62px;
+    margin-top:28px;
+}
+
+.person_center .top a, .person_center .top span {
+    color: #ed34a6;
+}
+
+.person_center .imgList {
+    margin-bottom:68px;
+    overflow: hidden;
+}
+
+.person_center .imgList li {
+    margin-right: 16px;
+    font-size: 12px;
+    padding-bottom: 6px;
+    background: #fff;
+    float: left;
+}
+
+.person_center .imgList li img {
+    width: 200px;
+    height: 150px;
+}
+
+.person_center .imgList li.minus {
+    margin-right: 0;
+}
+
+.person_center .imgList p {
+    width: 160px;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 38px;
+    background: url(../images/person_search_crown.png) no-repeat 14px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.person_center .imgList b {
+    color: #ed34a6;
+}
+
+.person_center .imgList .watch {
+    display: inline-block;
+    width: 70px;
+    height: 13px;
+    line-height: 13px;
+    padding-left: 38px;
+    background: url(../images/person_search_watch.png) no-repeat 14px 0;
+}
+
+.person_center .imgList .people {
+    display: inline-block;
+    width: 28px;
+    height: 13px;
+    line-height: 13px;
+    margin-left: 38px;
+    padding-left: 19px;
+    background: url(../images/person_search_people.png) no-repeat;
+}
+
+/*分页区域*/
+.person_center .paging {
+    width: 385px;
+    margin: 17px auto;
+    padding-bottom: 20px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.person_center .paging li {
+    width: 77px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    text-align: center;
+    background: #e1e1e1;
+    cursor: pointer;
+    float: left;
+}
+
+.person_center .paging li.width {
+    width: 20px;
+    background: #fff;
+}
+
+.person_center .paging li.selected {
+    width: 20px;
+    background: #8c3ff0;
+}
+
+.person_center .paging li.selected a {
+    display: block;
+    color: #fff;
+    font-family: "幼圆";
+}
+
+.person_center .paging li a {
+    display: block;
+    color: #000;
+    font-family: "幼圆";
+}
+
+/*下部*/
+.person_footer {
+    width: 100%;
+    font-size: 12px;
+    background: #f8f8f8;
+}
+
+.person_footer .center {
+    width: 1282px;
+    margin: 0 auto;
+    background: #dfdfdf;
+}
+
+.person_footer .center div {
+    width: 912px;
+    padding: 24px 0 19px 0;
+    margin: 0 auto;
+}
+
+.person_footer .center ul {
+    width: 400px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #797979;
+    overflow: hidden;
+}
+
+.person_footer .center li {
+    width: 65px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-right: 1px solid #797979;
+    float: left;
+}
+
+.person_footer .center p {
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #8d8d8d;
+}

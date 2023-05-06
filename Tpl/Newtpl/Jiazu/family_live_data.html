@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家族-直播数据</title>
+<include file="Public:head" />
+<link rel="stylesheet" type="text/css" href="/Public/css/family/family_detail.css"/>
+</head>
+
+<body>
+    <include file="Public:header" />
+	<div class="family_detail">
+    	<include file='Jiazu/publicheader' />
+        <div class="detail_l">
+        	<h3>直播数据<span>直播总时长约：<i>{$timetotal}</i></span></h3>
+            <form method="post">
+            <div class="family_search">全部<input type="text" name="search" /><button>搜索</button></div>
+            </form>
+            <table width="807" border="0">
+            	<thead>
+                	<th width="126">主播昵称</th>
+                    <th width="181">最后开播</th>
+                    <th width="181">最近结束</th>
+                    <th width="171">直播时长</th>
+                    <th>观看人数</th>
+                </thead>
+              <volist name='liverecordinfo' id='vo' key='k'>
+              <tr class="dark_grey">
+                <td>{$vo['nickname']}</td>
+                <td><php>echo date('Y-m-d H:i:s',$vo['starttime'])</php></td>
+                <td><php>if($vo['endtime']){echo date('Y-m-d H:i:s',$vo['endtime']);}else{echo "尚未结束";}</php></td>
+                <td><php>$time=$vo['endtime']-$vo['starttime']; if($vo['endtime']){echo floor(($time)/3600)."小时".floor(($time)%3600/60)."分钟";}else{echo "尚未结束";}</php></td>
+                <td>{$vo['entercount']}</td>
+              </tr>
+              </volist>
+            </table>
+			<div class="page">
+            	{$show}
+            </div>
+        </div>
+        <include file="Jiazu/family_detail_right" />
+        <div class="clear"></div>
+    </div>
+    <include file="Public:footer" />
+</body>
+</html>

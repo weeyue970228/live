@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家族-详情</title>
+<link rel="stylesheet" type="text/css" href="/Public/css/family/family_detail.css"/>
+<include file="Public:head" />
+<script>
+    $(function(){
+
+        //默认显示前6个副族长
+        $('.patriarch_list li').each(function(i){
+            if(i < 6){
+                $(this).show();
+            } else {
+                return false;
+            }
+        });
+
+        //副族长翻页
+        $('#btn_pre, #btn_next').click(function(){
+            var is_next = $(this).attr('id') == 'btn_next';
+            var index = $('.patriarch_list li:visible:' + (is_next ? 'last' : 'first')).index();
+            if(index <= 0 || index >= $('.patriarch_list li').size() - 1) return;
+            $('.patriarch_list li:visible').hide();
+            for(var i = 1; i <= 6; i++){
+                var _index = is_next ? index + i : index - i;
+                $('.patriarch_list li:eq(' + _index + ')').show();
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <include file="Public:header" />
+	<div class="family_detail">
+    <include file='Jiazu/publicheader' />
+        <div class="family_add_c">
+            <div class="detail_l">
+            	
+                <h3><span>家族直播间</span></h3>
+                <div class="family_live_list">
+                	<ul>
+                    <volist name='info' id='vo' key='k'>
+                    	<li class="live">
+                    		<a href="/{$vo['curroomnum']}">
+                    			<img <if condition="$vo['bigpic']">src="{$vo['bigpic']}"<else />src="/Public/images/default.gif"</if> onerror="javascript:this.src='/Public/images/default.gif'" />
+                    			<b></b>
+                    			<span><php>echo ($vo['online']+$vo['virtualguest']);</php></span>
+                    			<p>{$vo['nickname']}</p>
+                    		</a>
+                    	</li>
+                    </volist>   
+                    </ul>
+                </div>
+                <div class="page">
+                    {$page}
+                </div>
+            </div>
+            <include file="Jiazu/family_detail_right" />
+            <div class="clear"></div>
+        </div>
+    </div>
+    <include file="Public:footer" />
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".create_btn").click(function(){
+            	 
+                var familyid = $(this).attr('familyid');
+               
+                var url = "{:U('Jiazu/sqjoinfamily')}";
+                
+                $.get(url,{'familyid':familyid},function(d){
+                    
+                    if(d.status == 2 ){
+                    	$("#submitreturn").text(d.info);
+                        $("#submitreturn").show();
+                        
+                    }
+                },'json');
+            });
+        });
+    </script>
+</body>
+</html>

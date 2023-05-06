@@ -1,0 +1,201 @@
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 19px;
+  padding-bottom: 30px;
+}
+.goodnum {
+  float: left;
+  width: 1248px;
+}
+.gn-search {
+  border: solid 1px #dadada;
+  padding: 20px 10px;
+  background-color: #f8f8f8;
+  padding: 0 1px 1px 1px;
+}
+.gns-v {
+  height: 30px;
+  padding: 10px 12px 0px 15px;
+  overflow: hidden;
+}
+.gn-text {
+  border: solid 1px #b1b1b1;
+  border-width: 1px 0 1px 1px;
+  padding: 2px;
+  width: 154px;
+  height: 18px;
+  color: #848484;
+  background-color: #f5f5f5;
+  float: left;
+}
+.gns-v .gn_btn {
+  margin: 0px;
+  width: auto;
+  border-radius: 0px 3px 3px 0px;
+}
+.gn_btn {
+  display: inline-block;
+  float: left;
+  height: 24px;
+  padding-left: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  background: #fd8b74;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100px;
+}
+.gns-v .gn_btn cite {
+  width: auto;
+}
+.gn_btn cite {
+  display: inline-block;
+  padding-right: 15px;
+  height: 24px;
+  line-height: 22px;
+  background: #fd8b74;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+}
+.rtitle {
+  height: 38px;
+  padding-top: 6px;
+  font-size: 24px;
+  color: #494949;
+  /* float: left; */
+  font-family: "微软雅黑";
+  margin: 0px 20px;
+  font-weight: normal;
+  /* background: url(/Public/images/bg_show.png) repeat-x 0	-220px; */
+}
+.gn_item {
+  height: 174px;
+}
+.gni-t {
+  margin: 0 10px;
+  height: 33px;
+  background: url(/Public/images/line.gif) repeat-x left	bottom;
+  padding-top: 11px;
+}
+ 
+.gni-t h3 {
+  font-family: 'Microsoft YaHei';
+  color: #666;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 14px;
+}
+.gni-v {
+  padding: 14px 0;
+  overflow: hidden;
+}
+.gni-v li {
+  float: left;
+  width: 270px;
+  height: 120px;
+  margin-left: 34px;
+  _display: inline;
+}
+.gni-v li p {
+  line-height: 24px;
+  height: 22px;
+  padding-bottom: 3px;
+  font-size: 14px;
+  color: #494949;
+  overflow: hidden;
+}
+.gni-v li p .f-1 {
+  color: #fe4818;
+}
+.gni-v li p.price {
+  font-size: 12px;
+}
+.gni-v li p .f-2 {
+  color: #629a13;
+}
+.change-gn {
+  background: url(/Public/images/bg_goodnum.png)	no-repeat;
+}
+.change-gn {
+  display: inline-block;
+  width: 59px;
+  height: 26px;
+  background-position: -28px -135px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+  float: right;
+  margin-right: 5px;
+}
+
+/* 购买弹出层 */
+.poptip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: solid 1px #dadada;
+	width: 348px;
+	display: none;
+}
+.pop-t {
+	height: 29px;
+	background: url(/Public/images/layer.png) repeat-x 0	-123px;
+	_overflow: hidden
+}
+.pop-t h3 {
+	color: #565656;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 13px;
+	padding-top: 5px
+}
+.pop-t .close {
+	float: right;
+	margin-right: 8px;
+	margin-top: 7px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	background: url(/Public/images/layer.png) no-repeat 0	-57px
+}
+.pop-v {
+	padding: 22px 34px 15px 34px;
+	overflow: hidden;
+	background-color: #fff;
+	text-align:center;
+}
+.pop-v p {
+	height: 24px;
+	padding-bottom: 12px
+}
+.pop-v p.btn {
+	padding-left: 93px;
+	padding-top: 3px
+}
+.pop-v p span {
+	color: #ccc;
+	display: inline-block;
+	width: 90px;
+	text-align: left
+}
+.pop-v p strong {
+	color: #999
+}
+.pop-v span.sendBtn {
+	width: 66px;
+	height: 25px;
+	background: url(/Public/images/layer.png) no-repeat 0	-72px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	line-height: 25px;
+	margin: 15px 0px;
+}
+/* 购买弹出层 */

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>申请创建家族-家族首页-{$sitename}</title>	
+<include file="Public:head" />
+			
+		<link rel="stylesheet" href="__PUBLIC__/css/CoreCSS/familyJiazu.css">
+        
+       	<link rel="stylesheet" href="/Public/css/CoreCSS/sqagent.css" type="text/css" /> 
+
+	</head>
+	<body>
+	<include file="Public:header" />
+<div class="container clearfix">	
+<div class="iux_mainer">
+			
+			<div class="cnxmid">
+			 <div class="p_common p_family_Create">
+				
+				<div class="area_hd">
+					<h3 class="title_fx">创建家族流程<em class="fline"></em></h3>
+			    </div>
+				<div class="area_bd">
+					<div class="F_creBox">
+						<div class="F_crePro">
+							<div class="F_creProC" style="width:{$F_creProCwidth}%"></div>
+							<div class="F_proD">
+							      <if condition="$step eq 1">
+								     <span class="F_pspan active">1</span>
+								  <else/>
+								     <span class="F_pspan active"><em class="icocheck"></em></span>
+								  </if>
+								
+								创建条件
+							</div>
+							<div class="F_proD" style="left:33.3%">
+							   <if condition="$step eq 2">
+								        <span class="F_pspan active">2</span>
+								  <elseif condition="$step gt 2"/>
+										<span class="F_pspan active"><em class="icocheck"></em></span>
+								  <else/>									 
+									   
+									  <span class="F_pspan ">2</span>
+							   </if>
+								
+								填写资料
+							</div>
+							
+							<!--等待审核======================-->
+							<div class="F_proD" style="left:66.6%">
+							
+							<if condition="$step eq 3">
+								     <span class="F_pspan active">3</span>
+								  <elseif condition="$step gt 3"/>
+								      <span class="F_pspan active"><em class="icocheck"></em></span>
+									<else/>	
+                                          <span class="F_pspan ">3</span>									
+									  
+								  </if>
+								
+								等待审核
+							</div>
+							<div class="F_proD" style="left:100%">
+							 	<if condition="$step eq 4">
+								     <span class="F_pspan active">4</span>
+								  <elseif condition="$step gt 4"/>
+								      <span class="F_pspan active"><em class="icocheck"></em></span>
+									<else/>	
+                                          <span class="F_pspan ">4</span>									
+									  
+								  </if>
+							
+								完成申请
+							</div>
+						</div>
+						<div class="F_line"></div>
+					</div>
+				</div>
+				
+								
+
+				
+				<if condition="$step eq 1">
+					<div class="area_hd">
+						<h3 class="title_fx">创建条件<em class="fline"></em></h3>
+					</div>
+					<div class="area_bd" style="width:1000px;margin: 0 auto;">
+						<div class="F_cre_tj">
+							<h4>您正在申请创建FMSCMS家族，请注意以下几点：</h4>
+							1、每个用户只能创建一个家族。<br>
+							2、审核通过后15天内至少新增10名主播成员。<br>
+							3、每月家族营收不得低于5万豆。<br>
+						</div>
+					</div>
+					<div class="F_clause">
+						<p class="F_cla_p" style="display:none;">
+							<span class="check"><input name="agree_clause" type="checkbox"></span>
+							我同意《<a href="" target="_blank">用户服务条款</a>》
+							<span class="corred" id="agree_clause_no" style="display:none;"><em class="Exclamation"></em>你没有同意用户服务条款</span>
+						</p>
+						<p>
+							<a id="gh_step_next" href="sqagent?step=2" class="btn_fx bf_gray">下一步</a>
+							<a href="/index.php/Jiazu/"<u>返回</u></a>
+						</p>
+					</div>				
+				</if>
+				<if condition="$step eq 2">
+				
+				  
+				  <div>{$zhuangtai}</div>	
+		
+		            <div class="area_hd">
+					<h3 class="title_fx">公会资料<em class="fline"></em></h3>
+				    </div>
+		               
+						<form class="form-horizontal" enctype='multipart/form-data' method="post" action="#">
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-lg-1 control-label"><h1>家族名称:</h1></label>
+							<div class="col-lg-3">
+							  <input type="text" class="form-control"name="familyname" >
+							</div>
+							<em class="corred">*</em>
+						  </div>
+						  <div class="form-group">
+							<label  class="col-lg-1 control-label">家族简介:</label>
+							<div class="col-lg-3">
+						   <textarea class="" rows="6"  cols="57" name="familyinfo"></textarea>
+							</div>
+							<em class="corred">*</em>
+						  </div>
+						  <div class="form-group">
+							<label  class="col-lg-1 control-label" style="line-height: 20px;">家族封面</label>
+							<div class="col-lg-3">
+							<input type="file" id="exampleInputFile" name="familyimg">
+							<p class="help-block">请选择您要上传的图片。</p>
+							</div>
+							<em class="corred">*</em>
+						  </div>
+						  <div class="form-group" style="margin-left: 500px;">
+							<div class="col-sm-offset-2 col-sm-10" style="margin-bottom:20px;">
+							  <button type="submit" class="btn btn-default">确认申请</button>
+							</div>
+						  </div> 
+						 
+						</form>
+				  
+				  
+				  
+				</if>
+				<if condition="$step eq 3">
+				          <div class="area_hd"> 申请成功，请等待审核</div>
+				</if>
+				<if condition="$step eq 4">
+				      <div class="area_hd">审核成功</div>
+				</if>
+				    
+				 <div class="clear"></div>			    
+			</div><!-- E p_common -->
+		  </div><!-- E cnxmid -->
+
+		</div>
+		 <div class="clear"></div>
+	 </div>	
+	<include file="Public:footer" />			
+	</body>
+</html>

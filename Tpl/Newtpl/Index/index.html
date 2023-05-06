@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>首页</title>
+		<include file="Public:head" />    
+		<link rel="stylesheet" href="__PUBLIC__/newtpl2/css/index.css" type="text/css" />
+	</head>
+	<body>
+		
+		<include file="Public:header" />
+
+        <div class="scroll_top">
+			<div class="fullSlide">
+				
+				<div class="bd">
+					<ul>
+						<volist name='rollpics' id='vo' key='k'>
+							<li _src="url({$vo.picpath})" ><a target="_blank" href="{$vo.linkurl}"></a></li>
+		                 </volist>
+					</ul>
+				</div>
+		
+				<div class="hd"><ul></ul></div>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>        	
+        </div>	
+		<div class="contenter clear">
+			<div class="mian clear">
+				<div class="layout-main w1280">
+					<div class="bx hot-wrap nn-wrap" id="newAnchor">
+						<div class="hd">
+							<a href="/index.php/User/sign_view/" target="_blank" class="sign_view">我要直播</a>	
+							<a href="/index.php/User/sign_view/" target="_blank" class="sign_view">我要签约</a>
+							<i class="t-icon"></i>
+							<h2>新人直播</h2>
+							<div class="tab-tit">
+								<ul>
+									<li>
+										<a href="javascript:void(0);" data-target-id="newAnchor" class="active">新人直播</a>
+									</li>
+									
+									<?php
+										if($_SESSION['uid'] != '' && $_SESSION['uid'] != null || $_SESSION['uid'] > 0){
+									?>
+									<li><span class="tab-tit-line"></span></li>	
+									<li>
+										<a href="javascript:void(0);" data-target-id="concern">我关注的</a>
+									</li>
+									<li><span class="tab-tit-line"></span></li>	
+									<li>
+										<a href="javascript:void(0);" data-target-id="seen">我看过的</a>
+									</li>
+		                            <?php }?>
+									
+								</ul>
+							</div>					
+						</div>
+						<div class="bd mih175">
+							<div class="tab-content tab-cur" data-content="newAnchor">
+								<ul>
+								<volist name="newAnchor" id="vo">
+										<li>
+										<div class="live-panel live-panel-tag">
+											<div class="host-pic">
+												<img class="thumb" width="200" height="133" alt="{$vo['nickname']}" src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+												<a class="play-mask" target="room" href="/{$vo['curroomnum']}">
+												<div class="back"></div>
+												<span class="play-btn">播放</span>
+												</a>
+											</div>
+											<h4 class="name">
+											<a target="room" href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+											<!--<span class="host-type">热舞秀 </span>-->
+											</h4>
+											<p class="status fr">
+												<span class="" title="观众数">
+												<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+												<!--<span class="viewer" title="粉丝数">
+												<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+											</p>
+											<if condition="$vo['broadcasting'] eq 'y'">
+												<span class="live-tip">直播中<span class="arrow"></span></span>
+											<elseif condition=" $vo['offlinevideo'] neq null && $vo['offlinevideo'] neq '' " />	
+											    <span class="live-tip">录像<span class="arrow"></span></span>
+											</if>
+										</div>
+										</li>
+	   								</volist>		
+		
+								</ul>
+							</div>
+						</div>
+					</div>							
+				</div>
+
+			</div>
+			
+			<div class="main clear">
+				<div class="layout-main">
+					<div class="bx recommend-wrap">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>特别推荐</h2>
+						</div>
+						<div class="bd">
+							<ul>
+							   <volist name="recommend" id="vo">
+							   	 <if condition="$i eq '1' " >
+									<li  class="hl" >
+										<div class="live-panel">
+											<div class="host-pic" title="{$vo['nickname']}">
+												
+												<img class="thumb" width="380" height="283" alt="{$vo['nickname']}" 
+													src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+												
+												<a class="play-mask"  href="/{$vo['curroomnum']}">
+													<div class="back"></div>
+													<span class="play-btn">播放</span>
+												</a>
+											</div>
+											<div class="lv">
+												<i class="ico-lv zb-lv lv6"></i>
+											</div>
+											<h4 class="name">
+												<a  href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+											</h4>
+											<p class="status">
+												<!--<span class="live-time">
+												<span class="ico ico-clock"></span>
+												<span class="time"> 19分钟</span>
+												</span>-->
+												<span class="viewer" title="观众数">
+												<span class="ico ico-peo"></span>
+												<span class="num"><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+												</span>
+											</p>
+											<if condition="$vo['broadcasting'] eq 'y'">
+												<span class="live-tip">直播中<span class="arrow"></span></span>
+											</if>	
+											
+										</div>
+									</li>		
+								<else/>
+									<li>
+										<div class="live-panel">
+											<div class="host-pic" title="{$vo['nickname']}">
+												<img class="thumb" width="180" height="101" alt="{$vo['nickname']}" 
+													src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">												 
+												 
+												<a class="play-mask"  href="/{$vo['curroomnum']}">
+													<div class="back"></div>
+													<span class="play-btn">播放</span>
+												</a>
+											</div>
+											<div class="lv">
+												<i class="ico-lv zb-lv lv6"></i>
+											</div>
+											<h4 class="name">
+												<a  href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+												<span class="viewer" title="观众数">
+												<span class="ico ico-peo"></span>
+												<span class="num"><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+												</span>
+											</h4>
+										
+											<if condition="$vo['broadcasting'] eq 'y'">
+												<span class="live-tip">直播中<span class="arrow"></span></span>
+											</if>	
+											
+										</div>
+									</li>	
+								</if>	
+							   </volist>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="layout-side">
+					<div class="bx preview-wrap">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>直播预告表</h2>
+						</div>
+						<div class="bd">
+							<div class="content prev-count-5" >
+								<ul class="list-default">
+									<volist name="preview" id="vo">
+									<li>
+										<a  class="list-default-item preview-host" href="/{$vo['curroomnum']}" >
+											<img class="photo" src="{$ucurl}avatar.php?uid={$vo['ucuid']}&size=middle"  width="50" height="50">
+											<p class="name">
+												{$vo['nickname']}
+											</p>
+											<p class="time">
+												<span class="ico ico-nic"></span>今天 {$vo['starttime']|date="H:i",###}
+											</p>
+										</a>
+									</li>
+									</volist>
+
+								</ul>
+							</div>
+						</div>
+					</div>					
+					
+				</div>
+				
+			</div>
+			
+			<div class="main clear">
+				<div class="layout-main">
+					<div class="bx hot-wrap hot-host-wrap hot-live-wrap" id="liveAnchor" data-pb-block="15041004">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>正在直播</h2>
+							<div class="tab-tit">
+								<ul>
+									<!--<li>
+										<a href="javascript:void(0);" data-target-id="live" class="active" >正在直播</a>
+									</li>
+									<li><span class="tab-tit-line"></span></li>	
+									<li>
+										<a href="javascript:void(0);" data-target-id="xiuchang" >秀场直播	</a>
+									</li>
+									<li><span class="tab-tit-line"></span></li>	
+									<li>
+										<a href="javascript:void(0);" data-target-id="youxi" >游戏直播</a>
+									</li>-->
+								</ul>
+							</div>
+							<!--<a href="javascript:void(0);" class="reload"><span class="ico ico-reload"></span>换一换</a>-->
+						</div>
+						<div class="bd">
+							<div class="tab-content tab-cur" data-content="live">
+								<ul>
+								<volist name="on_live" id="vo">
+									<li>
+									<div class="live-panel">
+										<div class="host-pic">
+											<img class="thumb" width="180" height="120" alt="{$vo['nickname']}" src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+											<a class="play-mask" href="/{$vo['curroomnum']}">
+											<div class="back"></div>
+											<span class="play-btn">播放</span>
+											</a>
+										</div>
+										<h4 class="name">
+										<a href="/{$vo['curroomnum']}" >{$vo['nickname']}</a>
+										<!--<span class="host-type">热舞秀</span>-->
+										</h4>
+										<p class="status fr">
+											<span class="" title="观众数">
+											<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?>												</span>
+											<!--<span class="viewer" title="粉丝数">
+											<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+										</p>
+										<span class="live-tip">直播中<span class="arrow"></span></span>
+									</div>
+									</li>									
+								</volist>	
+
+								</ul>
+							</div>
+						</div>
+					</div>				
+				
+				</div>
+				<div class="layout-side">
+					<div class="bx ranks-wrap ml-ranks-wrap" id="_charmingRank" click-type="popularity_rank">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>魅力主播</h2>
+						</div>
+						<div class="bd">
+							<div class="tab-tit">
+								<ul >
+									<li onclick="turn(1,4,1)" id="lm1_1">
+										<a href="javascript:void(0);" >日榜</a>
+									</li>
+									<li onclick="turn(2,4,1)" id="lm1_2">
+										<a href="javascript:void(0);" >周榜</a>
+									</li>
+									<li onclick="turn(3,4,1)" id="lm1_3">
+										<a href="javascript:void(0);" >月榜</a>
+									</li>
+									<li class="on" onclick="turn(4,4,1)" id="lm1_4">
+								 		 <a href="javascript:void(0);" >总榜</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-content tab-cur">
+								<ol class="list-default" data-type="day" id="content1_1" style="display: none;">
+								<volist name="emceeRank_day1" id="vo">
+									<li>
+									<a class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" href="/{$vo['userinfo']['curroomnum']}"  >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$all['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<if condition="$vo['userinfo']['broadcasting'] eq 'y'">
+									<span class="live-tip">直播中</span>
+									</if>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="star star{$vo['emceelevel'][0]['levelid']}"></span></div>
+									</a>
+									</li>									
+									
+								</volist>	
+
+								</ol>
+								<ol class="list-default" data-type="week" id="content1_2" style="display: none;">
+								<volist name="emceeRank_week1" id="vo">
+									<li>
+									<a class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" href="/{$vo['userinfo']['curroomnum']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$all['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<if condition="$vo['userinfo']['broadcasting'] eq 'y'">
+									<span class="live-tip">直播中</span>
+									</if>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="star star{$vo['emceelevel'][0]['levelid']}"></span></div>
+									</a>
+									</li>									
+									
+								</volist>	
+								</ol>
+								<ol class="list-default" data-type="month" id="content1_3" style="display: none;">
+								<volist name="emceeRank_month1" id="vo">
+									<li>
+									<a class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" href="/{$vo['userinfo']['curroomnum']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$all['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<if condition="$vo['userinfo']['broadcasting'] eq 'y'">
+									<span class="live-tip">直播中</span>
+									</if>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="star star{$vo['emceelevel'][0]['levelid']}"></span></div>
+									</a>
+									</li>									
+									
+								</volist>	
+								</ol>
+								<ol class="list-default" data-type="all" id="content1_4" >
+								<volist name="emceeRank_all1" id="vo">
+									<li>
+									<a class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" href="/{$vo['userinfo']['curroomnum']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$all['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<if condition="$vo['userinfo']['broadcasting'] eq 'y'">
+									<span class="live-tip">直播中</span>
+									</if>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="star star{$vo['emceelevel'][0]['levelid']}"></span></div>
+									</a>
+									</li>									
+									
+								</volist>	
+	
+								</ol>
+								
+							</div>
+						</div>
+					</div>					
+					
+				</div>
+			</div>				 
+			
+			<div class="main clear">
+				<div class="layout-main">
+					<div class="bx hot-wrap hot-host-wrap" id="hotAnchor" >
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>热门主播</h2>
+							<div class="tab-tit">
+								<ul>
+									<li>
+										<a href="javascript:void(0);" data-target-id="hot" class="active" >热门主播</a>
+									</li>
+									
+									<volist name="usersorts" id="vo">
+										<volist name="vo.voo" id="vo2">
+											<li><span class="tab-tit-line"></span></li>	
+											<li>
+												<a href="javascript:void(0);" data-target-id="{$vo2.id}" >{$vo2.sortname}</a>
+											</li>
+										</volist>
+									</volist>
+	
+									<!--<li class="all">
+									<a href="#"  class="_allAnchor">全部&gt;</a>
+									</li>-->
+								</ul>
+							</div>
+							<!--<a href="javascript:void(0);" class="reload"><span class="ico ico-reload"></span>换一换</a>-->
+						</div>
+						<div class="bd">
+							<div class="tab-content tab-cur" data-content="hot">
+								<ul>									
+									<volist name="hot" id="vo">
+										<li>
+										<div class="live-panel live-panel-tag">
+											<div class="host-pic">
+												<img class="thumb" width="180" height="120" alt="{$vo['nickname']}" src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+												<a class="play-mask" target="room" href="/{$vo['curroomnum']}">
+												<div class="back"></div>
+												<span class="play-btn">播放</span>
+												</a>
+											</div>
+											<h4 class="name">
+											<a target="room" href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+											<!--<span class="host-type">热舞秀 </span>-->
+											</h4>
+											<p class="status fr">
+												<span class="" title="观众数">
+												<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+												<!--<span class="viewer" title="粉丝数">
+												<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+											</p>
+											<if condition="$vo['broadcasting'] eq 'y'">
+												<span class="live-tip">直播中<span class="arrow"></span></span>
+											<elseif condition=" $vo['offlinevideo'] neq null && $vo['offlinevideo'] neq '' " />	
+											    <span class="live-tip">录像<span class="arrow"></span></span>
+											</if>
+										</div>
+										</li>
+	   								</volist>									
+
+								</ul>
+							</div>
+						</div>
+					</div>				
+				
+				</div>
+				<div class="layout-side">
+					<div class="bx ranks-wrap fh-ranks-wrap" id="_charmingRank" click-type="popularity_rank">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>富豪榜</h2>
+						</div>
+						<div class="bd">
+							<div class="tab-tit">
+								<ul >
+									<li onclick="turn(1,4,2)" id="lm2_1">
+										<a href="javascript:void(0);" >日榜</a>
+									</li>
+									<li onclick="turn(2,4,2)" id="lm2_2">
+										<a href="javascript:void(0);" >周榜</a>
+									</li>
+									<li onclick="turn(3,4,2)" id="lm2_3">
+										<a href="javascript:void(0);" >月榜</a>
+									</li>
+									<li class="on" onclick="turn(4,4,2)" id="lm2_4">
+								 		 <a href="javascript:void(0);" >总榜</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-content tab-cur">
+								<ol class="list-default" data-type="day" id="content2_1" style="display: none;">
+								<volist name="richRank_day1" id="vo">
+									<li>
+									<div class="list-default-item rank-item <if condition="$i lt '3'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>	-->																	
+									</p>
+									<div class="trans"><span class="cracy cra{$vo['richlevel'][0]['levelid']}"></span></div>
+									</div>
+									</li>									
+									
+									
+								</volist>	
+
+	
+								</ol>
+								<ol class="list-default" data-type="week" id="content2_2" style="display: none;">
+								<volist name="richRank_week1" id="vo">
+									<li>
+									<div class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="cracy cra{$vo['richlevel'][0]['levelid']}"></span></div>
+									</div>
+									</li>									
+									
+									
+								</volist>	
+	
+								</ol>
+								<ol class="list-default" data-type="month" id="content2_3" style="display: none;">
+								<volist name="richRank_month1" id="vo">
+									<li>
+									<div class="list-default-item rank-item <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="cracy cra{$vo['richlevel'][0]['levelid']}"></span></div>
+									</div>
+									</li>									
+									
+									
+								</volist>	
+								</ol>
+								<ol class="list-default" data-type="all" id="content2_4" >
+								<volist name="richRank_all1" id="vo">
+									<li>
+									<div class="list-default-item rank-item  <if condition="$i lt '4'" >top-item</if> <if condition="$i eq '1'" >rank-item-active</if>" title="{$vo['userinfo']['nickname']}" >
+									<span class="order">{$i}</span>
+									<img class="pic" src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle" width="50" height="50">
+									<em class="name">{$vo['userinfo']['nickname']}</em>
+									<p class="viewer" >
+										<!--<span class="ico ico-fans"></span>-->
+									</p>
+									<div class="trans"><span class="cracy cra{$vo['richlevel'][0]['levelid']}"></span></div>
+									</div>
+									</li>									
+								</volist>	
+								</ol>
+								
+							</div>
+						</div>
+					</div>					
+					
+				</div>
+			</div>				 
+			
+			<div class="main clear">
+				<div class="layout-main">
+					<div class="bx week-star-wrap">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>
+							<span class="sr-only">明星家族</span>
+							
+							</h2>
+						</div>
+						<div class="bd">
+							<ul >
+							<volist name="family" id="vo">
+								<li>
+								<a href="/index.php/Jiazu/family_detail/id/{$vo['id']}.html"  class="week-item">
+								<div class="gift">
+									<!-- ie11下元素带边框时设置圆角有锯齿 -->
+									<div class="inner">
+										<img src="{$ucurl}avatar.php?uid={$vo['zz']['ucuid']}&size=middle" width="60" height="60">
+									</div>
+								</div>
+								<p class="num">
+									成员数<em class="em">{$vo["total"]}</em>名
+								</p>
+								<div class="pic">
+									<img src="/Public/Familyimg/{$vo['familyimg']}" width="130" height="130">
+									<div class="back"></div>
+									<span class="play-btn">播放</span>
+								</div>
+								<p class="name">{$vo["familyname"]}</p>
+								<!--<span class="live-tip">直播中<span class="arrow"></span></span>-->
+								</a>
+								</li>
+							</volist>		
+								
+							</ul>
+						</div>
+					</div>					
+										
+				</div>
+				<div class="layout-side">
+					
+					<div class="bx notice-wrap">
+						<div class="hd">
+							<i class="t-icon"></i>
+							<h2>公告</h2>
+						</div>
+						<div class="bd">
+							<div class="content" >
+								<ul>
+									<volist name="announce" id="vo">
+									 <li><span class="ico ico-point-black"></span><a href="__APP__/Activity/huodonginfo/info/{$vo.id}" title="{$vo.title}" target="_blank">{$vo.title}</a></li>
+									</volist> 
+								</ul>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>	
+			
+		</div>
+		
+	    <include file="Public:footer" />
+	    <script src="__PUBLIC__/js/CoreJS/index.js"></script>
+	    
+	</body>
+</html>

@@ -1,0 +1,793 @@
+[ 2016-03-30T10:26:13+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT uid,sum(bean) as total FROM `ss_beandetail` where type="income" and action="getgift" and date_format(FROM_UNIXTIME(addtime),"%m-%d-%Y")=date_format(now(),"%m-%d-%Y") group by uid order by total desc LIMIT 0,10 [ RunTime:0.008001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 863 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=9667195 and earnbean_low<=9667195 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT uid,sum(bean) as total FROM `ss_beandetail` where type="income" and action="getgift" and date_format(FROM_UNIXTIME(addtime),"%Y")=date_format(now(),"%Y") and date_format(FROM_UNIXTIME(addtime),"%u")=date_format(now(),"%u") group by uid order by total desc LIMIT 0,10 [ RunTime:0.012001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 863 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=9667195 and earnbean_low<=9667195 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 452 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=45017484 and earnbean_low<=45017484 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT uid,sum(bean) as total FROM `ss_beandetail` where type="income" and action="getgift" and date_format(FROM_UNIXTIME(addtime),"%m-%Y")=date_format(now(),"%m-%Y") group by uid order by total desc LIMIT 0,10 [ RunTime:0.010001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 931 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=14482150 and earnbean_low<=14482150 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 456 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=87770070 and earnbean_low<=87770070 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 451 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=317617531 and earnbean_low<=317617531 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 863 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=9667195 and earnbean_low<=9667195 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 930 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=1960525 and earnbean_low<=1960525 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 936 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=1414906 and earnbean_low<=1414906 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 854 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=24373381 and earnbean_low<=24373381 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 925 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=729383 and earnbean_low<=729383 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 891 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=1124534249 and earnbean_low<=1124534249 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT uid,sum(bean) as total FROM `ss_beandetail` where type="income" and action="getgift" group by uid order by total desc LIMIT 0,10 [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 887 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=2148047733 and earnbean_low<=2148047733 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 495 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=1483464956 and earnbean_low<=1483464956 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 891 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=1124534249 and earnbean_low<=1124534249 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 854 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=24373381 and earnbean_low<=24373381 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 920 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=18773682 and earnbean_low<=18773682 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 931 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=14482150 and earnbean_low<=14482150 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 606 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=15487406 and earnbean_low<=15487406 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 456 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=87770070 and earnbean_low<=87770070 ) ORDER BY levelid asc  [ RunTime:0.002001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`broadcasting`,`earnbean` FROM `ss_member` WHERE ( `id` = 451 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=317617531 and earnbean_low<=317617531 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT uid,sum(coin) as total FROM `ss_coindetail` where type="expend" and date_format(FROM_UNIXTIME(addtime),"%m-%d-%Y")=date_format(now(),"%m-%d-%Y") group by uid order by total desc LIMIT 0,10 [ RunTime:0.010000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin`,`broadcasting` FROM `ss_member` WHERE ( `id` = 919 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_richlevel` [ RunTime:0.001001s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=11047037 and spendcoin_low<=11047037 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT uid,sum(coin) as total FROM `ss_coindetail` where type="expend" and date_format(FROM_UNIXTIME(addtime),"%Y")=date_format(now(),"%Y") and date_format(FROM_UNIXTIME(addtime),"%u")=date_format(now(),"%u") group by uid order by total desc LIMIT 0,10 [ RunTime:0.017001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 919 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=11047037 and spendcoin_low<=11047037 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 891 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=59699331 and spendcoin_low<=59699331 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 854 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=8656703 and spendcoin_low<=8656703 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT uid,sum(coin) as total FROM `ss_coindetail` where type="expend" and date_format(FROM_UNIXTIME(addtime),"%m-%Y")=date_format(now(),"%m-%Y") group by uid order by total desc LIMIT 0,10 [ RunTime:0.011001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 891 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=59699331 and spendcoin_low<=59699331 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=70844186 and spendcoin_low<=70844186 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 854 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=8656703 and spendcoin_low<=8656703 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 521 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2147485557 and spendcoin_low<=2147485557 ) ORDER BY levelid asc  [ RunTime:0.002001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 935 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1113101 and spendcoin_low<=1113101 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 919 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=11047037 and spendcoin_low<=11047037 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 937 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1027518 and spendcoin_low<=1027518 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 931 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2200 and spendcoin_low<=2200 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 928 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1460 and spendcoin_low<=1460 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 936 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1000 and spendcoin_low<=1000 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT uid,sum(coin) as total FROM `ss_coindetail` where type="expend" group by uid order by total desc LIMIT 10 [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 521 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2147485557 and spendcoin_low<=2147485557 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 887 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2147580147 and spendcoin_low<=2147580147 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=70844186 and spendcoin_low<=70844186 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 891 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=59699331 and spendcoin_low<=59699331 ) ORDER BY levelid asc  [ RunTime:0.002001s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 854 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=8656703 and spendcoin_low<=8656703 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 922 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=6926340 and spendcoin_low<=6926340 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 935 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1113101 and spendcoin_low<=1113101 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 919 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=11047037 and spendcoin_low<=11047037 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 937 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=1027518 and spendcoin_low<=1027518 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `ucuid`,`curroomnum`,`nickname`,`spendcoin` FROM `ss_member` WHERE ( `id` = 905 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=862798 and spendcoin_low<=862798 ) ORDER BY levelid asc  [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT count(*) as total,`agentuid` FROM `ss_member` WHERE ( agentuid>0 ) GROUP BY agentuid ORDER BY total desc LIMIT 5   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_agentfamily` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_agentfamily` WHERE ( id=77 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `ucuid` FROM `ss_member` WHERE ( id='935' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_agentfamily` WHERE ( id=74 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `ucuid` FROM `ss_member` WHERE ( id='891' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_agentfamily` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `ucuid` FROM `ss_member` WHERE ( id='919' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_agentfamily` WHERE ( id=72 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `ucuid` FROM `ss_member` WHERE ( id='887' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_agentfamily` WHERE ( id=73 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `ucuid` FROM `ss_member` WHERE ( id='863' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_usersort` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_usersort` WHERE ( parentid=0 ) ORDER BY orderno  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_usersort` WHERE ( parentid=1 ) ORDER BY orderno  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_rollpic` [ RunTime:0.002001s ]
+SQL: SELECT `picpath`,`title`,`linkurl` FROM `ss_rollpic` ORDER BY orderno asc LIMIT 3   [ RunTime:0.001000s ]
+SQL: SELECT `curroomnum`,`snap`,`virtualguest`,`online`,`nickname` FROM `ss_member` WHERE ( recommend = 'y' and recommendno> '0' ) ORDER BY recommendno desc LIMIT 7   [ RunTime:0.003000s ]
+SQL: SELECT `curroomnum`,`snap`,`virtualguest`,`online`,`nickname` FROM `ss_member` WHERE ( recommend = 'y' ) LIMIT 7   [ RunTime:0.002000s ]
+SQL: SELECT `id`,`curroomnum`,`snap`,`virtualguest`,`online`,`nickname` FROM `ss_member` WHERE ( broadcasting = 'y' ) LIMIT 15   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_announce` [ RunTime:0.001000s ]
+SQL: SELECT `id`,`title` FROM `ss_announce` ORDER BY addtime LIMIT 9   [ RunTime:0.001001s ]
+SQL: SELECT `curroomnum`,`nickname`,`ucuid`,`starttime` FROM `ss_member` WHERE (  canlive='y' and  date_format(FROM_UNIXTIME(starttime),'%m-%Y')=date_format(now(),'%m-%Y') and  date_format(FROM_UNIXTIME(starttime),'%H%i')>date_format(now(),'%H%i') ) ORDER BY date_format(FROM_UNIXTIME(starttime),'%H%i') asc LIMIT 4   [ RunTime:0.003000s ]
+SQL: SELECT `id`,`nickname`,`curroomnum`,`maxonline`,`earnbean`,`snap`,`starttime`,`online`,`virtualguest`,`offlinevideo`,`broadcasting` FROM `ss_member` WHERE ( broadcasting = 'y' ) ORDER BY regtime desc LIMIT 6   [ RunTime:0.003000s ]
+SQL: SELECT `id`,`nickname`,`curroomnum`,`maxonline`,`earnbean`,`snap`,`starttime`,`online`,`virtualguest`,`offlinevideo`,`broadcasting` FROM `ss_member` WHERE ( broadcasting = 'y' ) ORDER BY (online+virtualguest) desc LIMIT 15   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 46 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 47 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 48 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 49 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 50 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 51 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 52 行.
+NOTIC: [8] Undefined index: _URL_ C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 53 行.
+NOTIC: [8] Undefined index: uid C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 118 行.
+NOTIC: [8] Undefined index: uid C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 118 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 152 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 205 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: broadcasting C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 232 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 314 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 354 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 369 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 369 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 383 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined variable: all C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 397 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+NOTIC: [8] Undefined index: fans C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\db3220628076a0d3c02e2f83e6df6544.php 第 460 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:15+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo/t/0.7591414626222104
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:15+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo2/t/0.38867448712699115
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.002000s ]
+
+[ 2016-03-30T10:26:19+08:00 ] 127.0.0.1 /index.php/User/interestByList/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_attention` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_attention` WHERE ( attuid=909 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: linkFront C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 3040 行.
+SQL: SELECT * FROM `ss_attention` WHERE ( attuid=909 ) ORDER BY addtime desc LIMIT 0,12   [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 3044 行.
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_coindetail` [ RunTime:0.002000s ]
+SQL: SELECT uid,sum(coin) as total FROM `ss_coindetail` where type="expend" and uid>0 and touid=909 group by uid order by total desc LIMIT 5 [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=891 )  [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=909 )  [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=521 )  [ RunTime:0.003001s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=887 )  [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM ss_guard g [ RunTime:0.002000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'g' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM ss_guard g
+SQL: SELECT g.*,m.curroomnum,m.nickname,`ucuid` FROM ss_guard g LEFT JOIN ss_member m on m.id = g.userid WHERE ( g.anchorid = 909 and g.maturitytime >1459304779 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_richlevel` [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=59699331 and spendcoin_low<=59699331 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=70844186 and spendcoin_low<=70844186 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2147485557 and spendcoin_low<=2147485557 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_richlevel` WHERE ( spendcoin_up>=2147580147 and spendcoin_low<=2147580147 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:20+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo/t/0.5275932983495295
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.002000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:20+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo2/t/0.6211110041476786
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:23+08:00 ] 127.0.0.1 /index.php/User/settlement/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_beandetail` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_beandetail` WHERE ( uid=909 and type="expend" and action="settlement" ) ORDER BY addtime desc  [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:24+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo/t/0.03091829619370401
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:24+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo2/t/0.43993007112294436
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:25+08:00 ] 127.0.0.1 /index.php/User/charge/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ProxyUserID C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 3796 行.
+SQL: SELECT `id`,`nickname` FROM `ss_member` WHERE ( sellm="1" ) ORDER BY id desc  [ RunTime:0.003001s ]
+INFO: [ view_parse ] --START--
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: proxyuserid C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\ae861449a0ae60ae0f5869bb8a807d2c.php 第 55 行.
+NOTIC: [8] Undefined variable: proxyusername C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\ae861449a0ae60ae0f5869bb8a807d2c.php 第 61 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:29+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo/t/0.6033408362418413
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-03-30T10:26:29+08:00 ] 127.0.0.1 /index.php/User/exchange/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_beandetail` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_beandetail` WHERE ( uid=909 and type="expend" and action="exchange" ) ORDER BY addtime desc  [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:30+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo/t/0.566075183916837
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.002001s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=13008414 and earnbean_low<=13008414 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:30+08:00 ] 127.0.0.1 /index.php/Show/show_headerInfo2/t/0.4585459807422012
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:31+08:00 ] 127.0.0.1 /index.php/User/getConsume/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: begin C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 3494 行.
+SQL: SHOW COLUMNS FROM `ss_coindetail` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_coindetail` WHERE ( type="expend" and uid=909 and date_format(FROM_UNIXTIME(addtime),"%m-%Y")=date_format(now(),"%m-%Y") ) LIMIT 1   [ RunTime:0.004000s ]
+NOTIC: [8] Undefined variable: linkFront C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 3524 行.
+SQL: SELECT * FROM `ss_coindetail` WHERE ( type="expend" and uid=909 and date_format(FROM_UNIXTIME(addtime),"%m-%Y")=date_format(now(),"%m-%Y") ) ORDER BY addtime desc LIMIT 0,20   [ RunTime:0.006001s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: begin C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\bd940ea22c7dcd589bf04451a03e0263.php 第 150 行.
+NOTIC: [8] Undefined index: end C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\bd940ea22c7dcd589bf04451a03e0263.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:31+08:00 ] 127.0.0.1 /index.php/User/info_edit/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003001s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:32+08:00 ] 127.0.0.1 /index.php/User/showadmin/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_roomadmin` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_roomadmin` WHERE ( uid=909 ) ORDER BY addtime desc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Lib\Action\UserAction.class.php 第 2850 行.
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\6c7090e40bcea852def5b136ba70a5dc.php 第 133 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-03-30T10:26:32+08:00 ] 127.0.0.1 /index.php/User/toolinuse/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM ss_membercar m [ RunTime:0.002000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'm' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM ss_membercar m
+SQL: SELECT * FROM ss_membercar m LEFT JOIN ss_car c  ON m.carID = c.id WHERE ( m.uid = 909 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Tpl/Newtpl/Public/header1.html) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Core\Lib\Template\ThinkTemplate.class.php 第 695 行.
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:33+08:00 ] 127.0.0.1 /index.php/User/queryMounts
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT `enableMounts` FROM `ss_member` WHERE ( id=909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_membercar` [ RunTime:0.002001s ]
+SQL: SELECT `id` FROM `ss_membercar` WHERE ( uid = 909 and carID=2 and endtime>'1459304793' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-03-30T10:26:33+08:00 ] 127.0.0.1 /index.php/User/myNos/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_roomnum` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_roomnum` WHERE ( uid=909 ) ORDER BY addtime asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_roomnum` WHERE ( uid=909 ) ORDER BY addtime asc  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_attention` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_attention` WHERE ( uid=909 ) ORDER BY addtime desc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=931 )  [ RunTime:0.002000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=854 )  [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-30T10:26:33+08:00 ] 127.0.0.1 /index.php/User/myfavor/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ss_siteconfig` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `ss_siteconfig` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ss_server` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `ss_server` WHERE ( isdefault="y" )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ss_member` WHERE ( isvirtual="y" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_favor` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_favor` WHERE ( uid=909 ) ORDER BY addtime desc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( id=931 )  [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `ss_member` [ RunTime:0.004001s ]
+SQL: SELECT `emceeagent`,`sign` FROM `ss_member` WHERE ( `id` = 909 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ss_emceelevel` [ RunTime:0.001000s ]
+SQL: SELECT `levelid`,`levelname` FROM `ss_emceelevel` WHERE ( earnbean_up>=14482150 and earnbean_low<=14482150 ) ORDER BY levelid asc  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: iconclass C:\Users\Administrator\AppData\Roaming\HBuilder\userprofiles\825591305@qq.com\fmscms-node3.0\Runtime\Cache\5e1521410c26cc6f1b540cfbfe93dbe3.php 第 189 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+

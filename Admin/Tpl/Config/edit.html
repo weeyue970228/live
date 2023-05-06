@@ -1,0 +1,114 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+	<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+	<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidator.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
+
+</head>
+<body>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href="javascript:;" ><em>设置</em></a><span>|</span>
+        <a href="/Admin/index.php/Config/lists/"><em>管理</em></a><span>|</span>
+        <a href="javascript:;" class="on"><em>{$info['id']?'编辑':'添加'} </em></a>
+        
+	</div>
+</div>
+
+<form action="__URL__/update/" method="post" id="myform">
+<input type="hidden" name="id" value="{$info.id}" />
+<div class="pad-10">
+<div class="col-tab">
+<div id="div_setting_1" class="contentList pad-10">
+<table width="100%"  class="table_form">
+  <tr>
+    <th style="width: 100px;">字段名</th>
+    <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="50" value="{$info['name']}"/>  （请输入字段名 英文字母开头，长度不超过30） </td>
+  </tr>
+  
+  <tr>
+    <th style="width: 100px;">字段标题</th>
+    <td class="y-bg"><input type="text" class="input-text" name="title" id="title" size="50" value="{$info['title']}"/> （请输入字段标题，用于表单显示） </td>
+  </tr>
+  
+  <tr>
+    <th style="width: 100px;">字段类型</th>
+    <td class="y-bg"><select name="type" id="data-type">
+								<option value="">----请选择----</option>
+								<option value="num" rule="int(10) UNSIGNED NOT NULL" <if condition="$info.type eq 'num'">selected</if> >数字</option>
+								<option value="string" rule="varchar(255) NOT NULL" <if condition="$info.type eq 'string'">selected</if>>字符串</option>
+								<option value="datetime" rule="int(10) NOT NULL" <if condition="$info.type eq 'datetime'">selected</if>>时间</option>
+								<option value="bool" rule="tinyint(2) NOT NULL" <if condition="$info.type eq 'bool'">selected</if>>布尔</option>
+								
+								</select>  （请输入字段标题，用于表单显示） </td>
+  </tr>  
+  
+  <tr>
+    <th style="width: 100px;">字段定义</th>
+    <td class="y-bg"><input type="text" class="input-text" name="field" id="data-field" size="50" value="{$info['field']}"/> （字段属性的sql表示） </td>
+  </tr>
+  
+  <tr>
+    <th style="width: 100px;">默认值</th>
+    <td class="y-bg"><input type="text" class="input-text" name="value" id="value" size="50" value="{$info['value']}"/> （字段的默认值） </td>
+  </tr>
+  
+  <tr>
+    <th style="width: 100px;">字段备注</th>
+    <td class="y-bg"><input type="text" class="input-text" name="remark" id="remark" size="50" value="{$info['remark']}"/> （用于表单中的提示） </td>
+  </tr>
+ 
+  
+</table>
+</div>
+
+<div class="bk15"></div>
+<input name="dosubmit" type="submit" value="提交" class="button">
+</div>
+</div>
+</form>
+</body>
+<script>
+function SwapTab(name,cls_show,cls_hide,cnt,cur){
+    for(i=1;i<=cnt;i++){
+		if(i==cur){
+			 $('#div_'+name+'_'+i).show();
+			 $('#tab_'+name+'_'+i).attr('class',cls_show);
+		}else{
+			 $('#div_'+name+'_'+i).hide();
+			 $('#tab_'+name+'_'+i).attr('class',cls_hide);
+		}
+	}
+}
+
+function showsmtp(obj,hiddenid){
+	hiddenid = hiddenid ? hiddenid : 'smtpcfg';
+	var status = $(obj).val();
+	if(status == 1) $("#"+hiddenid).show();
+	else  $("#"+hiddenid).hide();
+}
+
+$(function(){
+	$('#data-type').change(function(){
+		$('#data-field').val($(this).find('option:selected').attr('rule'));
+	});
+})
+</script>	
+</html>

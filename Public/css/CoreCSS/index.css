@@ -1,0 +1,141 @@
+/*头条
+*/
+
+#titleCont {
+  float: right;
+  margin-top: 8px;
+}
+#titleCont .first_runway {
+	position: relative;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	font-size: 14px;
+	padding: 2px 0;
+	height: 24px;
+	line-height: 24px
+}
+
+#titleCont .first_runway embed {
+	position: absolute;
+	z-index: 5
+}
+
+#titleCont .first_runway em {
+	margin: 0 10px 0 84px;
+	overflow: hidden;
+	float: left;
+	  display: inline;
+  vertical-align: top;
+}
+#titleCont .first_runway em a{
+   float: none;
+   	font-size: 14px;
+   	margin: auto;
+  display: inline;
+  vertical-align: top;
+}
+#titleCont .first_runway em a:hover{
+	
+	text-decoration: none;
+}
+
+#titleCont .first_runway i {
+	vertical-align: middle;
+	  float: left;
+}
+
+
+#titleCont .first_runway .icons {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	right: 3px;
+	top: 5px;
+	background: url(/Public/images/iconsBg.png) left top no-repeat
+}
+
+#titleCont .first_runway .RunwayTime {
+	font-style: normal;
+	margin: 2px 5px 0;
+	float: left;
+}
+
+#titleCont .first_runway .laba {
+	top: -12px;
+	left: -1px
+}
+
+#titleCont .first_runway .txcolor {
+	color: #3d9cdb
+}
+
+#titleCont  .ti {
+	position: absolute;
+	z-index: 5;
+	right: -50px;
+	top: 0
+}
+
+#titleCont .first_runway .newtime {
+	display: none
+}
+
+#titleCont .first_runway span {
+	display: inline-block;
+	padding: 0 2px;
+	vertical-align: middle
+}
+
+#titleCont .first_runway span.icon_rich_level,.room_ynew li span.icon_live_level {
+	padding: 0
+}
+
+#titleCont .first_runway img {
+	width: 23px;
+	height: 23px;
+		vertical-align:middle;
+}
+
+
+ #titleCont .first_runway .tipBoxRunway {
+    background: #383b43 none repeat scroll 0 0;
+    font-size: 12px;
+    font-style: normal;
+    padding: 5px 10px 10px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    white-space: normal;
+    width: 300px;
+    z-index: 100;
+    border-radius:10px;
+    display: none;
+}
+#titleCont .first_runway .tipBoxRunway p {
+    color: #fff;
+    line-height: 180%;
+    padding-top: 5px;
+}
+
+#titleCont .first_runway .tipBoxRunway .RunwayTF{
+	   display: none;
+	
+}
+
+.star_shining .start_img {
+  display: inline-block;
+  width: 43px;
+  height: 18px;
+  position: absolute;
+  top: 5px;
+  margin-left: -5px;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+
+.star_shining .star_shining_5 {
+  background-image: url(/Public/images/star_shining_5.gif);
+}
+/*头条
+*/

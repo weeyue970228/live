@@ -1,0 +1,434 @@
+
+
+.page{
+	*height:32px;
+	text-align:center
+}
+
+.page a,.page span{
+	display:inline-block;
+	width:28px;
+	height:28px;
+	margin:0 3px;
+	text-align:center;
+	color:#999;
+	font:12px/28px Microsoft YaHei;
+	background:#fff;
+	border-radius:3px;
+	border:1px solid #cfcfcf
+}
+
+.page a:link,.page a:visited,.page span{
+	background:#fff
+}
+
+.page a:hover,.page a:active,.page .page-cur{
+	color:#fff;
+	text-decoration:none;
+	background:#ff4e00;
+	border:1px solid #ff4e00
+}
+
+.page .page-pre,.page .page-next{
+	_position:relative;
+	_top:-2px;
+	width:50px;
+	_margin:0 5px
+}
+
+
+.family-list li{
+	float:left;
+	position:relative;
+	width:151px;
+	height:184px;
+	margin-right:22px;
+	margin-bottom:50px;
+	background:#f3f3f3
+}
+
+.family-list .hot-team-avatar{
+	position:relative;
+	display:block;
+	height:113px;
+	margin-bottom:14px
+}
+
+.family-list .hot-team-avatar:hover .hot-team-hover{
+	display:block
+}
+
+.family-list .hot-team-hover{
+	position:absolute;
+	left:0;
+	top:0;
+	width:151px;
+	height:113px;
+	background:#fff;
+	filter:alpha(opacity=30);
+	opacity:0.3;
+	z-index:99;
+	display:none
+}
+
+.family-list .hot-team-cover{
+	position:absolute;
+	left:0;
+	top:85px;
+	display:block;
+	width:151px;
+	height:28px;
+	background:#000;
+	filter:alpha(opacity=70);
+	opacity:0.7
+}
+
+.family-list .hot-team-fans{
+	position:absolute;
+	left:0;
+	top:85px;
+	display:block;
+	width:131px;
+	height:28px;
+	line-height:28px;
+	padding-left:20px;
+	color:#cccccc
+}
+
+.family-list .hot-team-fans em{
+	margin-right:8px;
+	margin-bottom:-2px
+}
+
+.family-list .hot-team-fans span{
+	display:inline-block;
+	width:45px
+}
+
+.family-list p{
+	padding-left:13px
+}
+
+.family-list .hot-team-name{
+	font:14px Microsoft YaHei;
+	margin-bottom:6px
+}
+
+.family-list .hot-team-owner{
+	color:#7c7c7c
+}
+
+.family-list .medal-family{
+	position:absolute;
+	left:152px;
+	top:0
+}
+
+
+.my-team{
+	width:1000px;
+	margin-bottom:50px;
+	overflow:hidden;
+	font-family:Microsoft YaHei
+}
+
+.my-team .my-team-hd h2{
+	font-size:24px;
+	margin-top:-3px;
+	padding-bottom:15px
+}
+
+.my-team .my-team-bd{
+	padding:30px 0 25px;
+	border-top:1px solid #e5e5e5;
+	border-bottom:1px solid #e5e5e5
+}
+
+.my-team-info{
+	float:left;
+	width:435px;
+	padding-top:35px
+}
+
+.my-team-info .avatar{
+	margin-right:16px
+}
+
+.my-team-info .my-team-title{
+	height:40px;
+	line-height:40px;
+	margin-bottom:16px
+}
+
+.my-team-info h2{
+	display:inline;
+	font-size:32px;
+	font-weight:bold;
+	margin-right:10px
+}
+
+.my-team-info .my-team-fans span{
+	position:relative;
+	top:-5px;
+	margin:0 20px 0 10px;
+	color:#ccc;
+	font:18px Arial
+}
+
+.my-team-bd .anchor-list{
+	float:left;
+	width:565px;
+	overflow:hidden
+}
+
+.my-team-bd ul{
+	width:610px
+}
+
+.my-team-bd li{
+	height:150px;
+	margin-right:42px
+}
+
+.build-last{
+	margin-bottom:50px
+}
+
+.build-last h3{
+	font:18px Microsoft YaHei;
+	margin-bottom:25px
+}
+
+.build-last ul{
+	float:left;
+	width:1005px
+}
+
+.build-last li{
+	position:relative;
+	float:left;
+	width:212px;
+	height:68px;
+	margin-right:50px;
+	background:#f3f3f3
+}
+
+.build-last .build-last-avatar{
+	float:left;
+	display:block;
+	width:80px;
+	height:68px;
+	margin-right:15px
+}
+
+.build-last .medal-family{
+	position:absolute;
+	left:58px;
+	top:1px
+}
+
+.build-last .build-last-name{
+	_height:20px;
+	padding:12px 0 6px;
+	font:14px Microsoft YaHei
+}
+
+.build-last .build-last-fans{
+	color:#bababa
+}
+
+.build-last .build-last-fans em{
+	margin-bottom:-3px;
+	margin-right:3px
+}
+
+.build-last .build-last-fans span{
+	margin-right:15px
+}
+
+.build-last .build-team{
+	float:left;
+	font-family:Microsoft YaHei
+}
+
+.build-last .build-team a{
+	display:block;
+	width:112px;
+	height:31px;
+	line-height:31px;
+	text-align:center;
+	color:#fff;
+	font-size:16px;
+	background:#ea5300;
+	border-top:1px solid #d52200;
+	border-bottom:1px solid #dedede
+}
+
+.build-last .build-team a:hover,.build-last .build-team a:active{
+	text-decoration:none;
+	background:#e70000
+}
+
+.build-last .build-team .build-team-disabled{
+	cursor:default;
+	color:#666;
+	border-top:1px solid #e6e6e6;
+	background:#E6E6E6 !important
+}
+
+.build-last .build-team .build-team-disabled:hover{
+    background: #F44848 !important;
+	color:#fff;
+}
+
+.build-last .build-team p{
+	color:#a59797;
+	margin-top:10px
+}
+
+.build-last .build-team-applyed .icon-confirm{
+	position:relative;
+	top:5px;
+	*top:2px;
+	_top:5px;
+	margin-right:5px
+}
+
+.hot-team{
+	overflow:hidden
+}
+
+.hot-team-hd{
+	height:40px;
+	line-height:40px;
+	margin-bottom:25px;
+	font-family:Microsoft YaHei
+}
+
+.hot-team-hd h2{
+	float:left;
+	font-size:24px;
+	margin-right:40px;
+	margin-top:-3px
+}
+
+.hot-team-hd a{
+	font-size:16px
+}
+
+.hot-team-hd i{
+	margin:0 15px;
+	font-size:14px;
+	font-style:italic
+}
+
+.hot-team-hd a,.hot-team-hd i{
+	color:#999
+}
+
+.hot-team-hd a:hover,.hot-team-hd a:active,.hot-team-hd .cur{
+	color:#333
+}
+
+.hot-team-list{
+	width:1070px;
+	padding-bottom:50px
+}
+
+.hot-team-list ul{
+	width:1070px
+}
+
+.family-live h2{
+	font:24px Microsoft YaHei
+}
+
+.family-live .family-live-bd{
+	position:relative;
+	width:1128px;
+	padding:40px 0 38px;
+	margin-top:22px;
+	margin-bottom:45px;
+	overflow:hidden;
+	border:1px solid #e7e7e7
+}
+
+.family-live .btn-family-left{
+	position:absolute;
+	top:95px;
+	left:0;
+	z-index:99
+}
+
+.family-live .btn-family-right{
+	position:absolute;
+	top:95px;
+	right:0;
+	z-index:99
+}
+
+.family-live ul{
+	width:1100px;
+	height:170px;
+	margin-left:30px;
+	overflow:hidden
+}
+
+.family-live li{
+	margin-right:22px
+}
+
+.family-live li .anchor-live-cover{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0
+}
+
+.family-live li .family-live-name{
+	display:none;
+	position:absolute;
+	top:75px;
+	left:0;
+	width:150px;
+	height:24px;
+	line-height:24px;
+	padding:0 5px;
+	color:#fff;
+	overflow:hidden;
+	z-index:10;
+	word-break:break-all;
+	word-wrap:break-word
+}
+
+.family-live li .hot-anchor-fans{
+	z-index:10
+}
+
+.family-live li .hot-anchor-fans span{
+	float:left;
+	display:none
+}
+
+.family-live li .hot-anchor-fans .icon-liveW{
+	margin-bottom:-1px;
+	margin-right:3px
+}
+
+.family-live li .hot-anchor-hover{
+	opacity:0.25;
+	filter:alpha(opacity=25);
+	background:#000
+}
+
+.family-live li .anchor-play{
+	top:24px
+}
+
+.family-live li .hover .family-live-name,.family-live li .hover .anchor-live-cover{
+	display:block
+}
+
+.family-live li .hover .hot-anchor-fans span{
+	display:inline
+}

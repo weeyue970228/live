@@ -1,0 +1,6 @@
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+
+# Rewrite 定义各重写规则
+
+RewriteRule ^([0-9]+)$ index.php/Show/index/roomnum/$1/

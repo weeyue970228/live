@@ -1,0 +1,3 @@
+<?php
+//000000000020a:3:{i:0;a:3:{s:8:"nickname";s:7:"test001";s:4:"snap";s:40:"/Public/bigpic/2016-03/56e3bf2035b8c.jpg";s:10:"curroomnum";s:10:"1924754907";}i:1;a:3:{s:8:"nickname";s:21:"哦哦哦哦哦哦哦";s:4:"snap";s:40:"/Public/bigpic/2016-03/56e3b96e4f19d.jpg";s:10:"curroomnum";s:10:"1295104980";}i:2;a:3:{s:8:"nickname";s:6:"e10000";s:4:"snap";s:40:"/Public/bigpic/2016-03/56e3b92f1b51d.jpg";s:10:"curroomnum";s:4:"1558";}}
+?>

@@ -1,0 +1,100 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理中心</title>
+<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" />
+<link rel="stylesheet" href="/Public/newtpl2/css/common.css" type="text/css" />
+<script language="javascript" src="__PUBLIC__/js/CoreJS/jquery.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/common.js"></script>
+</head>
+<body>
+<include file="Public:header" />
+<div class="wrap">
+  <div class="usercenter">
+    <include file="User:header" />
+
+	<div class="user-manager">
+		<ul>
+			<li>
+				<a href="__URL__/myfavor/" title="我的收藏">
+					<em class="t1"></em>
+					<strong class="tle">我收藏的<br />直播房间</strong>
+				</a>
+			</li>
+			<li>
+				<a href="__URL__/interestToList/" title="我的偶像">
+					<em class="t2"></em>
+					<strong>我的偶像</strong>
+				</a>
+			</li>
+			<li>
+				<a href="__URL__/myNos/" title="我的靓号">
+					<em class="t3"></em>
+					<strong>我的靓号</strong>
+				</a>
+			</li>
+			<li>
+				<a href="__URL__/info_edit/" title="个人资料">
+					<em class="t4"></em>
+					<strong>我的个人资料</strong>
+				</a>
+			</li>
+			<li>
+				<a href="/{$_SESSION['roomnum']}" title="我的直播">
+					<em class="t5"></em>
+					<strong class="tle">我的<br />直播房间</strong>
+				</a>
+			</li>
+			
+			<li>
+				<a href="__URL__/showadmin/" title="我的房管">
+					<em class="t7"></em>
+					<strong>我的房管</strong>
+				</a>
+			</li>
+       
+			<li>
+				<a href="__URL__/interestByList/" title="我的粉丝">
+					<em class="t9"></em>
+					<strong>我的粉丝</strong>
+				</a>
+			</li>
+			<li>
+				<a href="__URL__/toolinuse/" title="我的道具">
+					<em class="t10"></em>
+					<strong>我的道具</strong>
+				</a>
+			</li>
+			<li>
+				<a href="__URL__/getConsume/" title="">
+					<em class="t12"></em>
+					<strong>我的帐单</strong>
+				</a>
+			</li>
+			
+			<if condition="$emceeagent eq 'y'">
+			<li>
+				<a href="__URL__/sqmyfamily/" title="">
+					<em class="t13"></em>
+					<strong>我的家族</strong>
+				</a>
+			</li>
+			  <?php if($userinfo['sign']=="y")
+	       {?>
+			<li>
+				<a href="__URL__/settlement/" title="">
+					<em class="t6"></em>
+					<strong>我的结算</strong>
+				</a>
+			</li>
+			   <?php } ?>
+			</if>
+		</ul>
+	</div>
+  </div>
+</div>
+<include file="Public:footer" />
+</body>
+</html>

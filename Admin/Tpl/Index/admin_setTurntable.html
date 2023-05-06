@@ -1,0 +1,110 @@
+﻿<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<title>FMScms - 后台管理中心</title>
+		<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+		<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+		<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+		<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+		<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidator.js" charset="UTF-8"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
+		
+		<script language="javascript" type="text/javascript" src="/Public/js/CoreJS/ajaxfileupload.js" charset="UTF-8"></script>
+		<script type="text/javascript">
+			window.focus();
+		</script>
+	</head>
+
+	<body>
+		<style type="text/css">
+			html{_overflow-y:scroll}
+		</style>
+		<script type="text/javascript">
+		</script>
+		<form action="__URL__/save_setTurntable/" method="post" id="myform" enctype="multipart/form-data">
+			<input type="hidden" name="id" value="1"></input>
+			<div class="pad-10">
+				<div class="col-tab">
+					<div id="div_setting_1" class="contentList pad-10">
+						<table width="100%" class="table_form">
+							<tr>
+								<td>
+									转盘背景图
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="file" name="file_bg" />
+									<br  />
+									<!--<input type="text" name="bg_path" />-->
+								</td>
+							</tr>
+							<!--<tr>
+								<td>
+									转盘指针
+								</td>
+								
+								
+							</tr>
+							
+							
+							<tr>
+								<td>
+									<input type="file" name="file_point" />
+									<br  />
+									<input type="text" name="point_path" />
+								</td>
+							</tr>-->
+							
+							<tr>
+								<td>
+									礼物个数
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<td>
+									<input type="text" name="count" value="{$count}" />
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									转盘需要花费秀豆
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<td>
+									<input type="text" name="turntable_expense" value="{$turntable_expense}" />
+								</td>
+							</tr>
+							
+						</table>
+					</div>
+
+					<div class="bk15"></div>
+					<input name="dosubmit" type="submit" value="提交" class="button">
+				</div>
+			</div>
+		</form>
+		当前预览
+		<iframe src="/game/turntable/index.html" style="width: 600px;height: 600px;border: none;"></iframe>
+	</body>
+	<script type="text/javascript">
+
+	</script>
+
+</html>

@@ -1,0 +1,156 @@
+﻿<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidator.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	window.focus();
+</script>
+</head>
+<body>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href='__URL__/admin_menu_manage_list/' ><em>管理菜单</em></a><span>|</span><a href='__URL__/add_admin_menu_manage/' ><em>添加菜单</em></a><span>|</span><a href='javascript:;' class="on"><em>编辑菜单</em></a>
+	</div>
+</div>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style><script type="text/javascript"> 
+<!--
+	$(function(){
+		$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, function(){this.close();$(obj).focus();})}});
+		$("#channelstr").formValidator({onshow:"请输入类别名称",onfocus:"请输入类别名称",oncorrect:"输入正确"}).inputValidator({min:1,onerror:"请输入类别名称"});
+	})
+//-->
+</script>
+
+<form name="myform" id="myform" action="__URL__/do_edit_admin_menu_manage/" method="post">
+<input type="hidden" name="id" value="{$id}"></input>
+<div class="pad-10">
+<div class="col-tab">
+<ul class="tabBut cu-li">
+<li id="tab_setting_1" class="on">基本选项</li>
+</ul>
+<div id="div_setting_1" class="contentList pad-10">
+
+<table width="100%" class="table_form ">
+	  
+	  <tr style="display:none;">
+        <th width="200">请选择要修改的菜单类型</th>
+        <td>
+			<select name="menutype">
+				<option value="0">≡请选择要修改的菜单类型 ≡</option>
+				<option value="1" <eq name="menutype" value="1">selected</eq>>一级菜单</option>
+				<option value="2" <eq name="menutype" value="2">selected</eq>>二级菜单</option>
+				<option value="3" <eq name="menutype" value="3">selected</eq>>三级菜单</option>
+			</select>
+			<span>&nbsp;&nbsp;二三级菜单请注意选择上级菜单</span>
+		</td>
+      </tr>
+      <tr style="display:none;">
+        <th width="200">一级菜单：</th>
+        <td>
+			<select name="parentid" id="first_menu">
+				<option value="0">≡ 一级菜单 ≡</option>
+				<volist name="first_menu" id="vo">
+				<option value="{$vo['id']}" <if condition = "$vo['id'] eq $first_id">selected</if>>{$vo['menuname']}</option>
+				</volist>
+			</select>
+		</td>
+      </tr>
+      <tr style="display:none;">
+        <th width="200">二级菜单：</th>
+        <td>
+			<select name="twoid" id="twoid">
+				<option value="0" <eq name="two_id" value="0">selected</eq> >≡ 二级菜单 ≡</option>
+				<volist name="two_menu" id="vo">
+				<option value="{$vo['id']}" <if condition = "$vo['id'] eq $two_id">selected</if>>{$vo['menuname']}</option>
+				</volist>
+			</select>
+			
+		</td>
+      </tr>
+      <tr>
+        <th>菜单名称：</th>
+        <td>
+			<input type="text" name="menuname" id="menuname" class="input-text" value="{$menu['menuname']}">
+		</td>
+      </tr>
+      <tr style="display:none;">
+        <th>控制器：</th>
+        <td>
+			<input type="text" name="url" class="input-text" value="{$menu['url']}">
+		</td>
+      </tr>
+      <tr>
+        <th>面包屑导航：</th>
+        <td>
+			<input type="text" name="position" id="position" class="input-text" value="{$menu['position']}">
+		</td>
+      </tr>
+      <tr>
+        <th>是否显示：</th>
+        <td>
+			<select name="is_show">
+				<option value="1" <eq name="menu['is_show']" value="1">selected</eq>>显示</option>
+				<option value="0" <eq name="menu['is_show']" value="0">selected</eq>>隐藏</option>
+			</select>
+		</td>
+      </tr>
+      
+	
+</table>
+</div>
+
+ <div class="bk15"></div>
+    <input name="dosubmit" type="submit" value="提交" class="button">
+
+</form>
+</div>
+
+</div>
+<!--table_form_off-->
+</div>
+
+<script language="JavaScript">
+<!--
+	window.top.$('#display_center_id').css('display','none');
+	
+	//获取二级菜单
+	$("#first_menu").change(function(){
+		var first_menu=$("#first_menu  option:selected").val();
+		
+		$.ajax({
+			type:"POST",
+			url:"__URL__/get_two_adminmenu",
+			data:"first_menu="+first_menu,
+			success:function(data){
+				var two_data="";
+				for(var i=0;i<data.length;i++){
+					two_data+="<option value='"+data[i]['id']+"'>"+data[i]['menuname']+"</option>";
+				}
+
+				$("#twoid").html(two_data);
+			},
+			error:function(data){
+				console.log('erro');
+			}
+		});
+	});
+	
+	//-->
+</script>

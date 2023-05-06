@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guardProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" appName="5Show" appVersion="1.0" targetDir="E:\WebRoot\5show\Action_Zend" xsi:noNamespaceSchemaLocation="guard.xsd">
+	
+	<options>
+		<phpVersion value="5"/>
+
+		<phpFilesExtensions>
+			<extension>php</extension>
+			<extension>inc</extension>
+			<extension>php3</extension>
+			<extension>php4</extension>
+			<extension>phtml</extension>
+		</phpFilesExtensions>
+
+		<supportShortTags value="true"/>
+		<supportASPTags value="false"/>
+		<workWithEncodedFilesOnly value="false"/>
+		
+		<expiration>
+			<none/>
+		</expiration>
+
+		<licenseType value="none"/>
+		<privateKey>
+			<keyData/>
+		</privateKey>
+
+		<headerInformation>
+			<default/>
+		</headerInformation>
+
+		<optimizationLevel value="full"/> 
+		<ignoreErrors value="true"/>
+		<verbosityLevel value="verbose"/>
+		<allowEncodedFileModification value="true"/>
+		<resolveSymlinks value="true"/>
+		
+		<securityMethodList>
+			<securityMethod name="encodePhpFiles" value="true"/>
+			<securityMethod name="removeLineNumbers" value="false"/>
+			<securityMethod name="removePhpDoc" value="true"/>
+			<securityMethod name="obfuscateVariables" value="false"/>
+			<securityMethod name="obfuscateFunctions" value="false"/>
+			<securityMethod name="obfuscateClasses" value="false"/>
+			<securityMethod name="obfuscatePhpEntities" value="false"/>
+		</securityMethodList>
+
+		<ignorePatterns>
+			<pattern>CVS</pattern>
+			<pattern>.svn</pattern>
+			<pattern>.#*</pattern>
+			<pattern>.cvsignore</pattern>
+		</ignorePatterns>
+	</options>
+
+	<!-- Source entries: -->
+	<source path="E:\WebRoot\5show\Lib\Action">
+		<options/>
+	</source>
+</guardProject>

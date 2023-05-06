@@ -1,0 +1,202 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>搜索</title>
+		<include file="Public:head" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/newtpl2/css/index.css" />
+		<script type="text/javascript">
+			$(function() {
+				$(".bodys p").not(":first").hide();
+				$(".searchboxs ul li").mouseover(function() {
+					var index = $(this).index();
+					if (index == 0) {
+						$(this).find("a").addClass("style1");
+						console.log($("li").eq(1).find("a"));
+						$("#i2").removeClass("style2");
+						$("#i3").removeClass("style3");
+					}
+					if (index == 1) {
+						$(this).find("a").addClass("style2");
+						$("#i1").removeClass("style1");
+						$("#i3").removeClass("style3");
+					}
+					if (index == 2) {
+						$(this).find("a").addClass("style3");
+						$("#i2").removeClass("style2");
+					}
+					var index = $(this).index();
+					$(".bodys p").eq(index).show().siblings().hide();
+				});
+			});
+			//搜索
+			function serch(type) {
+				var keyWord = $("#" + type).val();
+				window.location.href = "__URL__/search/type/" + type + "/keyWord/" + keyWord;
+				//添加历史搜索记录
+				if (localStorage.getItem("promptNick") == null) {
+					var h = "";
+				} else {
+					var h = localStorage.getItem("promptNick");
+				}
+				if (localStorage.getItem("promptRoom") == null) {
+					var h2 = "";
+				} else {
+					var h2 = localStorage.getItem("promptRoom");
+				}
+				Array.prototype.S = String.fromCharCode(2);
+				Array.prototype.in_array = function(e) {
+					var r = new RegExp(this.S + e + this.S);
+					return (r.test(this.S + this.join(this.S) + this.S));
+				};
+				//判断历史是否已有
+				if (type == "nick") {
+					var arr = h.split("~?*?*?*?");
+					if (!arr.in_array(keyWord)) {
+						h = h + "~?*?*?*?" + keyWord;
+					}
+					localStorage.setItem("promptNick", h);
+				} else {
+					var arr2 = h2.split("~?*?*?*?");
+					if (!arr2.in_array(keyWord)) {
+						h2 = h2 + "~?*?*?*?" + keyWord;
+					}
+					localStorage.setItem("promptRoom", h2);
+				}
+			}
+			$(function() {
+				var h = localStorage.getItem("promptNick");
+				var arr = h.split("~?*?*?*?");
+				var h2 = localStorage.getItem("promptRoom");
+				var arr2 = h2.split("~?*?*?*?");
+				if (arr.length > 1 || arr2.length > 1) {
+					$("#del").show();
+				}
+				var k = 0;
+				for (var i = arr.length; i > 0; i--) {
+					if (k > 5) {
+						k = 0;
+						return 0;
+					}
+					k++;
+					$("#promptNick").append("<option>" + arr[i - 1] + "</option>");
+				}
+				for (var i = arr2.length; i > 0; i--) {
+					if (k > 5) {
+						k = 0;
+						return 0;
+					}
+					k++;
+					$("#promptRoom").append("<option>" + arr2[i - 1] + "</option>");
+				}
+			});
+
+			function deldata() {
+				localStorage.setItem("promptNick", "");
+				localStorage.setItem("promptRoom", "");
+				location.reload();
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<include file="Public:header" />
+		<div class="contenter clear search" style="margin-top:20px;">
+
+				<div class="searchboxs">
+					<ul class="border1">
+						<li><a href="#" class="style1" id="i1">昵称</a></li>
+						<li><a href="#" id="i2">房间号</a></li>
+
+					</ul>
+					<div class="bodys">
+						<p>
+							<input type="text" value="" id="nick" class="three" placeholder="输入昵称" name="nick" list="promptNick" />
+							<datalist id="promptNick">
+
+							</datalist>
+
+							<button class="three1" onclick="serch('nick')">搜索</button>
+
+						</p>
+						<p>
+							<input type="text" value="" id="room" class="three" placeholder="输入房间号" name="roomid" list="promptRoom" />
+							<datalist id="promptRoom">
+
+							</datalist>
+							<button class="three1" onclick="serch('room')">搜索</button>
+
+						</p>
+
+						<img src="/Public/images/deldata.jpg" id="del" title="删除搜索记录" onclick="deldata()" width="11" style="float: left;margin-top: 16px;margin-left: 3px;display:none" />
+					</div>
+
+				</div>
+
+				<div class="hot-anchor" id="editorReco">
+					<div class="hot-anchor-hd">
+						{$searchNot}
+					</div>
+
+				</div>
+				
+					<div class="mian clear">
+						<div class="layout-main w1280">
+							<div class="bx hot-wrap nn-wrap">
+								<div class="hd">
+									<h2>{$searchState}</h2>
+													
+								</div>
+								<div class="bd mih175">
+									<div class="tab-content tab-cur">
+										<ul>
+										<volist name="data" id="vo">
+												<li>
+												<div class="live-panel live-panel-tag">
+													<div class="host-pic">
+														<img class="thumb" width="200" height="133" alt="{$vo['nickname']}" src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+														<a class="play-mask" target="room" href="/{$vo['curroomnum']}">
+														<div class="back"></div>
+														<span class="play-btn">播放</span>
+														</a>
+													</div>
+													<h4 class="name">
+													<a target="room" href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+													<!--<span class="host-type">热舞秀 </span>-->
+													</h4>
+													<p class="status fr">
+														<span class="" title="观众数">
+														<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+														<!--<span class="viewer" title="粉丝数">
+														<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+													</p>
+													<if condition="$vo['broadcasting'] eq 'y'">
+														<span class="live-tip">直播中<span class="arrow"></span></span>
+													<elseif condition=" $vo['offlinevideo'] neq null && $vo['offlinevideo'] neq '' " />	
+													    <span class="live-tip">录像<span class="arrow"></span></span>
+													</if>
+												</div>
+												</li>
+			   								</volist>		
+				
+										</ul>
+										<div class="page">{$page}</div>
+									</div>
+								</div>
+							</div>							
+						</div>
+		
+					</div>				
+		</div>
+
+		<include file="Public:footer" />
+			<script>
+				$(function(){
+					//图片延迟加载
+					$("img.thumb").lazyload({effect: "fadeIn"});										
+				})
+			</script>			
+	</body>
+
+</html>

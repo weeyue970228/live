@@ -1,0 +1,92 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人资料-个人中心-管理中心-{$sitename}</title>
+<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" />
+<script language="javascript" src="__PUBLIC__/js/CoreJS/jquery.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/common.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/My97DatePicker/WdatePicker.js"></script>
+<script language="javascript" src="__PUBLIC__/js/CoreJS/areas.js"></script>
+<style type="text/css">
+  #photo_table{
+  	width: 800px;
+  }
+  .photo_select{
+  	float: right;
+  }
+
+</style>
+</head>
+<body>
+<include file="Public:header" />
+<link rel="stylesheet" href="/Public/newtpl2/css/common.css" type="text/css" />
+<div class="wrap">
+
+  <div class="usercenter">
+     <include file="PhotoManage:header" />
+<script language="javascript">
+$(function(){
+ 
+ }
+)
+</script>
+    <div class="myaccount">
+      
+
+<div class="account-l">
+<a href="/index.php/PhotoManage/Index" title="我的图片" class="on">我的图片</a>
+<a href="/index.php/PhotoManage/Album_List" title="我的相册">我的相册</a> 
+<a href="/index.php/PhotoManage/Upload_Photo" title="上传图片">上传图片</a> 
+<a href="/index.php/PhotoManage/Create_Album" title="创建相册">创建相册</a> 
+</div>
+
+      <div class="account-r">
+
+      
+         <div class="usercenter_con">
+         
+         	
+            <div class="djsc_list">
+                <table border="0" id="photo_table">
+                  <tr>
+                    <th scope="col">图片名称</th>
+                    <th scope="col">图片上传时间</th>
+                    <th scope="col">相册名称</th>
+                    <th scope="col">操作项</th>
+                  </tr>
+                  <volist name="arr_photo" id="vo">
+                     <tr>
+	                    <th scope="col">{$vo.name}</th>
+	                    <th scope="col">{$vo.createtime|date="Y-m-d H:i:s",###}</th>
+	                    <th scope="col">{$vo.catname}</th>
+	                    <th scope="col"><a style="color: blue;" href="/index.php/PhotoManage/Delete_photo/id/{$vo.id}">删除</a></th>
+	                  </tr>
+                  </volist>
+                  
+                </table>
+            </div>
+		</div>
+       
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--提示层-->
+		<div class="poptip" id="giveBox" style="display:none;">
+				<div class="pop-t"><span class="close" id="pop-close"></span><h3>提示</h3></div>	
+				<div class="pop-v">
+					<p class="txt" id="pop-text">修改成功!</p>
+					<p class="txt"><span class="sendBtn" id="pop-btnclose">确 定</span></p>
+				</div>
+			</div>
+		<!--提示层-->
+
+
+
+<include file="Public:footer" />
+</body>
+</html>

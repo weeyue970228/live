@@ -1,0 +1,116 @@
+﻿@charset "utf-8";
+
+/*base begin*/
+
+html {
+	_overflow-x: hidden;
+}
+
+
+/*base end*/
+
+
+.wrap {
+	width: 1180px;
+	margin: 0 auto;
+	/*margin-top: 9px;*/
+	margin-bottom: 30px;
+}
+
+
+.car {
+	width: 1180px;
+	height: auto;
+	clear: both;
+	margin: 0 auto;
+}
+
+.car_01 {
+	margin: 10px;
+	width: 255px;
+	float: left;
+}
+
+.car_02 {
+	padding: 10px 0 20px 10px;
+	font-size: 18px;
+	text-align: center;
+	font-family: "微软雅黑";
+}
+
+.car_03 {
+	width: 1178px;
+	height: auto;
+	float: left;
+	padding-bottom: 25px;
+}
+
+.car_04 {
+	text-align: center;
+	padding: 20px;
+}
+
+.car_04 img {
+	height: 74px;
+	width: auto;
+}
+
+.car_05 {
+	text-align: center;
+	line-height: 24px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+.car_06 {
+	width: 60px;
+	height: 24px;
+	text-align: center;
+	width: 180px;
+	margin: 20px auto;
+	height: 30px;
+	text-align: center;
+	color: #fff;
+	background: none;
+}
+
+.car_06 a {
+	display: block;
+	width: 180px;
+	height: 30px;
+	color: #FFF;
+	line-height: 30px;
+	border: none;
+	text-align: center;
+	font-family: "微软雅黑";
+	border-radius: 14px;
+	font-size: 14px;
+	background: #ff7256;
+}
+
+.car_06 a:hover {
+	background: #fd8b74;
+	border-radius: 14px;
+}
+
+.car_06 a {
+	text-decoration: none;
+}
+
+.car_07 {
+	width: 275px;
+	height: 360px;
+	float: left;
+	padding-left: 5px;
+	padding-top: 15px;
+	background: #fff;
+	margin: 0px 2px 2px 0px;
+}
+
+.car_08 {
+	height: 18px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	text-align: center;
+}
+

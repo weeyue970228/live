@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+body *{ box-sizing:content-box; font-family:"微软雅黑"; font-size:14px;}
+body a:hover{ text-decoration:none;}
+.clear{ clear:both; height:0; line-height:0;}
+body button{ border:none;}
+
+.family_data{ width:1080px; margin:35px auto 0;}
+.family_introduce{ background:#FFF; padding:18px 0 0 52px; height:142px; margin-bottom:21px;}
+.family_brief{ float:left; width:494px;}
+.family_Notice{ float:right; width:358px;}
+.family_brief div{ float:left; width:152px; white-space:nowrap;}
+.family_brief span{ display:block; float:left; padding-top:2px;}
+.family_brief span img{ width:116px; height:115px;}
+.family_brief div h3{ font-size:24px; font-weight:bold; line-height:40px; padding-top:10px; width:100%; overflow:hidden; text-overflow:ellipsis;}
+.family_brief div p{ line-height:32px; width:100%; overflow:hidden; text-overflow:ellipsis;}
+.family_brief div img{ margin-left:25px; margin-bottom:7px;}
+.family_brief_c{ padding-left:36px; padding-top:2px;}
+.family_Notice h3{ line-height:58px; font-size:18px; padding-bottom:3px; font-weight:normal;}
+
+.data_l{ float:left; width:802px; position:relative; overflow:hidden;}
+.data_r{ float:right; width:242px;}
+
+.data_l h3{ background:url(/Public/images/family/family_h2.png) no-repeat left center; line-height:45px; color:#010101; font-size:18px; font-weight:normal; padding-left:11px;}
+.data_l h3 span{ color:#7c7c7c; font-size:12px; padding-left:18px;}
+.family_search{ line-height:20px; width:280px; position:absolute; top:12px; right:0;}
+.family_search input{ width:147px; height:18px; line-height:18px; text-indent:3px; border:1px #dcdcdc solid; margin:0 13px 0 20px; background:#f8f8f8;}
+.family_search button{ width:51px; *width:67px; height:20px; line-height:18px; background:#e4007f; color:#FFF;}
+
+.data_l table th,.data_l table td{ text-align:center; background:#a0a0a0; line-height:28px; border-right:5px #f8f8f8 solid; border-bottom:7px #f8f8f8 solid;}
+.data_l table tr td{ background:#eeeeee;}
+.data_l table tr.dark_grey td{ background:#dcdcdc;}
+
+.page{ text-align:center; line-height:20px; padding-top:45px;}
+.page a{ display:inline-block; padding:0 5px; margin:0 5px; color:#000;}
+.page a.active{ color:#fefefe; background:#8c3ff0;}
+a.pagePre,a.pageNext{ background:#dcdcdc; padding:0 20px;}
+
+.patriarch{ padding-top:14px;}
+.patriarch_c{ zoom:1; overflow:hidden; padding-bottom:23px;}
+.patriarch_c a{ float:left;}
+.patriarch_c img{ width:90px; height:90px;}
+.patriarch_c div{ float:left; padding-left:17px; position:relative;}
+.patriarch_c div h6{ color:#010101; font-size:18px; line-height:55px; width:92px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:normal;}
+.patriarch_c div span{ color:#666666;}
+.patriarch_c div span.level4{ display:block; width:29px; height:24px;  position:absolute; right:-29px; top:11px;}
+
+.patriarch ul{ zoom:1; overflow:hidden; width:253px;}
+.patriarch ul li{ float:left; width:114px; height:42px; margin:0 12px 12px 0;}
+.patriarch ul li a{ display:block; text-align:center; line-height:42px; background:#ededed; color:#000;}
+.patriarch ul li.active a{ background:#8c3ff0; color:#fff;}
+
+.family_ranking{ padding-top:39px;}
+.family_ranking h2{ color:#4d00b1; background:url(/Public/images/family/family_ranking.png) no-repeat left center; padding-left:37px; font-family:"幼圆"; font-size:22px; line-height:70px; font-weight:normal;}
+.family_ranking ul{}
+.family_ranking ul li{ zoom:1; overflow:hidden; padding-bottom:12px; *padding-bottom:8px;}
+.family_ranking ul li span{ display:block; float:left; width:46px; height:47px; line-height:47px; color:#5e5e5e; font-style:italic; font-weight:bold; text-indent:9px;}
+.family_ranking ul li a{ display:block; float:left; width:47px; height:47px;}
+.family_ranking ul li a img{ width:100%; height:100%;}
+.family_ranking ul li div{ float:left; padding-left:29px; font-size:12px; color:#666666; line-height:22px;}
+
+.family_ranking ul li:first-child{ padding-bottom:19px; *padding-bottom:15px;}
+.family_ranking ul li:first-child span{ background:url(/Public/images/family/familu_top.png) no-repeat left center; line-height:0; font-size:0;}
+.family_ranking ul li:first-child a{ width:52px; height:52px;}
+.family_ranking ul li:first-child div{ padding-left:25px;}
+
+.data_l h3 strong,.data_l h3 b{ font-weight:normal; color:#e4007f; font-size:12px;}
+.data_l h3 b{ color:#8c3ff0;}
+.data_l h3 i{ font-style:normal; font-size:12px;}
+.btn_del{ color:#7324da;}
+.btn_expel{ color:#cc1279;}

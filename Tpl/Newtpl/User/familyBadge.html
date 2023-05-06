@@ -1,0 +1,58 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>管理中心-我的家族徽章</title>
+		<link rel="stylesheet" href="__PUBLIC__/css/CoreCSS/family.css" type="text/css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" />
+		<script language="javascript" src="__PUBLIC__/js/CoreJS/jquery.js"></script>
+		<script language="javascript" src="__PUBLIC__/js/CoreJS/common.js"></script>
+		<script language="javascript" src="__PUBLIC__/js/CoreJS/personal.js"></script>
+	</head>
+<body>
+
+<include file="Public:header" />
+
+<div class="f_block">
+	<div class="usercenter">
+	    <!-- utitle begin -->
+    <include file="User:header" />
+	    <!-- utitle end -->
+    </div>
+	<div class="myaccount clearn">
+			
+
+<div class="account-l">
+	
+	<a href="__URL__/familyIJoin/" title="我加入的家族" >我加入的家族</a>
+	<a href="__URL__/familyICreate/" title="我建立的家族" >我建立的家族</a>
+	<a href="__URL__/familyBadge/" title="我的家族徽章" class='on'>我的家族徽章</a>
+	<a href="__URL__/familyPrerogative/" title="我的家族特权" >我的家族特权</a>
+	<a href="__URL__/familyOperationLog/"  title="我的操作记录" >我的操作记录</a>
+</div>
+			<div class="account-r">
+				<!--有徽章-->
+				<form action="family_familyBadgeUpdate.htm" method="post">
+				<input type="hidden" name="familyBadgeUse" value=""/>
+					
+						<div class="badge">
+		                	<div class="badgett"><cite>请选择其中的一个佩戴：</cite>
+		                			<span class="familyico"></span><em></em></div>
+		                    <ul>
+		                    	
+		                    	
+		                    	
+		                        <li><input name="familyId" type="radio" value=""/>不显示家族徽章</li>
+		                    </ul>
+		                    <div class="passbt"><button class="btn_clear" name="blockno" type="submit">确定</button></div>
+		                </div>
+	                
+                </form>
+                
+			</div>
+		</div>
+</div>
+<include file="Public:footer" />
+</body>
+</html>

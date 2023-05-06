@@ -1,0 +1,72 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>FMScms - 后台管理中心</title>
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script>
+<script type="text/javascript">
+	window.focus();
+</script>
+</head>
+<body>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+    	<a>游戏>游戏开启与关闭</a>
+        <!--<a href='javascript:;' class="on"><em>管理员管理</em></a><span>|</span><a href='__URL__/add_adminuser/' ><em>添加管理员</em></a>    </div>-->
+</div>
+<style type="text/css">
+	html{_overflow-y:scroll}
+</style><div class="pad_10">
+<div class="table-list">
+<form name="myform" id="myform" action="__URL__/admin_close/" method="post" > 
+    <table width="100%" cellspacing="0">
+        <thead>
+		<tr>
+		<th width="20%">序号</th>
+		<th width="30%" align="left" >游戏名称</th>
+		<th width="25%" align="left" >当前状态</th>
+		<th width="25%" align="left">管理操作</th>
+		<th></th>
+		</tr>
+        </thead>
+        <tbody>
+<volist name="goodnums" id="vo">
+<tr>
+<td width="20%" align="center">{$vo['id']}</td>
+<td width="30%"  >{$vo['game']}</td>
+<td width="25%" >
+
+	<eq name="vo['enabled']" value="1">已启用</eq>
+	<eq name="vo['enabled']" value="0">已禁用</eq>
+</td>
+<td width="25%">
+	<switch name="vo['enabled']">
+				<case value="1"><a href="__URL__/opt_close/action/disaudit/userid/{$vo['id']}/return/{$_SERVER["REQUEST_URI"]|base64_encode}">禁用</a></case>
+				<case value="0"><a href="__URL__/opt_close/action/audit/userid/{$vo['id']}/return/{$_SERVER["REQUEST_URI"]|base64_encode}">启用</a></case>
+	</switch>
+</td>
+
+
+
+
+</tr>
+</volist>
+</tbody>
+</table>
+ <div id="pages"> </div>
+</form>
+</div>
+</div>
+</body>
+</html>

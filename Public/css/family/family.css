@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.family {
+	width: 1080px;
+	margin: 23px auto 0;
+}
+
+.family_c {
+	position: relative;
+	margin-top: -62px;
+}
+
+.family_l {
+	width: 813px;
+	float: left;
+}
+
+.family_r {
+	width: 242px;
+	float: right;
+}
+
+.family_l h2,
+.family_r h2 {
+	font-size: 22px;
+	line-height: 70px;
+	font-weight: normal;
+}
+
+.family_new h2 {
+	color: #da0000;
+	background: url(/Public/images/family/family_new.png) no-repeat left center;
+	padding-left: 36px;
+}
+
+.family_l ul {
+	zoom: 1;
+	overflow: hidden;
+}
+
+.family_l ul li {
+	float: left;
+	width: 240px;
+	height: 94px;
+	background: #FFF;
+	padding: 10px;
+	zoom: 1;
+	overflow: hidden;
+	margin-right: 10px;
+	position: relative;
+}
+
+.family_l ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #000000;
+	line-height: 27px;
+}
+
+.family_l ul li a img {
+	width: 104px;
+	height: 94px;
+	float: left;
+}
+
+.family_l ul li a div {
+	float: left;
+	padding-left: 9px;
+	white-space: nowrap;
+}
+
+.family_l ul li a h6 {
+	padding: 5px 0;
+	font-weight: 600;
+	font-size: 18px;
+	width: 78px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.family_l ul li a p {
+	width: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.family_l ul li span {
+	display: block;
+	position: absolute;
+	top: 7px;
+	right: 4px;
+}
+
+.family_hot h2 {
+	color: #de0ac8;
+	background: url(/Public/images/family/family_hot.png) no-repeat left center;
+	padding-left: 36px;
+}
+
+.family_hot h2 a {
+	float: right;
+	color: #000000;
+	font-size: 12px;
+	margin-right: 12px;
+}
+
+.family_hot ul li {
+	margin-bottom: 15px;
+}
+
+.family_r .create_btn,
+.family_r .family_detail {
+	display: block;
+	text-align: center;
+	background: #8c3ff0;
+	width: 240px;
+	height: 58px;
+	line-height: 58px;
+	color: #FFF;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.family_r .kong {
+	display: block;
+	text-align: center;
+	width: 240px;
+	height: 58px;
+	line-height: 58px;
+	color: #FFF;
+	font-size: 16px;
+	border: none;
+	box-sizing: border-box;
+}
+
+.family_r label {
+	display: block;
+	color: #6c6c6c;
+	line-height: 34px;
+}
+
+.family_ranking {
+	padding-top: 21px;
+}
+
+.family_ranking h2 {
+	color: #4d00b1;
+	background: url(/Public/images/family/family_ranking.png) no-repeat left center;
+	padding-left: 37px;
+}
+
+.family_ranking ul {}
+
+.family_ranking ul li {
+	zoom: 1;
+	overflow: hidden;
+	padding-bottom: 12px;
+	*padding-bottom: 8px;
+}
+
+.family_ranking ul li span {
+	display: block;
+	float: left;
+	width: 46px;
+	height: 47px;
+	line-height: 47px;
+	color: #5e5e5e;
+	font-style: italic;
+	font-weight: bold;
+	text-indent: 9px;
+}
+
+.family_ranking ul li a {
+	display: block;
+	float: left;
+	width: 47px;
+	height: 47px;
+}
+
+.family_ranking ul li a img {
+	width: 100%;
+	height: 100%;
+}
+
+.family_ranking ul li div {
+	float: left;
+	padding-left: 29px;
+	font-size: 12px;
+	color: #666666;
+	line-height: 22px;
+}
+
+.family_ranking ul li:first-child {
+	padding-bottom: 19px;
+	*padding-bottom: 15px;
+}
+
+.family_ranking ul li:first-child span {
+	background: url(/Public/images/family/familu_top.png) no-repeat left center;
+	line-height: 0;
+	font-size: 0;
+}
+
+.family_ranking ul li:first-child a {
+	width: 52px;
+	height: 52px;
+}
+
+.family_ranking ul li:first-child div {
+	padding-left: 25px;
+}
+
+.create_tip {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	width: 390px;
+	height: 206px;
+	background: #FFF;
+	border: 1px #dbdbdb solid;
+	margin: -103px 0 0 -145px;
+	display: none;
+}
+
+.create_tip h3 {
+	background: #eeeeee;
+	line-height: 44px;
+	padding: 0 15px 0 14px;
+	margin-bottom: 7px;
+}
+
+.create_tip h3 a {
+	float: right;
+	font-weight: bold;
+	font-size: 28px;
+	color: #c2c1c1;
+}
+
+.create_tip p {
+	line-height: 74px;
+	text-align: center;
+	margin-bottom: 12px;
+	font-size: 18px;
+}
+
+.create_tip p img {
+	vertical-align: middle;
+	margin-right: 17px;
+}
+
+.create_tip input {
+	display: block;
+	width: 104px;
+	height: 38px;
+	line-height: 38px;
+	color: #FFF;
+	background: #8c3ff0;
+	border: none;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.create_family {
+	width: 421px;
+	height: 511px;
+	background: #FFF;
+	border: 1px #dbdbdb solid;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 45px 0 0 76px;
+	margin: -278px 0 0 -248px;
+}
+
+.close_create {
+	position: absolute;
+	top: 7px;
+	right: 14px;
+	font-weight: bold;
+	font-size: 28px;
+	color: #c2c1c1;
+	line-height: 28px;
+}
+
+.create_family h3 {
+	font-size: 16px;
+}
+
+.create_family ul {
+	padding: 21px 0 24px;
+}
+
+.create_family ul li {
+	line-height: 32px;
+	padding-bottom: 28px;
+}
+
+.create_family ul li label {
+	display: inline-block;
+	width: 83px;
+	float: left;
+}
+
+.create_family ul li input {
+	border: 1px #dcdcdc solid;
+	height: 30px;
+	line-height: 30px;
+	width: 116px;
+}
+
+.create_family ul li textarea {
+	width: 258px;
+	height: 142px;
+	border: 1px #dcdcdc solid;
+	resize: none;
+}
+
+.create_family ul li input.family_name {
+	width: 258px;
+}
+
+.create_family ul li a {
+	display: inline-block;
+	width: 116px;
+	height: 30px;
+	background: #eeeeee;
+	border: none;
+	position: relative;
+	text-align: center;
+	color: #000;
+}
+
+.create_family ul li input.family_logo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+
+.create_family ul li span {
+	color: #ec0b93;
+	padding-left: 12px;
+}
+
+.create_family button {
+	display: block;
+	width: 182px;
+	height: 40px;
+	background: #8c3ff0;
+	color: #FFF;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	margin: 0 auto;
+}
+.family_my {
+	min-height:62px;
+}
+.family_my h2 {
+	top: -70px;
+	color: #631fba;
+	background: url(/Public/images/family/family_my.png) no-repeat left center;
+	padding-left: 36px;
+}
+
+.family_brief {
+	height: 115px;
+	zoom: 1;
+	overflow: hidden;
+}
+
+.family_brief div {
+	float: left;
+	width: 146px;
+	white-space: nowrap;
+}
+
+.family_brief span {
+	display: block;
+	float: left;
+}
+
+.family_brief span img {
+	width: 116px;
+	height: 115px;
+}
+
+.family_brief div h3 {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 77px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.family_brief div p {
+	line-height: 20px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.family_brief div img {
+	margin-left: 20px;
+	margin-bottom: 2px;
+}
+
+.family_brief_c {
+	padding-left: 40px;
+}
+
+.add_family_modal,
+.create_family_msg {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.add_family_modal .body {
+	background: #fff;
+	width: 499px;
+	height: 558px;
+	margin: 0 auto;
+	border: 1px solid #dbdbdb;
+}
+
+.add_family_modal .title {
+	height: 45px;
+}
+
+.add_family_modal .close_modal {
+	font-size: 24px;
+	color: #888;
+	line-height: 45px;
+	margin-right: 18px;
+	float:right;
+}
+
+.add_family_modal .close_modal:hover {
+	color: #bbb;
+}
+
+.add_family_modal h1 {
+	font-size: 16px;
+	padding-left: 75px;
+	margin-bottom: 19px;
+}
+
+.add_family_modal .item {
+	line-height: 33px;
+	padding-left: 75px;
+	margin-bottom: 30px;
+}
+
+.add_family_modal .label {
+	line-height: 33px;
+	width: 85px;
+	vertical-align: top;
+}
+
+.add_family_modal .family_name_text {
+	width: 260px;
+	height: 31px;
+	border: 1px solid #dcdcdc;
+}
+
+.add_family_modal .family_text {
+	width: 260px;
+	height: 144px;
+	border: 1px solid #dcdcdc;
+	resize: none;
+}
+
+.add_family_modal .badge_name {
+	width: 118;
+	height: 33px;
+	border: 1px solid #dcdcdc;
+}
+
+.add_family_modal .badge_name_msg {
+	color: #ec0b93;
+	padding-left: 20px;
+}
+
+.add_family_modal .submit_btn {
+	display: block;
+	margin: 30px auto;
+	width: 182px;
+	height: 40;
+	line-height: 40px;
+	background: #8c3ff0;
+	color: #fff;
+	font-size: 16px;
+	border: 0;
+}
+
+.create_family_msg .body {
+	background: #fff;
+	width: 390px;
+	height: 207px;
+	margin: 0 auto;
+	border: 1px solid #dbdbdb;
+}
+
+.create_family_msg .title {
+	background: #eee;
+	line-height: 44px;
+	padding: 0 14px;
+	font-size: 14px;
+}
+
+.create_family_msg .close_modal {
+	font-size: 24px;
+	color: #888;
+	line-height: 44px;
+	margin-right: 18px;
+	float:right;
+}
+
+.create_family_msg .close_modal:hover {
+	color: #bbb;
+}
+
+.create_family_msg .content {
+	line-height: 90px;
+	text-align: center;
+}
+
+.create_family_msg button {
+	display: block;
+	width: 104px;
+	height: 38px;
+	line-height: 38px;
+	background: #8c3ff0;
+	border: 0;
+	margin: 0 auto;
+	color: #fff;
+}

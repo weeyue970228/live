@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>秀场{$sitename}</title>
+
+		<include file="Public:head" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/newtpl2/css/index.css" />
+	</head>
+
+	<body>
+
+		
+
+			<include file="Public:header" />
+			
+
+			<div class="contenter clear xiuchang" style="margin-top:20px;">
+
+					<div class="fullSlide">
+						<div class="bd">
+							<ul>
+								<volist name='rollpics' id='vo' key='k'>
+									<li _src="url({$vo.picpath})" >
+										<a target="_blank" href="{$vo.linkurl}"></a>
+									</li>
+								</volist>
+							</ul>
+						</div>
+
+						<div class="hd">
+							<ul></ul>
+						</div>
+
+						<span class="prev"></span>
+
+						<span class="next"></span>
+
+					</div>
+
+					<script type="text/javascript">
+						/* 控制左右按钮显示 */
+						jQuery(".fullSlide").hover(function() {
+							jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+						}, function() {
+							jQuery(this).find(".prev,.next").fadeOut()
+						});
+						/* 调用SuperSlide */
+						jQuery(".fullSlide").slide({
+							titCell: ".hd ul",
+							mainCell: ".bd ul",
+							effect: "fold",
+							autoPlay: true,
+							autoPage: true,
+							trigger: "click",
+							startFun: function(i) {
+								var curLi = jQuery(".fullSlide .bd li").eq(i); /* 当前大图的li */
+								if (!!curLi.attr("_src")) {
+									curLi.css("background-image", curLi.attr("_src")).removeAttr("_src") /* 将_src地址赋予li背景，然后删除_src */
+								}
+							}
+						});
+					</script>
+
+					
+					<div class="mian clear">
+						<div class="layout-main w1280">
+							<div class="bx hot-wrap nn-wrap">
+								<div class="bd mih175">
+									<div class="tab-content tab-cur" >
+										<ul>
+										<volist name="members" id="vo">
+												<li>
+												<div class="live-panel live-panel-tag">
+													<div class="host-pic">
+														<img class="thumb" width="200" height="133" alt="{$vo['nickname']}" src="/Public/newtpl2/images/lazyload.png" data-original="{$vo['snap']}">
+														<a class="play-mask" target="room" href="/{$vo['curroomnum']}">
+														<div class="back"></div>
+														<span class="play-btn">播放</span>
+														</a>
+													</div>
+													<h4 class="name">
+													<a target="room" href="/{$vo['curroomnum']}">{$vo['nickname']}</a>
+													<!--<span class="host-type">热舞秀 </span>-->
+													</h4>
+													<p class="status fr">
+														<span class="" title="观众数">
+														<span class="ico ico-peo"></span><?php if($vo['virtualguest'] > 0){echo ($vo['online'] + $vo['virtualguest'] + $virtualcount);}else{echo $vo['online'];} ?></span>
+														<!--<span class="viewer" title="粉丝数">
+														<span class="ico ico-fans"></span>{$vo['fans']}</span>-->
+													</p>
+													<if condition="$vo['broadcasting'] eq 'y'">
+														<span class="live-tip">直播中<span class="arrow"></span></span>
+													<elseif condition=" $vo['offlinevideo'] neq null && $vo['offlinevideo'] neq '' " />	
+													    <span class="live-tip">录像<span class="arrow"></span></span>
+													</if>
+												</div>
+												</li>
+			   								</volist>		
+				
+										</ul>
+										<div class="page">{$page}</div>
+									</div>
+								</div>
+							</div>							
+						</div>
+		
+					</div>
+
+					
+
+			
+			</div>
+		
+
+			<include file="Public:footer" />
+			<script>
+				$(function(){
+					//图片延迟加载
+					$("img.thumb").lazyload({effect: "fadeIn"});										
+				})
+			</script>		
+
+	</body>
+
+</html>

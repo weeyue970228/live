@@ -1,0 +1,62 @@
+<tagLib name="html" />
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>直播设置-个人中心-管理中心-{$sitename}</title>
+<include file="Public:head" />
+
+		<script language="javascript" src="__PUBLIC__/js/CoreJS/My97DatePicker/WdatePicker.js"></script>
+
+	</head>
+
+	<body>
+		<include file="Public:header" />
+		<div class="wrap">
+			<div class="usercenter">
+
+			<include file="User:header" />
+				<div class="myaccount">
+
+					<div class="account-l">
+						<a href="__URL__/info_edit/" title="我的个人资料">我的个人资料</a>
+						<a href="__URL__/info_icon/" title="上传头像">上传头像</a>
+						<a href="__URL__/info_changepass/" title="密码/保护">密码/保护</a>
+						<a href="__URL__/info_live/" title="密码/保护" class="on">直播设置</a>
+					</div>
+
+					<div class="account-r">
+						<div class="xgmm_l">
+							<h2>修改密码</h2>
+							<form name="infoForm" id="id_passwordForm" method="post" action="__URL__/do_info_live/" >
+								<input type="hidden" name="id" value="{$_SESSION['uid']}">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="30%" align="right">设置直播时间</td>
+										<td width="22%">
+
+											<input type="text" onfocus="WdatePicker({dateFmt:'HH:mm:ss'})" name="time" class="Wdate" style="width:150px" value="{$starttime}"/>
+										</td>
+										<td><em id="npw_prompt"></em></td>
+									</tr>
+									<tr>
+										<td width="30%" align="right">&nbsp;</td>
+										<td width="22%">
+											<input name="setinfo_btn" type="image" src="__PUBLIC__/images/tjbt.gif" />
+										</td>
+										<td></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<include file="Public:footer" />
+	</body>
+
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+	<title>排行榜-{$sitename}</title> 	
+	<include file="Public:head" />
+	<link rel="stylesheet" href="__PUBLIC__/newtpl2/css/order.css" type="text/css" />
+</head>
+<body >
+	<include file="Public:header" />
+    <div class="contenter clear">    	
+		<div class="mod_all_rank m">
+			<div class="banner">
+				<img src="__PUBLIC__/newtpl2/images/starrank.png"/>
+			</div>
+			<div class="line"></div>
+			<ul class="hd">
+				<li onmousemove="turn(1,4,1)" id="lm1_1"><a href="javascript:void(0);">日</a></li>
+				<li onmousemove="turn(2,4,1)" id="lm1_2"><a href="javascript:void(0);">周</a></li>
+				<li onmousemove="turn(3,4,1)" id="lm1_3"><a href="javascript:void(0);">月</a></li>
+				<li class="on" onmousemove="turn(4,4,1)" id="lm1_4"><a href="javascript:void(0);">总</a></li>
+			</ul>
+			<div class="bd">
+				<ul id="content1_1" style="display: none;">
+					<volist name="emceeRank_day" id="vo">
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content1_2" style="display: none;">
+					<volist name="emceeRank_week" id="vo">
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content1_3" style="display: none;">
+					<volist name="emceeRank_month" id="vo">
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content1_4" >
+					<volist name="emceeRank_all" id="vo" >
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+			</div>
+		</div>    	
+    	
+    	
+		<div class="mod_all_rank c">
+			<div class="banner">
+				<img src="__PUBLIC__/newtpl2/images/charmrank.png"/>
+			</div>
+			<div class="line"></div>
+			<ul class="hd">
+				<li onmousemove="turn(1,4,2)" id="lm2_1"><a href="javascript:void(0);">日</a></li>
+				<li onmousemove="turn(2,4,2)" id="lm2_2"><a href="javascript:void(0);">周</a></li>
+				<li onmousemove="turn(3,4,2)" id="lm2_3"><a href="javascript:void(0);">月</a></li>
+				<li class="on" onmousemove="turn(4,4,2)" id="lm2_4"><a href="javascript:void(0);">总</a></li>
+			</ul>
+			<div class="bd">
+				<ul id="content2_1" style="display: none;">
+					<volist name="rqRank_day" id="vo" >
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>					
+
+				</ul>
+				<ul id="content2_2" style="display: none;">
+					<volist name="rqRank_week" id="vo" >
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>	
+				</ul>
+				<ul id="content2_3" style="display: none;">
+					<volist name="rqRank_month" id="vo" >
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>	
+				</ul>
+				<ul id="content2_4" >
+					<volist name="rqRank_all" id="vo" >
+					<li>
+						<a  href="/{$vo['userinfo']['curroomnum']}"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong><strong style="float:left;">({$vo['userinfo']["curroomnum"]})</strong></span>
+							<b class="star star{$vo['emceelevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>	
+				</ul>
+			</div>
+		</div>
+		
+		<div class="mod_all_rank s">
+			<div class="banner">
+				<img src="__PUBLIC__/newtpl2/images/richrank.png"/>
+			</div>
+			<div class="line"></div>
+			<ul class="hd">
+				<li onmousemove="turn(1,4,3)" id="lm3_1"><a href="javascript:void(0);">日</a></li>
+				<li onmousemove="turn(2,4,3)" id="lm3_2"><a href="javascript:void(0);">周</a></li>
+				<li onmousemove="turn(3,4,3)" id="lm3_3"><a href="javascript:void(0);">月</a></li>
+				<li class="on" onmousemove="turn(4,4,3)" id="lm3_4"><a href="javascript:void(0);">总</a></li>
+			</ul>
+			<div class="bd">
+				<ul id="content3_1" style="display: none;">
+					<volist name="richRank_day" id="vo" >
+					<li>
+						<a  href="javascript:void(0);"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong></span>
+							<b class="cracy cra{$vo['richlevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content3_2" style="display: none;">
+					<volist name="richRank_week" id="vo" >
+					<li>
+						<a  href="javascript:void(0);"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong></span>
+							<b class="cracy cra{$vo['richlevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content3_3" style="display: none;">
+					<volist name="richRank_month" id="vo" >
+					<li>
+						<a  href="javascript:void(0);"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong></span>
+							<b class="cracy cra{$vo['richlevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<ul id="content3_4" >
+					<volist name="richRank_all" id="vo" >
+					<li>
+						<a  href="javascript:void(0);"  target="_blank">
+							<if condition="$i eq '1'">
+								<i class="first bg"></i>
+							<elseif condition="$i eq '2'"/>
+								<i class="second bg"></i>
+							<elseif condition="$i eq '3'"/>
+								 <i class="third">3</i>
+							<else/>
+								 <i>{$i}</i>
+							</if>
+							
+							<img src="{$ucurl}avatar.php?uid={$vo['userinfo']['ucuid']}&size=middle"/>
+							<span class="tit text_hidden"><strong style="float:left;margin-right:5px;">{$vo['userinfo']["nickname"]}</strong></span>
+							<b class="cracy cra{$vo['richlevel'][0]['levelid']}"></b>
+						</a>
+					</li>
+					</volist>
+				</ul>
+			</div>
+		</div>  		
+    </div>    
+	
+    <div class="contenter clear giftrank">
+    	
+		<div class="banner">
+			<img src="/Public/newtpl2/images/giftrank.png">
+				
+			<div class="fn_right">
+				<ul class="hd">
+					<li onmousemove="turn(1,4,4)" id="lm4_1"><a href="javascript:void(0);">日</a></li>
+					<li onmousemove="turn(2,4,4)" id="lm4_2"><a href="javascript:void(0);">周</a></li>
+					<li onmousemove="turn(3,4,4)" id="lm4_3"><a href="javascript:void(0);">月</a></li>
+					<li class="on" onmousemove="turn(4,4,4)" id="lm4_4"><a href="javascript:void(0);">总</a></li>
+				</ul>	
+				
+			</div>	
+		</div>  
+		
+		<div class="bd" id="content4_1" style="display: none;">
+			<volist name="gifts_day" id="vo">
+			<div class="bweek_d <if condition="$key%3 eq '0'">m<elseif condition="$key%3 eq '1'"/>c<elseif condition="$key%3 eq '2'"/>s</if>  ">
+				<div class="bweek_d_left">
+					<div class="bweek_d_left1">
+						<img src="{$vo['giftinfo']['giftIcon']}" width="84" height="85"><em></em>
+					</div>
+					<div class="bweek_d_left2">
+						 {$vo['giftinfo']['giftname']}
+					</div>
+				</div>
+				<div class="bweek_d_right">
+					<volist name="vo['zhubo']" id="zhubo">
+					<div class="bweek_d_right1">
+						<div class="bw_num">
+							 {$i}
+						</div>
+						<a class="bw_name" href="/{$zhubo['userinfo']['curroomnum']}" target="_blank" title="{$zhubo['userinfo']['nickname']}">{$zhubo['userinfo']['nickname']}​</a>
+						<div class="bw_img">
+							<b class="star star{$zhubo['emceelevel'][0]['levelid']}"></b>
+						</div>
+						<div class="bw_g bw_g_first">
+							{$zhubo['total']}个
+						</div>
+					</div>
+					</volist>
+	
+				</div>
+			</div> 								
+			</volist>			
+		</div>
+		
+		<div class="bd" id="content4_2" style="display: none;">
+			<volist name="gifts_week" id="vo">
+			<div class="bweek_d <if condition="$key%3 eq '0'">m<elseif condition="$key%3 eq '1'"/>c<elseif condition="$key%3 eq '2'"/>s</if>  ">
+				<div class="bweek_d_left">
+					<div class="bweek_d_left1">
+						<img src="{$vo['giftinfo']['giftIcon']}" width="84" height="85"><em></em>
+					</div>
+					<div class="bweek_d_left2">
+						 {$vo['giftinfo']['giftname']}
+					</div>
+				</div>
+				<div class="bweek_d_right">
+					<volist name="vo['zhubo']" id="zhubo">
+					<div class="bweek_d_right1">
+						<div class="bw_num">
+							 {$i}
+						</div>
+						<a class="bw_name" href="/{$zhubo['userinfo']['curroomnum']}" target="_blank" title="{$zhubo['userinfo']['nickname']}">{$zhubo['userinfo']['nickname']}​</a>
+						<div class="bw_img">
+							<b class="star star{$zhubo['emceelevel'][0]['levelid']}"></b>
+						</div>
+						<div class="bw_g bw_g_first">
+							{$zhubo['total']}个
+						</div>
+					</div>
+					</volist>
+	
+				</div>
+			</div> 								
+			</volist>				
+		</div>
+		
+		<div class="bd" id="content4_3" style="display: none;">
+			<volist name="gifts_month" id="vo">
+			<div class="bweek_d <if condition="$key%3 eq '0'">m<elseif condition="$key%3 eq '1'"/>c<elseif condition="$key%3 eq '2'"/>s</if>  ">
+				<div class="bweek_d_left">
+					<div class="bweek_d_left1">
+						<img src="{$vo['giftinfo']['giftIcon']}" width="84" height="85"><em></em>
+					</div>
+					<div class="bweek_d_left2">
+						 {$vo['giftinfo']['giftname']}
+					</div>
+				</div>
+				<div class="bweek_d_right">
+					<volist name="vo['zhubo']" id="zhubo">
+					<div class="bweek_d_right1">
+						<div class="bw_num">
+							 {$i}
+						</div>
+						<a class="bw_name" href="/{$zhubo['userinfo']['curroomnum']}" target="_blank" title="{$zhubo['userinfo']['nickname']}">{$zhubo['userinfo']['nickname']}​</a>
+						<div class="bw_img">
+							<b class="star star{$zhubo['emceelevel'][0]['levelid']}"></b>
+						</div>
+						<div class="bw_g bw_g_first">
+							{$zhubo['total']}个
+						</div>
+					</div>
+					</volist>
+				</div>
+			</div> 								
+			</volist>				
+		</div>
+		
+		<div class="bd" id="content4_4" >
+			<volist name="gifts_all" id="vo">
+			<div class="bweek_d <if condition="$key%3 eq '0'">m<elseif condition="$key%3 eq '1'"/>c<elseif condition="$key%3 eq '2'"/>s</if>  ">
+				<div class="bweek_d_left">
+					<div class="bweek_d_left1">
+						<img src="{$vo['giftinfo']['giftIcon']}" width="84" height="85"><em></em>
+					</div>
+					<div class="bweek_d_left2">
+						 {$vo['giftinfo']['giftname']}
+					</div>
+				</div>
+				<div class="bweek_d_right">
+					<volist name="vo['zhubo']" id="zhubo">
+					<div class="bweek_d_right1">
+						<div class="bw_num">
+							 {$i}
+						</div>
+						<a class="bw_name" href="/{$zhubo['userinfo']['curroomnum']}" target="_blank" title="{$zhubo['userinfo']['nickname']}">{$zhubo['userinfo']['nickname']}​</a>
+						<div class="bw_img">
+							<b class="star star{$zhubo['emceelevel'][0]['levelid']}"></b>
+						</div>
+						<div class="bw_g bw_g_first">
+							{$zhubo['total']}个
+						</div>
+					</div>
+					</volist>
+	
+				</div>
+			</div> 								
+			</volist>				
+		</div>
+    </div>
+    	
+	<include file="Public:footer" />
+</body></html>

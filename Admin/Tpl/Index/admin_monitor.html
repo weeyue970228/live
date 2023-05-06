@@ -1,0 +1,86 @@
+﻿<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=7" /> 
+<title>FMScms - 后台管理中心</title> 
+<link href="__PUBLIC__/statics/css/reset.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/system.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/table_form.css" rel="stylesheet" type="text/css" /> 
+<link href="__PUBLIC__/statics/css/dialog.css" rel="stylesheet" type="text/css" /> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/dialog.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles1.css" title="styles1" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles2.css" title="styles2" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles3.css" title="styles3" media="screen" /> 
+<link rel="alternate stylesheet" type="text/css" href="__PUBLIC__/statics/css/style/styles4.css" title="styles4" media="screen" /> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/jquery.min.js"></script> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/admin_common.js"></script> 
+<script language="javascript" type="text/javascript" src="__PUBLIC__/statics/js/styleswitch.js"></script> 
+<script type="text/javascript" language="javascript" src="__PUBLIC__/js/CoreJS/swfobject.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/js/CoreJS/socket.io.js"></script>
+<style type="text/css">
+	table{
+		border: 1px solid black;
+		width: 100%;
+	
+	}
+	.mytd{
+		border: 1px solid #C2D1D8;
+		width: 20%;
+		float: left;
+		margin: 10px;
+
+	}
+	.mytd span{
+		margin-left: 5px;
+	}
+	.mybtn{
+		float: right;
+		margin-right: 5px;
+	}
+</style>
+</head> 
+<body> 
+    <div>当前有<span style="color: orange;"><?php echo sizeof($onlineEmceeList);?></span>位主播在直播<br>
+    	<div id="stopplay"></div>
+    </div>
+    
+    <div style="width: 1050px;" class="table-list"><br> 
+    	
+    <ul>
+    	
+    		<?php foreach($onlineEmceeList as $v){?>
+    		<li class="mytd"><span>开播时长:<?php 
+    			$times = time()-$v['showId'];
+    			$result = '';
+    			$hour = floor($times/3600);
+                $minute = floor(($times-3600 * $hour)/60);
+                $second = floor((($times-3600 * $hour) - 60 * $minute) % 60);
+                $result = $hour.':'.$minute.':'.$second;
+                echo  $result;?></span><div  id="<?php echo $v['username'];?>" style="margin-left: 5px;"></div><br><span>主播:<?php echo $v['nickname'];?></span>&nbsp;<button  onclick="closeRoom('<?php echo $v['curroomnum'];?>')" class="btn mybtn">关闭房间</button><br><span>房间号:<?php echo $v['curroomnum'];?></span>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mybtn" target="_blank" href="/<?php echo $v['curroomnum']; ?>">进入房间</a></li>
+	    		<script type="text/javascript">
+				swfobject.embedSWF("/Public/swf/monitor.swf?roomId=stream<?php echo $v['curroomnum'];?>&cdn=<?php echo $configInfo['cdn'];?>", "<?php echo $v['username'];?>", 200, 150, "10.0", "", {},{wmode:"transparent", allowscriptaccess:"always"});
+						
+				</script>
+				
+    		<?php }?>
+
+    </ul>
+    
+    </div><br>
+    <div style="clear: both; margin-top: 150px;">{$page}</div>
+</body> 
+</html>
+<script type="text/javascript">
+     var socket = new io("192.168.1.52:19967");
+
+    function closeRoom(roomId){
+    	//swfobject.getObjectById('stopplay').stopplayfn(roomId);
+        var data = {"token":"1234567","roomnum":roomId};
+        socket.emit("superadminaction",data);
+    	alert("房间已关闭");
+    	
+    }
+    
+</script>
